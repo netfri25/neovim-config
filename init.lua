@@ -1,0 +1,7 @@
+require('plugins')
+require('user/options')
+require('user/keymaps')
+require('user/pluginconf')
+require('user/colorschemes')
+require('user/commands')
+require('user/neovide')
