@@ -7,5 +7,4 @@ git clone https://github.com/netfri25/neovim-config ~/.config/nvim
 git clone --depth 1 https://github.com/wbthomason/packer.nvim\
  ~/.local/share/nvim/site/pack/packer/start/packer.nvim # Installs packer
 ```
-#### **Warning**
-if you have already a config for neovim it will **COMPLETELY DESTROY IT**.
+If it tells you that the directory already exists and its empty, you should remove it completely (meaning your previous config will be gone) and try running the command again
