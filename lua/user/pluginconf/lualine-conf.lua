@@ -38,7 +38,7 @@ lualine.setup({
             'buffers',
 
             filetype_names = {
-               NvimTree = "Tree",
+               NvimTree = "File explorer",
             },
 
             symbols = {
