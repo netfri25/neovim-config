@@ -13,6 +13,9 @@ keymap("n", "<A-down>", ":resize +2<CR>", opts)
 keymap("n", "<A-left>", ":vertical resize -2<CR>", opts)
 keymap("n", "<A-right>", ":vertical resize +2<CR>", opts)
 
+-- Unhighlight search
+keymap("n", "<C-l>", ":let @/=''<CR>", opts)
+
 -- Move text up and down
 keymap("n", "<A-k>", "<Esc>:m .-2<CR>==", opts)
 keymap("n", "<A-j>", "<Esc>:m .+1<CR>==", opts)
