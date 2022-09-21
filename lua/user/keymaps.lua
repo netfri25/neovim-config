@@ -23,9 +23,6 @@ keymap("n", "<A-j>", "<Esc>:m .+1<CR>==", opts)
 -- Redo on shift-u instead of ctrl-r
 keymap("n", "U", "<C-r>", opts)
 
--- Delete without writing to the buffer
-keymap("n", "<leader>d", "\"_d", opts)
-
 -- Autocomplete brackets, braces, parentheses and angles
 keymap("i", "<A-[>", "[]<left>", opts)
 keymap("i", "<A-{>", "{}<left>", opts)
