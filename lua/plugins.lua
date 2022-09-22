@@ -6,7 +6,7 @@ return require('packer').startup(function(use)
    use { 'folke/lsp-colors.nvim' }
    use { 'navarasu/onedark.nvim' }
    use { 'lambdalisue/suda.vim' }
-   use { 'akinsho/toggleterm.nvim', tag = 'v1.*' }
+   use { 'akinsho/toggleterm.nvim' }
    use { 'folke/which-key.nvim' }
    use { 'sainnhe/gruvbox-material' }
    use { 'lewis6991/impatient.nvim' }
