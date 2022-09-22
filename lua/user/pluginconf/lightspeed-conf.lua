@@ -16,8 +16,8 @@ lightspeed.setup({
    -- labels = { . . . },
    -- These keys are captured directly by the plugin at runtime.
    special_keys = {
-      next_match_group = '<space>',
-      prev_match_group = '<tab>',
+      next_match_group = '<tab>',
+      prev_match_group = '<s-tab>',
    },
    --- f/t ---
    limit_ft_matches = 4,
