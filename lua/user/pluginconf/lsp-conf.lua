@@ -8,7 +8,7 @@ local capabilities = cmp_nvim_lsp.update_capabilities(vim.lsp.protocol.make_clie
 capabilities.textDocument.completion.completionItem.snippetSupport = true
 
 -- lspconfig
-local keymaps_opts = { silent=true }
+local keymaps_opts = { silent = true }
 vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, keymaps_opts)
 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, keymaps_opts)
 vim.keymap.set('n', ']d', vim.diagnostic.goto_next, keymaps_opts)
@@ -17,7 +17,7 @@ vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, keymaps_opts)
 
 -- Mappings.
 -- See `:help vim.lsp.*` for documentation on any of the below functions
-local bufopts = { silent=true }
+local bufopts = { silent = true }
 vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, bufopts)
 vim.keymap.set('n', 'gd', vim.lsp.buf.definition, bufopts)
 vim.keymap.set('n', 'K', vim.lsp.buf.hover, bufopts)
@@ -63,6 +63,17 @@ lspconfig['tsserver'].setup({
 
 lspconfig['jsonls'].setup({
    capabilities = capabilities,
+})
+
+lspconfig['sumneko_lua'].setup({
+   settings = {
+      Lua = {
+         runtime = { version = 'LuaJIT', },
+         diagnostics = { globals = { 'vim' }, },
+         workspace = { library = vim.api.nvim_get_runtime_file("", true), },
+         telemetry = { enable = false, },
+      },
+   },
 })
 
 require('rust-tools').setup({
