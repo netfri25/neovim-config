@@ -38,4 +38,5 @@ return require('packer').startup(function(use)
    use { 'nvim-lualine/lualine.nvim' }
    use { 'j-hui/fidget.nvim' }
    use { 'AckslD/nvim-trevJ.lua' }
+   use { 'Mofiqul/vscode.nvim' }
 end)

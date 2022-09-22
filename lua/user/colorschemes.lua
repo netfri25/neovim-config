@@ -4,6 +4,7 @@ vim.cmd([[
    let g:material_style = "darker"
    set background=dark
    colorscheme gruvbox-material
+   " colorscheme vscode
    highlight CursorLine cterm=NONE ctermbg=NONE ctermfg=NONE guibg=NONE guifg=NONE
 ]])
 
