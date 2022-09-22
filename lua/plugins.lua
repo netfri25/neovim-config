@@ -30,10 +30,10 @@ return require('packer').startup(function(use)
    use { 'simrat39/rust-tools.nvim' }
    use { 'RishabhRD/popfix' }
    use { 'hood/popui.nvim' }
-   use {
-      'AckslD/nvim-revJ.lua',
-      requires = { 'kana/vim-textobj-user', 'sgur/vim-textobj-parameter' }
-   }
+   -- use {
+   --    'AckslD/nvim-revJ.lua',
+   --    requires = { 'kana/vim-textobj-user', 'sgur/vim-textobj-parameter' }
+   -- }
    use { 'ggandor/lightspeed.nvim' }
    use { 'max397574/better-escape.nvim' }
    use { 'kyazdani42/nvim-tree.lua' }
@@ -41,4 +41,5 @@ return require('packer').startup(function(use)
    use { 'numToStr/Comment.nvim' }
    use { 'nvim-lualine/lualine.nvim' }
    use { 'j-hui/fidget.nvim' }
+   use { 'AckslD/nvim-trevJ.lua' }
 end)
