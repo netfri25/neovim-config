@@ -27,7 +27,7 @@ vim.lsp.handlers['textDocument/hover'] = vim.lsp.with(vim.lsp.handlers.hover, { 
 vim.lsp.handlers['textDocument/signatureHelp'] = vim.lsp.with(vim.lsp.handlers.hover, { border = 'rounded' })
 
 -- lspconfig
-local keymaps_opts = { silent = true }
+local keymaps_opts = { silent = true, noremap = true }
 vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, keymaps_opts)
 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, keymaps_opts)
 vim.keymap.set('n', ']d', vim.diagnostic.goto_next, keymaps_opts)
