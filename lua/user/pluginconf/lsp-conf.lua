@@ -101,6 +101,13 @@ lspconfig['sumneko_lua'].setup({
    },
 })
 
+local rust_analyzer_command
+if vim.fn.executable('rustup') == 1 then
+   rust_analyzer_command = { 'rustup', 'run', 'stable', 'rust-analyzer' }
+else
+   rust_analyzer_command = { 'rust-analyzer' }
+end
+
 require('rust-tools').setup({
    tools = {
       autoSetHints = true,
@@ -111,6 +118,10 @@ require('rust-tools').setup({
       },
    },
 
-   ['server.settings.rust-analyzer.checkOnSave.command'] = 'clippy',
-   ['server.settings.rust-analyzer.inlayHints.maxLength'] = 'null',
+   ['server.cmd'] = rust_analyzer_command,
+
+   ['server.settings.rust-analyzer'] = {
+      ['checkOnSave.command'] = 'clippy',
+      ['inlayHints.maxLength'] = 'null',
+   }
 })
