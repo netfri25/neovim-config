@@ -17,7 +17,7 @@ vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, keymaps_opts)
 
 -- Mappings.
 -- See `:help vim.lsp.*` for documentation on any of the below functions
-local bufopts = { silent = true }
+local bufopts = { silent = true, noremap = true }
 vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, bufopts)
 vim.keymap.set('n', 'gd', vim.lsp.buf.definition, bufopts)
 vim.keymap.set('n', 'K', vim.lsp.buf.hover, bufopts)
