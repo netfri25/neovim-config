@@ -1,4 +1,10 @@
 vim.ui.select = require("popui.ui-overrider")
 vim.ui.input = require("popui.input-overrider")
 vim.g.popui_border_style = 'rounded'
-vim.cmd[[nnoremap <leader>p :lua require'popui.diagnostics-navigator'()<CR>]]
+
+vim.api.nvim_set_keymap(
+   'n',
+   '<leader>p',
+   '<cmd>lua require(\'popui.diagnostics-navigator\')()<cr>',
+   { noremap = true, silent = true }
+)
