@@ -1,4 +1,4 @@
-local ok, whichkey = pcall(require, "which-key")
+local ok, whichkey = pcall(require, 'which-key')
 if not ok then return end
 
 whichkey.setup({
@@ -8,11 +8,11 @@ whichkey.setup({
    },
 
    key_labels = {
-      ["<cr>"] = "<ret>",
+      ['<cr>'] = '<ret>',
    },
 
    window = {
-      border = "rounded",
+      border = 'rounded',
       margin = { 2, 2, 2, 1 }
    },
 
@@ -20,6 +20,6 @@ whichkey.setup({
       height = { min = 4, max = 20 },
       width = { min = 20, max = 50 },
       spacing = 3,
-      align = "center",
+      align = 'center',
    }
 })

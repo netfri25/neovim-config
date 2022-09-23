@@ -24,7 +24,7 @@ return require('packer').startup(function(use)
    use { 'saadparwaiz1/cmp_luasnip' }
    use { 'nvim-lua/lsp_extensions.nvim',
       run = function()
-         require('lsp_extensions').inlay_hints({ enabled = { "TypeHint", "ChainingHint", "ParameterHint" } })
+         require('lsp_extensions').inlay_hints({ enabled = { 'TypeHint', 'ChainingHint', 'ParameterHint' } })
       end
    }
    use { 'simrat39/rust-tools.nvim' }

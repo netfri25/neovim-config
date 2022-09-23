@@ -1,13 +1,13 @@
 local options = {
    backup = false,                                  -- creates a backup file
-   -- clipboard = "unnamedplus",                    -- allows neovim to access the system clipboard
+   -- clipboard = 'unnamedplus',                    -- allows neovim to access the system clipboard
    cmdheight = 2,                                   -- more space in the neovim command line for displaying messages
-   completeopt = { "menu", "menuone", "noselect" }, -- mostly just for cmp
+   completeopt = { 'menu', 'menuone', 'noselect' }, -- mostly just for cmp
    conceallevel = 0,                                -- so that `` is visible in markdown files
-   fileencoding = "utf-8",                          -- the encoding written to a file
+   fileencoding = 'utf-8',                          -- the encoding written to a file
    hlsearch = true,                                 -- highlight all matches on previous search pattern
    ignorecase = false,                              -- ignore case in search patterns
-   mouse = "a",                                     -- allow the mouse to be used in neovim
+   mouse = 'a',                                     -- allow the mouse to be used in neovim
    pumheight = 10,                                  -- pop up menu height
    showmode = false,                                -- we don't need to see things like -- INSERT -- anymore
    -- smartcase = true,                             -- smart case
@@ -27,26 +27,26 @@ local options = {
    number = true,                                   -- set numbered lines
    relativenumber = true,                           -- set relative numbered lines
    numberwidth = 4,                                 -- set number column width to 2 {default 4}
-   signcolumn = "yes",                              -- always show the sign column, otherwise it would shift the text each time
+   signcolumn = 'yes',                              -- always show the sign column, otherwise it would shift the text each time
    wrap = true,                                     -- display lines as one long line
    scrolloff = 7,                                   -- is one of my fav
    sidescrolloff = 7,
-   guifont = "JetBrainsMonoNL Nerd Font:h12",       -- the font used in graphical neovim applications
-   foldmethod = "manual",                           -- folding set to "expr" for treesitter based folding
-   foldexpr = "",                                   -- set to "nvim_treesitter#foldexpr()" for treesitter based folding
+   guifont = 'JetBrainsMonoNL Nerd Font:h12',       -- the font used in graphical neovim applications
+   foldmethod = 'manual',                           -- folding set to 'expr' for treesitter based folding
+   foldexpr = '',                                   -- set to 'nvim_treesitter#foldexpr()' for treesitter based folding
    hidden = true,                                   -- required to keep multiple buffers and open multiple buffers
-   shell = "bash",                                  -- the default shell that some neovim commands will use
+   shell = 'bash',                                  -- the default shell that some neovim commands will use
    title = false,                                   -- set the title of window to the value of the titlestring
-   titlestring = "Neovim",                          -- what the title of the window will be set to
+   titlestring = 'Neovim',                          -- what the title of the window will be set to
    showtabline = 1,
 }
 
-vim.opt.shortmess:append "c"
+vim.opt.shortmess:append 'c'
 
 for k, v in pairs(options) do
    vim.opt[k] = v
 end
 
-vim.opt.whichwrap:append "<,>,[,],h,l"
-vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = "rounded" })
-vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, { border = "rounded" })
+vim.opt.whichwrap:append '<,>,[,],h,l'
+vim.lsp.handlers['textDocument/hover'] = vim.lsp.with(vim.lsp.handlers.hover, { border = 'rounded' })
+vim.lsp.handlers['textDocument/signatureHelp'] = vim.lsp.with(vim.lsp.handlers.signature_help, { border = 'rounded' })

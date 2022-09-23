@@ -1,4 +1,4 @@
-vim.g.neovide_cursor_vfx_mode = "ripple"
+vim.g.neovide_cursor_vfx_mode = 'ripple'
 vim.g.neovide_refresh_rate = 150
 vim.g.neovide_fullscreen = true
 vim.g.neovide_input_use_logo = true
@@ -12,10 +12,10 @@ vim.g.neovide_cursor_vfx_particle_lifetime = 0.8
 
 vim.g.gui_font_default_size = 12
 vim.g.gui_font_size = vim.g.gui_font_default_size
-vim.g.gui_font_face = "JetBrainsMonoNL Nerd Font Regular"
+vim.g.gui_font_face = 'JetBrainsMonoNL Nerd Font Regular'
 
 RefreshGuiFont = function()
-   vim.opt.guifont = string.format("%s:h%s",vim.g.gui_font_face, vim.g.gui_font_size)
+   vim.opt.guifont = string.format('%s:h%s',vim.g.gui_font_face, vim.g.gui_font_size)
 end
 
 ResizeGuiFont = function(delta)
@@ -34,5 +34,5 @@ ResetGuiFont()
 -- Keymaps
 local opts = { noremap = true, silent = true }
 
-vim.keymap.set({'n', 'i'}, "<C-=>", function() ResizeGuiFont(1)  end, opts)
-vim.keymap.set({'n', 'i'}, "<C-->", function() ResizeGuiFont(-1) end, opts)
+vim.keymap.set({'n', 'i'}, '<C-=>', function() ResizeGuiFont(1)  end, opts)
+vim.keymap.set({'n', 'i'}, '<C-->', function() ResizeGuiFont(-1) end, opts)

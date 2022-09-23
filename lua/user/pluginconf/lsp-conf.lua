@@ -1,7 +1,7 @@
 local ok, lspconfig = pcall(require, 'lspconfig')
 if not ok then return end
 
-local okok, cmp_nvim_lsp = pcall(require, "cmp_nvim_lsp")
+local okok, cmp_nvim_lsp = pcall(require, 'cmp_nvim_lsp')
 if not okok then return end
 
 local capabilities = cmp_nvim_lsp.update_capabilities(vim.lsp.protocol.make_client_capabilities())
@@ -70,7 +70,7 @@ lspconfig['sumneko_lua'].setup({
       Lua = {
          runtime = { version = 'LuaJIT', },
          diagnostics = { globals = { 'vim' }, },
-         workspace = { library = vim.api.nvim_get_runtime_file("", true), },
+         workspace = { library = vim.api.nvim_get_runtime_file('', true), },
          telemetry = { enable = false, },
       },
    },
@@ -81,11 +81,11 @@ require('rust-tools').setup({
       autoSetHints = true,
       inlay_hints = {
          show_parameter_hints = false,
-         parameter_hints_prefix = "",
-         other_hints_prefix = "",
+         parameter_hints_prefix = '',
+         other_hints_prefix = '',
       },
    },
 
-   ["server.settings.rust-analyzer.checkOnSave.command"] = "clippy",
-   ["server.settings.rust-analyzer.inlayHints.maxLength"] = "null",
+   ['server.settings.rust-analyzer.checkOnSave.command'] = 'clippy',
+   ['server.settings.rust-analyzer.inlayHints.maxLength'] = 'null',
 })

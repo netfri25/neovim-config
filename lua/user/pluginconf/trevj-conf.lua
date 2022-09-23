@@ -1,4 +1,4 @@
-local ok, trevj = pcall(require, "trevj")
+local ok, trevj = pcall(require, 'trevj')
 if not ok then return end
 
 local opts = { noremap = true, silent = true }
