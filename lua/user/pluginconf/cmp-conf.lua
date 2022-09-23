@@ -9,15 +9,8 @@ cmp.setup({
    },
 
    window = {
-      completion = {
-         border = 'rounded',
-         scrollbar = '║',
-      },
-
-      documentation = {
-         border = 'rounded',
-         scrollbar = '║',
-      }
+      completion = cmp.config.window.bordered(),
+      documentation = cmp.config.window.bordered(),
    },
 
    mapping = cmp.mapping.preset.insert({
