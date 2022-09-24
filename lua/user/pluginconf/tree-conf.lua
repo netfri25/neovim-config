@@ -48,7 +48,7 @@ tree.setup({
             { key = '>', action = 'next_sibling' },
             { key = 'P', action = 'parent_node' },
             { key = '<bs>', action = 'close_node' },
-            { key = '<tab>',  action = 'preview' },
+            { key = '<tab>', action = 'preview' },
             { key = 'K', action = 'first_sibling' },
             { key = 'J', action = 'last_sibling' },
             { key = 'I', action = 'toggle_git_ignored' },
@@ -69,7 +69,7 @@ tree.setup({
             { key = ']d', action = 'next_diag_item' },
             { key = '[g', action = 'prev_git_item' },
             { key = ']g', action = 'next_git_item' },
-            { key = { 'h', '-' } , action = 'dir_up' },
+            { key = { 'h', '-' }, action = 'dir_up' },
             -- { key = 's', action = 'system_open' },
 
             -- NOTE: filters are really bad.

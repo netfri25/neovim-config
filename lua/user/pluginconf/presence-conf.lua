@@ -10,7 +10,7 @@ presence:setup({
    debounce_time = 10,
    enable_line_number = false,
    blacklist = {},
-   buttons = {{ label = 'Check out this cute dog!', url = 'https://rr.noordstar.me/0ee63750' }},
+   buttons = { { label = 'Check out this cute dog!', url = 'https://rr.noordstar.me/0ee63750' } },
 
    file_assets = {},
 

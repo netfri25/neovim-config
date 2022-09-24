@@ -1,1 +1,1 @@
-vim.cmd[[imap <silent><expr> <S-Tab> luasnip#expand_or_jumpable() ? '<Plug>luasnip-expand-or-jump' : '<Tab>']]
+vim.api.nvim_set_keymap('i', '<S-Tab>', '<Plug>luasnip-expand-or-jump', { silent = true, noremap = true })
