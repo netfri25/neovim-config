@@ -1,4 +1,18 @@
-vim.cmd [[packadd packer.nvim]]
+-- bootstrap packer
+local ensure_packer = function()
+   local fn = vim.fn
+   local install_path = fn.stdpath('data') .. '/site/pack/packer/start/packer.nvim'
+   if fn.empty(fn.glob(install_path)) > 0 then
+      vim.api.nvim_out_write('installing packer\n')
+      fn.system({ 'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path })
+      vim.cmd [[packadd packer.nvim]]
+      vim.api.nvim_out_write('finished installing packer\n')
+      return true
+   end
+   return false
+end
+
+local packer_bootstrap = ensure_packer()
 
 return require('packer').startup(function(use)
    use { 'wbthomason/packer.nvim' }
@@ -22,7 +36,8 @@ return require('packer').startup(function(use)
    use { 'hrsh7th/nvim-cmp' }
    use { 'L3MON4D3/LuaSnip' }
    use { 'saadparwaiz1/cmp_luasnip' }
-   use { 'nvim-lua/lsp_extensions.nvim',
+   use {
+      'nvim-lua/lsp_extensions.nvim',
       run = function()
          require('lsp_extensions').inlay_hints({ enabled = { 'TypeHint', 'ChainingHint', 'ParameterHint' } })
       end
@@ -37,4 +52,8 @@ return require('packer').startup(function(use)
    use { 'j-hui/fidget.nvim' }
    use { 'AckslD/nvim-trevJ.lua' }
    use { 'Mofiqul/vscode.nvim' }
+
+   if packer_bootstrap then
+      require('packer').sync()
+   end
 end)
