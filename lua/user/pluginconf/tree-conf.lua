@@ -13,6 +13,22 @@ tree.setup({
       custom = { '^.git$', '^.gitignore$' },
    },
 
+   actions = {
+      use_system_clipboard = false,
+
+      open_file = {
+         quit_on_open = true,
+      },
+
+      file_popup = {
+         open_win_config = {
+            relative = 'cursor',
+            border = 'rounded',
+            style = 'minimal',
+         },
+      },
+   },
+
    view = {
       number = false,
       relativenumber = false,
