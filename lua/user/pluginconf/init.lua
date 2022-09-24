@@ -17,12 +17,11 @@ local plugins = {
    'fidget',
    'trevj',
    'vscode',
-   'oshdff',
 }
 
 for _, plugin in ipairs(plugins) do
-   local ok, _ = pcall(require, 'user/pluginconf/' .. plugin .. '-conf')
+   local ok, err = pcall(require, 'user/pluginconf/' .. plugin .. '-conf')
    if not ok then
-      print('unable to load ' .. plugin)
+      vim.api.nvim_err_writeln('unable to load ' .. plugin .. ': ' .. err)
    end
 end
