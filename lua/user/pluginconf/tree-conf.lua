@@ -39,11 +39,9 @@ tree.setup({
             { key = '<cr>', action = 'toggle_node' },
             { key = 'i', action = 'edit' },
             { key = '<C-i>', action = 'edit_in_place' },
-            -- { key = 'O', action = 'edit_no_picker' },
             { key = { '\\', 'l' }, action = 'cd' },
             { key = '<C-v>', action = 'vsplit' },
             { key = '<C-s>', action = 'split' },
-            -- { key = '<C-t>', action = 'tabnew' },
             { key = '<', action = 'prev_sibling' },
             { key = '>', action = 'next_sibling' },
             { key = 'P', action = 'parent_node' },
@@ -53,6 +51,7 @@ tree.setup({
             { key = 'J', action = 'last_sibling' },
             { key = 'I', action = 'toggle_git_ignored' },
             { key = 'H', action = 'toggle_dotfiles' },
+            -- INFO: I don't have any custom hidden files (yet), so rn its commented out
             -- { key = 'U', action = 'toggle_custom' },
             { key = 'R', action = 'refresh' },
             { key = 'a', action = 'create' },
@@ -70,18 +69,20 @@ tree.setup({
             { key = '[g', action = 'prev_git_item' },
             { key = ']g', action = 'next_git_item' },
             { key = { 'h', '-' }, action = 'dir_up' },
+            -- INFO: I'm not using these because I don't want it to override
+            --       the keymaps for the lightspeed plugin
             -- { key = 's', action = 'system_open' },
+            -- { key = 'S', action = 'search_node' },
 
-            -- NOTE: filters are really bad.
-            --       if its not gonna get an update which fixes the bugs
-            --       and makes them look better I will just keep using the default
-            --       buffer search
+            -- INFO: filters are really bad.
+            --       If its not going to get an update which fixes most of its bugs
+            --       and makes them look nicer I will just keep using the default
+            --       buffer search or the lightspeed plugin
             -- { key = 'f', action = 'live_filter' },
             -- { key = 'F', action = 'clear_live_filter' },
             { key = { 'q', '<esc>' }, action = 'close' },
             { key = 'E', action = 'collapse_all' },
             { key = 'e', action = 'expand_all' },
-            -- { key = 'S', action = 'search_node' },
             { key = '.', action = 'run_file_command' },
             { key = '<c-k>', action = 'toggle_file_info' },
             { key = '?', action = 'toggle_help' },
@@ -90,6 +91,7 @@ tree.setup({
          }
       },
 
+      -- keeping this if I would ever want to go back into floating window
       float = {
          enable = false,
          open_win_config = {
@@ -105,6 +107,7 @@ tree.setup({
       icons = {
          show = {
             file = true,
+            -- the folder icon is very useless
             folder = false,
             folder_arrow = true,
             git = true,
@@ -117,6 +120,7 @@ tree.setup({
       show_on_dirs = true,
    },
 
+   -- I'm not using it anymore, but I will if its going to improve
    live_filter = {
       always_show_folders = false,
    },

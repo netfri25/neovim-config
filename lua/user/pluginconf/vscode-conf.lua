@@ -1,3 +1,4 @@
+-- I don't like this theme anyway but its nice for "trolling" people that I use VSCode
 local ok, vscode = pcall(require, 'vscode')
 if not ok then return end
 

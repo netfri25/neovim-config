@@ -1,3 +1,5 @@
+-- another plugin that I fell in love with.
+-- makes it a lot easier and fun to run commands from neovim
 local ok, toggleterm = pcall(require, 'toggleterm')
 if not ok then return end
 

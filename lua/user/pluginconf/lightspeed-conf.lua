@@ -1,3 +1,5 @@
+-- one of my most favourite plugins.
+-- makes movment so much easier and really simple
 local ok, lightspeed = pcall(require, 'lightspeed')
 if not ok then return end
 

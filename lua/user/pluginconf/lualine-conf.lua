@@ -1,3 +1,6 @@
+-- also one of my favourite plugins.
+-- looks so clean and nice while also allowing me to see all the open buffers so I
+-- can easily navigate between them and see which ones I accidentally left open
 local ok, lualine = pcall(require, 'lualine')
 if not ok then return end
 

@@ -28,12 +28,12 @@ cmp.setup({
       { name = 'buffer' }
    }),
 
+   -- ghost text is cool
    experimental = {
       ghost_text = true,
    },
 })
 
--- Use buffer source for `/` (if you enabled `native_menu`, this won't work anymore).
 cmp.setup.cmdline('/', {
    mapping = cmp.mapping.preset.cmdline(),
    sources = {
@@ -41,7 +41,6 @@ cmp.setup.cmdline('/', {
    }
 })
 
--- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
 cmp.setup.cmdline(':', {
    mapping = cmp.mapping.preset.cmdline(),
    sources = cmp.config.sources({

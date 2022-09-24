@@ -1,3 +1,4 @@
+-- nice plugin for showing trailing whitespace
 vim.g.better_whitespace_ctermcolor = 'red'
 vim.g.better_whitespace_guicolor = 'red'
 vim.g.better_whitespace_enabled = 1

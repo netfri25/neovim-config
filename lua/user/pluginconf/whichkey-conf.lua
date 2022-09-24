@@ -1,3 +1,6 @@
+-- amazing plugin.
+-- I'm too lazy to add all of my keymaps to this plugin (might do that in the future), but this
+-- plugin did help me a lot in learning how to use vim motions and keymaps
 local ok, whichkey = pcall(require, 'which-key')
 if not ok then return end
 

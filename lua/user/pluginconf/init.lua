@@ -1,18 +1,28 @@
-require('user/pluginconf/impatiant-conf')
-require('user/pluginconf/presence-conf')
-require('user/pluginconf/suda-conf')
-require('user/pluginconf/whichkey-conf')
-require('user/pluginconf/toggleterm-conf')
-require('user/pluginconf/comment-conf')
-require('user/pluginconf/treesitter-conf')
-require('user/pluginconf/whitespace-conf')
-require('user/pluginconf/cmp-conf')
-require('user/pluginconf/lsp-conf')
-require('user/pluginconf/popui-conf')
-require('user/pluginconf/luasnip-conf')
-require('user/pluginconf/lightspeed-conf')
-require('user/pluginconf/tree-conf')
-require('user/pluginconf/lualine-conf')
-require('user/pluginconf/fidget-conf')
-require('user/pluginconf/trevj-conf')
-require('user/pluginconf/vscode-conf')
+local plugins = {
+   'impatient',
+   'presence',
+   'suda',
+   'whichkey',
+   'toggleterm',
+   'comment',
+   'treesitter',
+   'whitespace',
+   'cmp',
+   'lsp',
+   'popui',
+   'luasnip',
+   'lightspeed',
+   'tree',
+   'lualine',
+   'fidget',
+   'trevj',
+   'vscode',
+   'oshdff',
+}
+
+for _, plugin in ipairs(plugins) do
+   local ok, _ = pcall(require, 'user/pluginconf/' .. plugin .. '-conf')
+   if not ok then
+      print('unable to load ' .. plugin)
+   end
+end

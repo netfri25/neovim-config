@@ -1,7 +1,8 @@
+-- Discord presence with a rickroll button
 local ok, presence = pcall(require, 'presence')
 if not ok then return end
 
-presence:setup({
+presence.setup({
    auto_update = true,
    neovim_image_text = 'We\'re no stranges to love\nYou know the rules and so do I',
    main_image = 'neovim',

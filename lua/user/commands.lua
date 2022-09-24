@@ -8,11 +8,13 @@ vim.api.nvim_create_autocmd('Filetype', {
    command = 'syntax match Comment +\\/\\/.\\+$+',
 })
 
+-- easy reloading the entire config
 vim.api.nvim_create_user_command('Reload', function()
    local path = vim.fn.stdpath('config') .. '/init.lua'
    vim.api.nvim_command('source ' .. path)
 end, {})
 
+-- highlighting yanked text regions
 vim.api.nvim_create_autocmd('TextYankPost', {
    pattern = '*',
    callback = function()

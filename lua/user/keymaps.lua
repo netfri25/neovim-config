@@ -13,7 +13,7 @@ keymap('n', '<A-down>', ':resize +2<CR>', opts)
 keymap('n', '<A-left>', ':vertical resize -2<CR>', opts)
 keymap('n', '<A-right>', ':vertical resize +2<CR>', opts)
 
--- Unhighlight search
+-- Clear highlighted search patterns
 keymap('n', '<C-l>', ':let @/=\'\'<CR>', opts)
 
 -- Move text up and down
@@ -23,18 +23,13 @@ keymap('n', '<A-j>', '<Esc>:m .+1<CR>==', opts)
 -- Redo on shift-u instead of ctrl-r
 keymap('n', 'U', '<C-r>', opts)
 
+-- Insert --
 -- Autocomplete brackets, braces, parentheses and angles
 keymap('i', '<A-[>', '[]<left>', opts)
 keymap('i', '<A-{>', '{}<left>', opts)
 keymap('i', '<A-(>', '()<left>', opts)
 keymap('i', '<A-lt>', '<><left>', opts)
 
--- Switch and delete buffers
--- keymap('n', ']b', ':bnext<CR>', opts)
--- keymap('n', '[b', ':bprevious<CR>', opts)
--- keymap('n', '<leader>bd', ':bdelete<CR>', opts)
-
--- Insert --
 -- Press jk fast to exit insert mode
 keymap('i', 'jk', '<ESC>', opts)
 

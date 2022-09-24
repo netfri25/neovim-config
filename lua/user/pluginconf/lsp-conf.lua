@@ -27,34 +27,23 @@ vim.lsp.handlers['textDocument/hover'] = vim.lsp.with(vim.lsp.handlers.hover, { 
 vim.lsp.handlers['textDocument/signatureHelp'] = vim.lsp.with(vim.lsp.handlers.hover, { border = 'rounded' })
 
 -- lspconfig
-local keymaps_opts = { silent = true, noremap = true }
-vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, keymaps_opts)
-vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, keymaps_opts)
-vim.keymap.set('n', ']d', vim.diagnostic.goto_next, keymaps_opts)
-vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, keymaps_opts)
-
-
--- Mappings.
--- See `:help vim.lsp.*` for documentation on any of the below functions
-local bufopts = { silent = true, noremap = true }
-vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, bufopts)
-vim.keymap.set('n', 'gd', vim.lsp.buf.definition, bufopts)
-vim.keymap.set('n', 'K', vim.lsp.buf.hover, bufopts)
-vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, bufopts)
-vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, bufopts)
-vim.keymap.set('n', '<leader>wa', vim.lsp.buf.add_workspace_folder, bufopts)
-vim.keymap.set('n', '<leader>wr', vim.lsp.buf.remove_workspace_folder, bufopts)
-vim.keymap.set('n', '<leader>wl', function()
-   print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
-end, bufopts)
-vim.keymap.set('n', '<leader>D', vim.lsp.buf.type_definition, bufopts)
-vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, bufopts)
-vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, bufopts)
-vim.keymap.set('n', 'gr', vim.lsp.buf.references, bufopts)
--- vim.keymap.set('n', '<leader>f', function() vim.lsp.buf.format({ async=true }) end, bufopts)
-vim.keymap.set('n', '<leader>f', vim.lsp.buf.formatting, bufopts)
--- vim.api.nvim_command('Format', vim.lsp.buf.formatting)
-
+local opts = { silent = true, noremap = true }
+vim.api.nvim_set_keymap('n', '<leader>e', vim.diagnostic.open_float, opts)
+vim.api.nvim_set_keymap('n', '[d', vim.diagnostic.goto_prev, opts)
+vim.api.nvim_set_keymap('n', ']d', vim.diagnostic.goto_next, opts)
+vim.api.nvim_set_keymap('n', '<leader>q', vim.diagnostic.setloclist, opts)
+vim.api.nvim_set_keymap('n', 'gD', vim.lsp.buf.declaration, opts)
+vim.api.nvim_set_keymap('n', 'gd', vim.lsp.buf.definition, opts)
+vim.api.nvim_set_keymap('n', 'K', vim.lsp.buf.hover, opts)
+vim.api.nvim_set_keymap('n', 'gi', vim.lsp.buf.implementation, opts)
+vim.api.nvim_set_keymap('n', '<C-k>', vim.lsp.buf.signature_help, opts)
+vim.api.nvim_set_keymap('n', '<leader>D', vim.lsp.buf.type_definition, opts)
+vim.api.nvim_set_keymap('n', '<leader>rn', vim.lsp.buf.rename, opts)
+vim.api.nvim_set_keymap('n', '<leader>ca', vim.lsp.buf.code_action, opts)
+vim.api.nvim_set_keymap('n', 'gr', vim.lsp.buf.references, opts)
+vim.api.nvim_set_keymap('n', '<leader>f', vim.lsp.buf.formatting, opts)
+-- I will uncomment the next line when neovim gets its 0.8 update
+-- vim.api.nvim_set_keymap('n', '<leader>f', function() vim.lsp.buf.format({ async=true }) end, bufopts)
 
 lspconfig['pylsp'].setup({
    capabilities = capabilities,
@@ -64,6 +53,7 @@ lspconfig['clangd'].setup({
    capabilities = capabilities,
 })
 
+-- I'm not even a clojure programmer, but why not
 lspconfig['clojure_lsp'].setup({
    capabilities = capabilities,
 })
@@ -101,6 +91,8 @@ lspconfig['sumneko_lua'].setup({
    },
 })
 
+-- if you have rust-analyzer installed through rustup, use it.
+-- if its a standalone binary executable, use it instead
 local rust_analyzer_command
 if vim.fn.executable('rustup') == 1 then
    rust_analyzer_command = { 'rustup', 'run', 'stable', 'rust-analyzer' }
