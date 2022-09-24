@@ -32,7 +32,6 @@ return require('packer').startup(function(use)
    use { 'hood/popui.nvim' }
    use { 'ggandor/lightspeed.nvim' }
    use { 'kyazdani42/nvim-tree.lua' }
-   use { 'johann2357/nvim-smartbufs' }
    use { 'numToStr/Comment.nvim' }
    use { 'nvim-lualine/lualine.nvim' }
    use { 'j-hui/fidget.nvim' }
