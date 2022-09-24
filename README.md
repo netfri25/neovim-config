@@ -3,11 +3,8 @@ Almost nothing is documented or commented, because im too lazy to do so.
 
 ### Quickstart
 ```shell
+mv -r ~/.config/nvim ~/.config/old-nvim-config # save your previous neovim config
 git clone https://github.com/netfri25/neovim-config ~/.config/nvim
-git clone --depth 1 https://github.com/wbthomason/packer.nvim\
- ~/.local/share/nvim/site/pack/packer/start/packer.nvim # Installs packer
 ```
-If it tells you that the directory already exists and its empty, you should remove it completely (meaning your previous config will be gone) and try running the command again
 
-After the installation, opening neovim will result in an error.
-Ignore the error and run `:PackerSync` inside neovim and next time you open it everything will work perfectly.
+After that, opening neovim will automatically install packer and sync all the plugins, but it will result in a long error which you can safely ignore and it will say that it failed to install treesitter, but relaunching neovim will cause all errors to vanish.
