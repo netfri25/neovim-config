@@ -67,7 +67,7 @@ tree.setup({
             { key = 'e', action = 'expand_all' },
             -- { key = 'S', action = 'search_node' },
             { key = '.', action = 'run_file_command' },
-            { key = 'K', action = 'toggle_file_info' },
+            { key = '<c-k>', action = 'toggle_file_info' },
             { key = '?', action = 'toggle_help' },
             { key = 'mm', action = 'toggle_mark' },
             { key = 'mv', action = 'bulk_move' },
