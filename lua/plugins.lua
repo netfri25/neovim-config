@@ -31,7 +31,6 @@ return require('packer').startup(function(use)
    use { 'RishabhRD/popfix' }
    use { 'hood/popui.nvim' }
    use { 'ggandor/lightspeed.nvim' }
-   use { 'max397574/better-escape.nvim' }
    use { 'kyazdani42/nvim-tree.lua' }
    use { 'johann2357/nvim-smartbufs' }
    use { 'numToStr/Comment.nvim' }
