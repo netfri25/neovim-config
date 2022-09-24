@@ -1,9 +1,10 @@
-vim.g.material_style = 'darker'
+vim.g.material_style = 'darker' -- Gruvbox material style
 vim.g.onedark_config = { style = 'warm' }
 
 local function apply_colorscheme(name)
    vim.api.nvim_command('colorscheme ' .. name)
-   vim.cmd [[ highlight CursorLine cterm=NONE ctermbg=NONE ctermfg=NONE guibg=NONE guifg=NONE ]]
+   vim.api.nvim_set_hl(0, 'CursorLine', {})
+   vim.api.nvim_set_hl(0, 'CursorLineNr', { link = 'Special' })
 end
 
 local function func_colorscheme(name)
