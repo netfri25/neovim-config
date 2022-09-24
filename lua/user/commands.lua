@@ -36,13 +36,13 @@ vim.cmd([[
    command! Reload call ReloadConfig()
 
    " save and load folds
-   augroup remember_folds
-     autocmd!
-     au BufWinLeave ?* silent! mkview 1
-     au BufWinEnter ?* silent! loadview 1
-   augroup END
+   " augroup remember_folds
+   "   autocmd!
+   "   au BufWinLeave ?* silent! mkview 1
+   "   au BufWinEnter ?* silent! loadview 1
+   " augroup END
 
-   set viewoptions-=options
+   " set viewoptions-=options
 
    augroup highlight_yank
        autocmd!
