@@ -39,6 +39,7 @@ local options = {
    title = false,                                   -- set the title of window to the value of the titlestring
    titlestring = 'Neovim',                          -- what the title of the window will be set to
    showtabline = 1,
+   background = 'dark',
 }
 
 vim.opt.shortmess:append 'c'

@@ -16,21 +16,3 @@ vscode.setup({
       },
    }
 })
-
-function VSCode()
-   vim.cmd [[
-      colorscheme vscode
-      highlight CursorLine cterm=NONE ctermbg=NONE ctermfg=NONE guibg=NONE guifg=NONE
-   ]]
-end
-
-vim.api.nvim_create_user_command('VSCode', 'lua VSCode()', {})
-
-function Gruvbox()
-   vim.cmd [[
-      colorscheme gruvbox-material
-      highlight CursorLine cterm=NONE ctermbg=NONE ctermfg=NONE guibg=NONE guifg=NONE
-   ]]
-end
-
-vim.api.nvim_create_user_command('Gruvbox', 'lua Gruvbox()', {})
