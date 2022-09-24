@@ -1,5 +1,6 @@
 local plugins = {
-   'impatient',
+   -- loading this plugin at the very start
+   -- 'impatient',
    'presence',
    'suda',
    'whichkey',
