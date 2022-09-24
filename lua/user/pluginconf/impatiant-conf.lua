@@ -10,4 +10,4 @@ _G.__luacache_config = {
    }
 }
 
-local ok, impatiant = pcall(require, 'impatient')
+local _ = pcall(require, 'impatient')
