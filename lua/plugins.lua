@@ -45,7 +45,10 @@ return require('packer').startup(function(use)
    use { 'simrat39/rust-tools.nvim' }
    use { 'RishabhRD/popfix' }
    use { 'hood/popui.nvim' }
-   use { 'ggandor/lightspeed.nvim' }
+   use {
+      'ggandor/lightspeed.nvim',
+      requires ={ 'tpope/vim-repeat' },
+   }
    use { 'kyazdani42/nvim-tree.lua' }
    use { 'numToStr/Comment.nvim' }
    use { 'nvim-lualine/lualine.nvim' }

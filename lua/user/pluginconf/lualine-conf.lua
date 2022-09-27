@@ -5,12 +5,12 @@ local ok, lualine = pcall(require, 'lualine')
 if not ok then return end
 
 local opts = { noremap = true, silent = true }
-local keymap = vim.api.nvim_set_keymap
+local keymap = vim.keymap.set
 
-keymap('n', '[b', '<cmd>bprevious<cr>', opts)
-keymap('n', ']b', '<cmd>bnext<cr>', opts)
-keymap('n', '<leader>bd', '<cmd>bdelete<cr>', opts)
-keymap('n', '<leader>bb', '<cmd>silent! exe \'LualineBuffersJump\' . v:count<cr>', opts)
+keymap('n', '[b', '<cmd>bprevious<cr>', { silent = true, desc = 'Switch to next buffer' })
+keymap('n', ']b', '<cmd>bnext<cr>', { silent = true, desc = 'Switch to previous buffer' })
+keymap('n', '<leader>bd', '<cmd>bdelete<cr>', { silent = true, desc = 'Delete buffer' })
+keymap('n', '<leader>bb', '<cmd>silent! exe \'LualineBuffersJump\' . v:count<cr>', { silent = true, desc = 'Jump to {count}th buffer' })
 
 lualine.setup({
    options = {

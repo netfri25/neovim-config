@@ -32,7 +32,5 @@ end
 ResetGuiFont()
 
 -- Keymaps
-local opts = { noremap = true, silent = true }
-
-vim.keymap.set({ 'n', 'i' }, '<C-=>', function() ResizeGuiFont(1) end, opts)
-vim.keymap.set({ 'n', 'i' }, '<C-->', function() ResizeGuiFont(-1) end, opts)
+vim.keymap.set({ 'n', 'i', 'v' }, '<C-=>', function() ResizeGuiFont(1) end, { silent = true, desc = 'Decrease GUI font size' })
+vim.keymap.set({ 'n', 'i', 'v' }, '<C-->', function() ResizeGuiFont(-1) end, { silent = true, desc = 'Increase GUI font size' })

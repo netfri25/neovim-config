@@ -1,7 +1,7 @@
 local ok, tree = pcall(require, 'nvim-tree')
 if not ok then return end
 
-vim.api.nvim_set_keymap('n', '<leader>t', ':NvimTreeToggle<CR>', { silent = true, noremap = true })
+vim.keymap.set('n', '<leader>t', '<cmd>NvimTreeToggle<cr>', { silent = true, desc = 'Toggle file browser' })
 
 tree.setup({
    hijack_cursor = true,
