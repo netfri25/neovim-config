@@ -47,6 +47,10 @@ vim.keymap.set('n', '<leader>f', vim.lsp.buf.formatting, opts)
 
 lspconfig['pylsp'].setup({
    capabilities = capabilities,
+   ['settings.pylsp.plugins.pycodestyle'] = {
+      ignore = { 'E501' },
+      maxLineLength = 120,
+   }
 })
 
 lspconfig['clangd'].setup({
@@ -110,10 +114,13 @@ require('rust-tools').setup({
       },
    },
 
-   ['server.cmd'] = rust_analyzer_command,
+   server = {
+      cmd = rust_analyzer_command,
+      capabilities = capabilities,
 
-   ['server.settings.rust-analyzer'] = {
-      ['checkOnSave.command'] = 'clippy',
-      ['inlayHints.maxLength'] = 'null',
-   }
+      ['settings.rust-analyzer'] = {
+         ['checkOnSave.command'] = 'clippy',
+         ['inlayHints.maxLength'] = 'null',
+      },
+   },
 })
