@@ -41,7 +41,7 @@ keymap('v', '<', '<gv', { silent = true, desc = 'Indent left' })
 keymap('v', '>', '>gv', { silent = true, desc = 'Indent right' })
 
 -- Edit without saving the deleted text
-keymap('v', 'p', '"_dP', { silent = true, desc = 'Replace' })
+keymap('v', 'd', '"_d', { silent = true, desc = 'Delete' })
 keymap('v', 'c', '"_di', { silent = true, desc = 'Change' })
 
 -- Press jk fast to exit visual mode
