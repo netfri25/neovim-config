@@ -3,7 +3,7 @@ local plugins = {
    -- 'impatient',
    'presence',
    'suda',
-   'whichkey',
+   -- 'whichkey',
    'toggleterm',
    'comment',
    'treesitter',
@@ -18,6 +18,7 @@ local plugins = {
    'fidget',
    'trevj',
    'vscode',
+   'ofirkai',
 }
 
 for _, plugin in ipairs(plugins) do
