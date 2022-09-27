@@ -55,6 +55,7 @@ return require('packer').startup(function(use)
    use { 'j-hui/fidget.nvim' }
    use { 'AckslD/nvim-trevJ.lua' }
    use { 'Mofiqul/vscode.nvim' }
+   use { 'ofirgall/ofirkai.nvim' }
 
    if packer_bootstrap then
       require('packer').sync()

@@ -17,6 +17,7 @@ end
 vim.api.nvim_create_user_command('Gruvbox', func_colorscheme('gruvbox-material'), {})
 vim.api.nvim_create_user_command('VSCode', func_colorscheme('vscode'), {})
 vim.api.nvim_create_user_command('Onedark', func_colorscheme('onedark'), {})
+vim.api.nvim_create_user_command('Sublime', func_colorscheme('ofirkai'), {})
 
 -- might add something in the future that will remember the last colorscheme I used
 local colorscheme_cmd = 'Gruvbox'
