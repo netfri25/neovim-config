@@ -19,6 +19,7 @@ local plugins = {
    'trevj',
    'vscode',
    'ofirkai',
+   'onedark',
 }
 
 for _, plugin in ipairs(plugins) do
