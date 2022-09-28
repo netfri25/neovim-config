@@ -14,6 +14,11 @@ end
 
 local packer_bootstrap = ensure_packer()
 
+vim.api.nvim_create_autocmd('BufWrite', {
+   pattern = 'plugins.lua',
+   command = 'source %',
+})
+
 return require('packer').startup(function(use)
    use { 'wbthomason/packer.nvim' }
    use { 'andweeb/presence.nvim' }
