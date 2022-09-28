@@ -10,7 +10,7 @@ tree.setup({
 
    filters = {
       dotfiles = false,
-      custom = { '^.git$', '^.gitignore$' },
+      custom = { '^.git$', '^.gitignore$', '^target$' },
    },
 
    actions = {
@@ -52,7 +52,7 @@ tree.setup({
             { key = 'I', action = 'toggle_git_ignored' },
             { key = 'H', action = 'toggle_dotfiles' },
             -- INFO: I don't have any custom hidden files (yet), so rn its commented out
-            -- { key = 'U', action = 'toggle_custom' },
+            { key = 'U', action = 'toggle_custom' },
             { key = 'R', action = 'refresh' },
             { key = 'a', action = 'create' },
             { key = 'd', action = 'remove' },
