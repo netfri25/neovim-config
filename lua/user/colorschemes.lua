@@ -21,6 +21,6 @@ vim.api.nvim_create_user_command('Onedark', func_colorscheme('onedark', false), 
 vim.api.nvim_create_user_command('Sublime', func_colorscheme('ofirkai', false), {})
 
 -- might add something in the future that will remember the last colorscheme I used
-local colorscheme_cmd = 'Onedark'
+local colorscheme_cmd = 'Gruvbox'
 
 vim.api.nvim_command(colorscheme_cmd)
