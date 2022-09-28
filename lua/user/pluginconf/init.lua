@@ -16,12 +16,10 @@ local plugins = {
    'nvimtree',
    'lualine',
    'fidget',
-   -- this plugin is nice, but until it gets improved I will used revJ instead
-   -- 'trevj',
+   'trevj',
    'vscode',
    'ofirkai',
    'onedark',
-   'revj',
 }
 
 for _, plugin in ipairs(plugins) do
