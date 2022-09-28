@@ -3,6 +3,11 @@ vim.g.material_style = 'darker' -- Gruvbox material style
 local function apply_colorscheme(name, change_cursorline)
    vim.api.nvim_command('colorscheme ' .. name)
    vim.api.nvim_set_hl(0, 'CursorLine', {})
+   -- doesn't work, I will need to fix it in the future
+   -- vim.api.nvim_set_hl(0, 'LspDiagnosticsUnderlineError', { underline = true, undercurl = false })
+   -- vim.api.nvim_set_hl(0, 'LspDiagnosticsUnderlineWarning', { underline = true, undercurl = false })
+   -- vim.api.nvim_set_hl(0, 'LspDiagnosticsUnderlineInformation', { underline = true, undercurl = false })
+   -- vim.api.nvim_set_hl(0, 'LspDiagnosticsUnderlineHint', { underline = true, undercurl = false })
    if change_cursorline == true then
       vim.api.nvim_set_hl(0, 'CursorLineNr', { link = 'Special' })
    end
