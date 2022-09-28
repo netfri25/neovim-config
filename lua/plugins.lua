@@ -55,9 +55,14 @@ return require('packer').startup(function(use)
    use { 'numToStr/Comment.nvim' }
    use { 'nvim-lualine/lualine.nvim' }
    use { 'j-hui/fidget.nvim' }
-   use { 'AckslD/nvim-trevJ.lua' }
+   -- use { 'AckslD/nvim-trevJ.lua' }
    use { 'Mofiqul/vscode.nvim' }
    use { 'ofirgall/ofirkai.nvim' }
+   use {
+      'AckslD/nvim-revJ.lua',
+      requries = { 'kana/vim-textobj-user', 'sgur/vim-textobj-parameter' }
+   }
+
 
    if packer_bootstrap then
       require('packer').sync()
