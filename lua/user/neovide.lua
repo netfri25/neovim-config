@@ -12,7 +12,7 @@ vim.g.neovide_cursor_vfx_particle_lifetime = 0.8
 
 vim.g.gui_font_default_size = 12
 vim.g.gui_font_size = vim.g.gui_font_default_size
-vim.g.gui_font_face = 'JetBrainsMonoNL Nerd Font Regular'
+vim.g.gui_font_face = 'DejaVuSansMono Nerd Font'
 
 RefreshGuiFont = function()
    vim.opt.guifont = string.format('%s:h%s', vim.g.gui_font_face, vim.g.gui_font_size)
