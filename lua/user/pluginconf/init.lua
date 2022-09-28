@@ -13,7 +13,7 @@ local plugins = {
    'popui',
    'luasnip',
    'lightspeed',
-   'tree',
+   'nvimtree',
    'lualine',
    'fidget',
    'trevj',
