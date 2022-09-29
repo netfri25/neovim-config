@@ -8,6 +8,18 @@ vim.api.nvim_create_autocmd('Filetype', {
    command = 'syntax match Comment +\\/\\/.\\+$+',
 })
 
+vim.api.nvim_create_autocmd('Filetype', {
+   pattern = 'help',
+   callback = function()
+      local buf = vim.api.nvim_get_current_buf()
+      vim.keymap.set('n', 'q', '<cmd>:q<cr>', {
+         buffer = buf,
+         silent = true,
+         desc = 'Quit the help buffer',
+      })
+   end
+})
+
 -- easy reloading the entire config
 vim.api.nvim_create_user_command('Reload', function()
    local path = vim.fn.stdpath('config') .. '/init.lua'
