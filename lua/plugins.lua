@@ -13,13 +13,15 @@ local ensure_packer = function()
 end
 
 local packer_bootstrap = ensure_packer()
+local packer = require('packer')
 
-vim.api.nvim_create_autocmd('BufWrite', {
+vim.api.nvim_create_autocmd('BufWritePost', {
    pattern = 'plugins.lua',
    command = 'source %',
 })
 
-return require('packer').startup(function(use)
+
+return packer.startup(function(use)
    use { 'wbthomason/packer.nvim' }
    use { 'andweeb/presence.nvim' }
    use { 'folke/lsp-colors.nvim' }
@@ -64,16 +66,16 @@ return require('packer').startup(function(use)
    use { 'AckslD/nvim-trevJ.lua' }
    use { 'Mofiqul/vscode.nvim' }
    use { 'ofirgall/ofirkai.nvim' }
-   use { 'arnamak/stay-centered.nvim' }
    use { 'https://git.sr.ht/~whynothugo/lsp_lines.nvim' }
-   use { 'ntk148v/vim-horizon' }
-   use { 'ackyshake/Spacegray.vim' }
+
    use {
-      "mcchrish/zenbones.nvim",
-      requires = "rktjmp/lush.nvim"
+      'mcchrish/zenbones.nvim',
+      requires = 'rktjmp/lush.nvim'
    }
 
+   use { 'kvrohit/substrata.nvim' }
+
    if packer_bootstrap then
-      require('packer').sync()
+      packer.sync()
    end
 end)
