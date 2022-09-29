@@ -68,6 +68,10 @@ return require('packer').startup(function(use)
    use { 'https://git.sr.ht/~whynothugo/lsp_lines.nvim' }
    use { 'ntk148v/vim-horizon' }
    use { 'ackyshake/Spacegray.vim' }
+   use {
+      "mcchrish/zenbones.nvim",
+      requires = "rktjmp/lush.nvim"
+   }
 
    if packer_bootstrap then
       require('packer').sync()
