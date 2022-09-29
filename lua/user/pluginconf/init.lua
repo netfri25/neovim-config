@@ -21,6 +21,7 @@ local plugins = {
    'ofirkai',
    'onedark',
    'staycentered',
+   'lsplines',
 }
 
 for _, plugin in ipairs(plugins) do

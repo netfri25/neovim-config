@@ -65,6 +65,7 @@ return require('packer').startup(function(use)
    use { 'Mofiqul/vscode.nvim' }
    use { 'ofirgall/ofirkai.nvim' }
    use { 'arnamak/stay-centered.nvim' }
+   use { 'https://git.sr.ht/~whynothugo/lsp_lines.nvim' }
 
    if packer_bootstrap then
       require('packer').sync()
