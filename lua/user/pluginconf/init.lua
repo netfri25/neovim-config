@@ -20,6 +20,7 @@ local plugins = {
    'vscode',
    'ofirkai',
    'onedark',
+   'staycentered',
 }
 
 for _, plugin in ipairs(plugins) do

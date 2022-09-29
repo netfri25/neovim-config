@@ -58,6 +58,7 @@ return require('packer').startup(function(use)
    use { 'AckslD/nvim-trevJ.lua' }
    use { 'Mofiqul/vscode.nvim' }
    use { 'ofirgall/ofirkai.nvim' }
+   use { 'arnamak/stay-centered.nvim' }
 
    if packer_bootstrap then
       require('packer').sync()
