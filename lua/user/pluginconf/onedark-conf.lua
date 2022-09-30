@@ -24,7 +24,9 @@ onedark.setup({
    },
 
    colors = {},
-   highlights = {},
+   highlights = {
+      TSParameter = { fg = '$fg' }
+   },
 
    diagnostics = {
       darker = true,
