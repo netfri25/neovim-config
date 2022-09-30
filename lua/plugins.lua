@@ -75,6 +75,7 @@ return packer.startup(function(use)
 
    use { 'kvrohit/substrata.nvim' }
    use { 'linty-org/key-menu.nvim' }
+   use { 'sitiom/nvim-numbertoggle' }
 
    if packer_bootstrap then
       packer.sync()
