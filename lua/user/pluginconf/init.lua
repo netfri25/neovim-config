@@ -22,6 +22,7 @@ local plugins = {
    'onedark',
    'lsplines',
    'zenbones',
+   'keymenu',
 }
 
 for _, plugin in ipairs(plugins) do
