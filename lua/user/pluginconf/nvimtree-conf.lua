@@ -1,6 +1,12 @@
 local ok, tree = pcall(require, 'nvim-tree')
 if not ok then return end
 
+local utils = require('nvim-tree.utils')
+utils.notify.warn = function(msg) end
+utils.notify.error = function(msg) end
+utils.notify.info = function(msg) end
+utils.notify.debug = function(msg) end
+
 vim.keymap.set('n', '<leader>t', '<cmd>NvimTreeToggle<cr>', { silent = true, desc = 'Toggle file browser' })
 
 tree.setup({
