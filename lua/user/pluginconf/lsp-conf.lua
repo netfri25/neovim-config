@@ -42,9 +42,8 @@ vim.keymap.set('n', '<leader>D', vim.lsp.buf.type_definition, { silent = true, d
 vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, { silent = true, desc = 'Rename symbol' })
 vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, { silent = true, desc = 'Code actions' })
 vim.keymap.set('n', 'gr', vim.lsp.buf.references, { silent = true, desc = 'Show references' })
-vim.keymap.set('n', '<leader>f', vim.lsp.buf.formatting, { silent = true, desc = 'Format buffer' })
--- I will uncomment the next line when neovim gets its 0.8 update
--- vim.keymap.set('n', '<leader>f', function() vim.lsp.buf.format({ async=true }) end, { silent = true, desc = 'Format buffer' })
+vim.keymap.set('n', '<leader>f', function() vim.lsp.buf.format({ async = true }) end,
+   { silent = true, desc = 'Format buffer' })
 
 lspconfig['pylsp'].setup({
    capabilities = capabilities,
