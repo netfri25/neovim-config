@@ -24,6 +24,7 @@ local plugins = {
    'zenbones',
    'keymenu',
    'numbertoggle',
+   'cmdheight',
 }
 
 for _, plugin in ipairs(plugins) do
