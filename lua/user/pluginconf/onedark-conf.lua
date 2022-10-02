@@ -27,6 +27,7 @@ onedark.setup({
 
    highlights = {
       TSParameter = { fg = '$fg' },
+      CursorLineNr = { fg = '$cyan' },
 
       MatchParen = {
          fg = '$red',

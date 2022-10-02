@@ -8,7 +8,7 @@ local function apply_colorscheme(name, change_cursorline)
    -- vim.api.nvim_set_hl(0, 'LspDiagnosticsUnderlineWarning', { underline = true, undercurl = false })
    -- vim.api.nvim_set_hl(0, 'LspDiagnosticsUnderlineInformation', { underline = true, undercurl = false })
    -- vim.api.nvim_set_hl(0, 'LspDiagnosticsUnderlineHint', { underline = true, undercurl = false })
-   if change_cursorline == true then
+   if change_cursorline then
       vim.api.nvim_set_hl(0, 'CursorLineNr', { link = 'Special' })
    end
 end
@@ -22,7 +22,7 @@ end
 vim.api.nvim_create_autocmd('ColorScheme', {
    callback = function()
       vim.api.nvim_set_hl(0, 'CursorLine', {})
-      vim.api.nvim_set_hl(0, 'CursorLineNr', { link = 'Special' })
+      -- vim.api.nvim_set_hl(0, 'CursorLineNr', { link = 'Special' })
    end
 })
 
