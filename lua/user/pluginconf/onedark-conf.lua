@@ -24,8 +24,15 @@ onedark.setup({
    },
 
    colors = {},
+
    highlights = {
-      TSParameter = { fg = '$fg' }
+      TSParameter = { fg = '$fg' },
+
+      MatchParen = {
+         fg = '$red',
+         bg = '#00000000',
+         fmt = 'underline,bold',
+      },
    },
 
    diagnostics = {
