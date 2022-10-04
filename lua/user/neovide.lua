@@ -1,5 +1,5 @@
 -- vim.g.neovide_cursor_vfx_mode = 'ripple'
-vim.g.neovide_refresh_rate = 300
+vim.g.neovide_refresh_rate = 120
 vim.g.neovide_fullscreen = true
 vim.g.neovide_input_use_logo = true
 vim.g.neovide_no_idle = false
