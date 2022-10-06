@@ -116,7 +116,7 @@ require('rust-tools').setup({
 
    server = {
       cmd = rust_analyzer_command,
-      capabilities = capabilities,
+      -- capabilities = capabilities,
 
       ['settings.rust-analyzer'] = {
          ['checkOnSave.command'] = 'clippy',
