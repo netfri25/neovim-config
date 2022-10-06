@@ -1,6 +1,6 @@
 vim.api.nvim_create_autocmd('Filetype', {
    pattern = 'haskell',
-   command = 'setlocal shiftwidth=2, softtabstop=2',
+   command = 'setlocal shiftwidth=2 | setlocal softtabstop=2',
 })
 
 vim.api.nvim_create_autocmd('Filetype', {
