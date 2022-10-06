@@ -35,6 +35,6 @@ vim.api.nvim_create_user_command('Zen', func_colorscheme('zenwritten', true), {}
 vim.api.nvim_create_user_command('Substrata', func_colorscheme('substrata', true), {})
 
 -- might add something in the future that will remember the last colorscheme I used
-local default_colorscheme = 'Onedark'
+local default_colorscheme = 'Gruvbox'
 
 vim.api.nvim_command(default_colorscheme)
