@@ -12,9 +12,6 @@ keymap('n', '<A-down>', ':resize +2<cr>', { silent = true, desc = 'Resize window
 keymap('n', '<A-left>', ':vertical resize -2<cr>', { silent = true, desc = 'Resize window' })
 keymap('n', '<A-right>', ':vertical resize +2<cr>', { silent = true, desc = 'Resize window' })
 
--- Enter command mode
-keymap({ 'n', 'v' }, ';', ':', { silent = true, desc = 'Enter command mode' })
-
 -- Clear highlighted search patterns
 keymap('n', '<C-l>', '<cmd>let @/=\'\'<cr>', { silent = true, desc = 'Clear highlighted search' })
 
