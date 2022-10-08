@@ -28,9 +28,9 @@ keymap('n', 'U', '<C-r>', { silent = true, desc = 'Undo' })
 -- Insert --
 -- Autocomplete brackets, braces, parentheses and angles
 keymap('i', '<A-[>', '[]<left>', { silent = true, desc = 'Autocomplete []' })
-keymap('i', '<A-{>', '{}<left>', { silent = true, desc = 'Autocomplete {}' })
-keymap('i', '<A-(>', '()<left>', { silent = true, desc = 'Autocomplete ()' })
-keymap('i', '<A-lt>', '<><left>', { silent = true, desc = 'Autocomplete <>' })
+keymap('i', '<A-S-[>', '{}<left>', { silent = true, desc = 'Autocomplete {}' })
+keymap('i', '<A-S-9>', '()<left>', { silent = true, desc = 'Autocomplete ()' })
+keymap('i', '<A-S-,>', '<><left>', { silent = true, desc = 'Autocomplete <>' })
 
 -- Press jk fast to exit insert mode
 keymap('i', 'jk', '<esc>', { silent = true, desc = 'Exit insert mode' })
