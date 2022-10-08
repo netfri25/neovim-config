@@ -32,7 +32,7 @@ onedark.setup({
       MatchParen = {
          fg = '$red',
          bg = '#00000000',
-         fmt = 'underline,bold',
+         fmt = 'bold',
       },
    },
 
