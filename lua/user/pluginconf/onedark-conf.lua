@@ -2,13 +2,13 @@ local ok, onedark = pcall(require, 'onedark')
 if not ok then return end
 
 onedark.setup({
-   style = 'warm',
+   style = 'warmer',
    transparent = false,
    term_colors = true,
    ending_tildes = false,
    cmp_itemkind_reverse = false,
 
-   toggle_style_key = nil,
+   -- toggle_style_key = '<c-s>',
    toggle_style_list = { 'dark', 'darker', 'warm', 'warmer', 'deep', 'cool' },
 
    code_styles = {
