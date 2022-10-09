@@ -22,7 +22,6 @@ local plugins = {
    'onedark',
    'lsplines',
    'zenbones',
-   'keymenu',
    'numbertoggle',
 }
 
