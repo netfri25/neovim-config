@@ -12,7 +12,6 @@ local plugins = {
    'lsp',
    'popui',
    'luasnip',
-   'lightspeed',
    'nvimtree',
    'lualine',
    'fidget',
