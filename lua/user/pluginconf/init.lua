@@ -15,7 +15,6 @@ local plugins = {
    'nvimtree',
    'lualine',
    'fidget',
-   'trevj',
    'vscode',
    'ofirkai',
    'onedark',

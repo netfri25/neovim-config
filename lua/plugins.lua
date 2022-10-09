@@ -62,7 +62,6 @@ return packer.startup(function(use)
    use { 'numToStr/Comment.nvim' }
    use { 'nvim-lualine/lualine.nvim' }
    use { 'j-hui/fidget.nvim' }
-   use { 'AckslD/nvim-trevJ.lua' }
    use { 'Mofiqul/vscode.nvim' }
    use { 'ofirgall/ofirkai.nvim' }
    use { 'https://git.sr.ht/~whynothugo/lsp_lines.nvim' }
