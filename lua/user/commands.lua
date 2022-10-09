@@ -20,6 +20,12 @@ vim.api.nvim_create_autocmd('Filetype', {
    end
 })
 
+vim.api.nvim_create_autocmd('TermLeave,TermClose', {
+   callback = function()
+      vim.o.scrolloff = 100
+   end
+})
+
 -- easy reloading the entire config
 vim.api.nvim_create_user_command('Reload', function()
    local path = vim.fn.stdpath('config') .. '/init.lua'
