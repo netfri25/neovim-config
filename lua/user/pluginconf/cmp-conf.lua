@@ -23,7 +23,8 @@ cmp.setup({
 
    sources = cmp.config.sources({
       { name = 'nvim_lsp' },
-      -- { name = 'luasnip' },
+      { name = 'luasnip' },
+      { name = 'nvim_lsp_signature_help' },
    }, {
       { name = 'buffer' }
    }),
@@ -31,6 +32,13 @@ cmp.setup({
    -- ghost text is cool
    experimental = {
       ghost_text = true,
+   },
+
+   formatting = {
+      format = function(_, vim_item)
+         vim_item.menu = nil
+         return vim_item
+      end,
    },
 })
 
