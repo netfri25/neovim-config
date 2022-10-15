@@ -4,8 +4,8 @@ if not ok then return end
 local okok, cmp_nvim_lsp = pcall(require, 'cmp_nvim_lsp')
 if not okok then return end
 
-local lsp_capabilites = vim.lsp.protocol.make_client_capabilities()
-local cmp_capabilities = cmp_nvim_lsp.default_capabilities(lsp_capabilites)
+local lsp_capabilities = vim.lsp.protocol.make_client_capabilities()
+local cmp_capabilities = cmp_nvim_lsp.default_capabilities(lsp_capabilities)
 cmp_capabilities.textDocument.completion.completionItem.snippetSupport = true
 
 vim.diagnostic.config({
