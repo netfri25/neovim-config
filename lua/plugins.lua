@@ -73,6 +73,7 @@ return packer.startup(function(use)
 
    use { 'kvrohit/substrata.nvim' }
    use { 'sitiom/nvim-numbertoggle' }
+   use { 'nagy135/typebreak.nvim', requires = 'nvim-lua/plenary.nvim' }
 
    if packer_bootstrap then
       packer.sync()

@@ -21,6 +21,7 @@ local plugins = {
    'lsplines',
    'zenbones',
    'numbertoggle',
+   'typebreak',
 }
 
 for _, plugin in ipairs(plugins) do
