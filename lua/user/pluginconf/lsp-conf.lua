@@ -4,9 +4,9 @@ if not ok then return end
 local okok, cmp_nvim_lsp = pcall(require, 'cmp_nvim_lsp')
 if not okok then return end
 
-local capabilities = cmp_nvim_lsp.update_capabilities(vim.lsp.protocol.make_client_capabilities())
-capabilities.textDocument.completion.completionItem.snippetSupport = true
-
+local lsp_capabilites = vim.lsp.protocol.make_client_capabilities()
+local cmp_capabilities = cmp_nvim_lsp.default_capabilities(lsp_capabilites)
+cmp_capabilities.textDocument.completion.completionItem.snippetSupport = true
 
 vim.diagnostic.config({
    virtual_text = false,
@@ -46,7 +46,7 @@ vim.keymap.set('n', '<leader>f', function() vim.lsp.buf.format({ async = true })
    { silent = true, desc = 'Format buffer' })
 
 lspconfig['pylsp'].setup({
-   capabilities = capabilities,
+   capabilities = cmp_capabilities,
    ['settings.pylsp.plugins.pycodestyle'] = {
       ignore = { 'E501' },
       maxLineLength = 120,
@@ -54,16 +54,16 @@ lspconfig['pylsp'].setup({
 })
 
 lspconfig['clangd'].setup({
-   capabilities = capabilities,
+   capabilities = cmp_capabilities,
 })
 
 -- I'm not even a clojure programmer, but why not
 lspconfig['clojure_lsp'].setup({
-   capabilities = capabilities,
+   capabilities = cmp_capabilities,
 })
 
 lspconfig['hls'].setup({
-   capabilities = capabilities,
+   capabilities = cmp_capabilities,
    settings = {
       haskell = {
          ['plugin.hlint.globalOn'] = true,
@@ -72,15 +72,15 @@ lspconfig['hls'].setup({
 })
 
 lspconfig['tsserver'].setup({
-   capabilities = capabilities,
+   capabilities = cmp_capabilities,
 })
 
 lspconfig['jsonls'].setup({
-   capabilities = capabilities,
+   capabilities = cmp_capabilities,
 })
 
 lspconfig['sumneko_lua'].setup({
-   capabilities = capabilities,
+   capabilities = cmp_capabilities,
    settings = {
       Lua = {
          runtime = { version = 'LuaJIT' },
@@ -116,7 +116,7 @@ require('rust-tools').setup({
 
    server = {
       cmd = rust_analyzer_command,
-      -- capabilities = capabilities,
+      capabilities = cmp_capabilities,
 
       ['settings.rust-analyzer'] = {
          ['checkOnSave.command'] = 'clippy',
