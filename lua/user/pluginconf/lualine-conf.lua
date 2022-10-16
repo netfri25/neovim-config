@@ -8,6 +8,8 @@ local keymap = vim.keymap.set
 
 keymap('n', '[b', '<cmd>bprevious<cr>', { silent = true, desc = 'Switch to next buffer' })
 keymap('n', ']b', '<cmd>bnext<cr>', { silent = true, desc = 'Switch to previous buffer' })
+keymap('n', '[B', '<cmd>bfirst<cr>', { silent = true, desc = 'Switch to previous buffer' })
+keymap('n', ']B', '<cmd>blast<cr>', { silent = true, desc = 'Switch to previous buffer' })
 keymap('n', '<leader>bd', '<cmd>bdelete<cr>', { silent = true, desc = 'Delete buffer' })
 keymap('n', '<leader>bb', '<cmd>silent! exe \'LualineBuffersJump\' . v:count<cr>', { silent = true, desc = 'Jump to {count}th buffer' })
 
