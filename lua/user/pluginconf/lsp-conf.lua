@@ -47,10 +47,17 @@ vim.keymap.set('n', '<leader>f', function() vim.lsp.buf.format({ async = true })
 
 lspconfig['pylsp'].setup({
    capabilities = cmp_capabilities,
-   ['settings.pylsp.plugins.pycodestyle'] = {
-      ignore = { 'E501' },
-      maxLineLength = 120,
-   }
+
+   settings = {
+      pylsp = {
+         plugins = {
+            pycodestyle = {
+               ignore = { 'E501' },
+               maxLineLength = 120,
+            },
+         },
+      },
+   },
 })
 
 lspconfig['clangd'].setup({
@@ -66,7 +73,11 @@ lspconfig['hls'].setup({
    capabilities = cmp_capabilities,
    settings = {
       haskell = {
-         ['plugin.hlint.globalOn'] = true,
+         plugin = {
+            hlint = {
+               globalOn = true,
+            },
+         },
       }
    }
 })
@@ -118,9 +129,16 @@ require('rust-tools').setup({
       cmd = rust_analyzer_command,
       capabilities = cmp_capabilities,
 
-      ['settings.rust-analyzer'] = {
-         ['checkOnSave.command'] = 'clippy',
-         ['inlayHints.maxLength'] = 'null',
+      settings = {
+         ['rust-analyzer'] = {
+            checkOnSave = {
+               command = 'clippy',
+
+               inlayHints = {
+                  maxLength = 'null',
+               },
+            },
+         },
       },
    },
 })
