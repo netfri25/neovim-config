@@ -75,6 +75,7 @@ return packer.startup(function(use)
    use { 'sitiom/nvim-numbertoggle' }
    use { 'nagy135/typebreak.nvim', requires = 'nvim-lua/plenary.nvim' }
    use { 'hrsh7th/cmp-nvim-lsp-signature-help' }
+   use { 'tamton-aquib/duck.nvim' }
 
    if packer_bootstrap then
       packer.sync()
