@@ -13,10 +13,12 @@ local function apply_colorscheme(name, change_cursorline)
    end
 end
 
-local function func_colorscheme(name, change_cursorline)
-   return function()
+local function func_colorscheme(command_name, name, change_cursorline)
+   local function func()
       apply_colorscheme(name, change_cursorline)
    end
+
+   vim.api.nvim_create_user_command(command_name, func, {})
 end
 
 vim.api.nvim_create_autocmd('ColorScheme', {
@@ -27,14 +29,14 @@ vim.api.nvim_create_autocmd('ColorScheme', {
 })
 
 -- for easy switching between colorschemes and applying the cursor highlighters
-vim.api.nvim_create_user_command('Gruvbox', func_colorscheme('gruvbox-material', true), {})
-vim.api.nvim_create_user_command('VSCode', func_colorscheme('vscode', true), {})
-vim.api.nvim_create_user_command('Onedark', func_colorscheme('onedark', false), {})
-vim.api.nvim_create_user_command('Sublime', func_colorscheme('ofirkai', false), {})
-vim.api.nvim_create_user_command('Zen', func_colorscheme('zenwritten', true), {})
-vim.api.nvim_create_user_command('Substrata', func_colorscheme('substrata', true), {})
+func_colorscheme('Gruvbox', 'gruvbox-material', true)
+func_colorscheme('VSCode', 'vscode', true)
+func_colorscheme('Onedark', 'onedark', false)
+func_colorscheme('Sublime', 'ofirkai', false)
+func_colorscheme('Zen', 'zenwritten', true)
+func_colorscheme('Substrata', 'substrata', true)
 
 -- might add something in the future that will remember the last colorscheme I used
-local default_colorscheme = 'Onedark'
+local default_colorscheme = 'Gruvbox'
 
 vim.api.nvim_command(default_colorscheme)
