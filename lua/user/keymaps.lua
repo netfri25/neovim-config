@@ -12,6 +12,10 @@ keymap('n', '<A-down>', ':resize +2<cr>', { silent = true, desc = 'Resize window
 keymap('n', '<A-left>', ':vertical resize -2<cr>', { silent = true, desc = 'Resize window' })
 keymap('n', '<A-right>', ':vertical resize +2<cr>', { silent = true, desc = 'Resize window' })
 
+-- Quick jumps
+keymap('n', 'L', '<end>', { silent = true, desc = 'Go to the end of the line' })
+keymap('n', 'H', '<home>', { silent = true, desc = 'Go to the start of the line' })
+
 -- Clear highlighted search patterns
 keymap('n', '<C-l>', '<cmd>let @/=\'\'<cr>', { silent = true, desc = 'Clear highlighted search' })
 
@@ -32,8 +36,8 @@ keymap('i', '<A-{>', '{}<left>', { silent = true, desc = 'Autocomplete {}' })
 keymap('i', '<A-(>', '()<left>', { silent = true, desc = 'Autocomplete ()' })
 keymap('i', '<A-<>', '<><left>', { silent = true, desc = 'Autocomplete <>' })
 
--- Press jk fast to exit insert mode
-keymap('i', 'jk', '<esc>', { silent = true, desc = 'Exit insert mode' })
+-- Press hj fast to exit insert mode
+keymap('i', 'hj', '<esc>', { silent = true, desc = 'Exit insert mode' })
 
 -- Visual --
 -- Stay in indent mode
@@ -43,8 +47,8 @@ keymap('v', '>', '>gv', { silent = true, desc = 'Indent right' })
 -- Edit without saving the deleted text
 keymap('v', 'c', '"_di', { silent = true, desc = 'Change' })
 
--- Press jk fast to exit visual mode
-keymap('v', 'jk', '<esc>', { silent = true, desc = 'Exit visual mode' })
+-- Press hj fast to exit visual mode
+keymap('v', 'hj', '<esc>', { silent = true, desc = 'Exit visual mode' })
 
 -- Redo on shift-u instead of alt-r
 keymap('v', 'U', '<A-r>', { silent = true, desc = 'Undo' })
