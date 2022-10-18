@@ -76,6 +76,7 @@ return packer.startup(function(use)
    use { 'nagy135/typebreak.nvim', requires = 'nvim-lua/plenary.nvim' }
    use { 'hrsh7th/cmp-nvim-lsp-signature-help' }
    use { 'tamton-aquib/duck.nvim' }
+   use { 'nvim-treesitter/playground' }
 
    if packer_bootstrap then
       packer.sync()
