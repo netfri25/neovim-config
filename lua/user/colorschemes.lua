@@ -33,8 +33,6 @@ func_colorscheme('Gruvbox', 'gruvbox-material', true)
 func_colorscheme('VSCode', 'vscode', true)
 func_colorscheme('Onedark', 'onedark', false)
 func_colorscheme('Sublime', 'ofirkai', false)
-func_colorscheme('Zen', 'zenwritten', true)
-func_colorscheme('Substrata', 'substrata', true)
 
 -- might add something in the future that will remember the last colorscheme I used
 local default_colorscheme = 'Onedark'

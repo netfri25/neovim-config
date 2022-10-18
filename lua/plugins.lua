@@ -28,11 +28,9 @@ return packer.startup(function(use)
    use { 'navarasu/onedark.nvim' }
    use { 'lambdalisue/suda.vim' }
    use { 'akinsho/toggleterm.nvim' }
-   -- use { 'folke/which-key.nvim' }
    use { 'sainnhe/gruvbox-material' }
    use { 'lewis6991/impatient.nvim' }
    use { 'kyazdani42/nvim-web-devicons' }
-   -- use { 'nvim-lua/plenary.nvim' }
    use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
    use { 'ntpeters/vim-better-whitespace' }
    use { 'neovim/nvim-lspconfig' }
@@ -65,17 +63,9 @@ return packer.startup(function(use)
    use { 'Mofiqul/vscode.nvim' }
    use { 'ofirgall/ofirkai.nvim' }
    use { 'https://git.sr.ht/~whynothugo/lsp_lines.nvim' }
-
-   use {
-      'mcchrish/zenbones.nvim',
-      requires = 'rktjmp/lush.nvim'
-   }
-
-   use { 'kvrohit/substrata.nvim' }
    use { 'sitiom/nvim-numbertoggle' }
    use { 'nagy135/typebreak.nvim', requires = 'nvim-lua/plenary.nvim' }
    use { 'hrsh7th/cmp-nvim-lsp-signature-help' }
-   use { 'tamton-aquib/duck.nvim' }
    use { 'nvim-treesitter/playground' }
 
    if packer_bootstrap then
