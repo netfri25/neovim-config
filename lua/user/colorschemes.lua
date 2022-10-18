@@ -37,6 +37,6 @@ func_colorscheme('Zen', 'zenwritten', true)
 func_colorscheme('Substrata', 'substrata', true)
 
 -- might add something in the future that will remember the last colorscheme I used
-local default_colorscheme = 'Gruvbox'
+local default_colorscheme = 'Onedark'
 
 vim.api.nvim_command(default_colorscheme)
