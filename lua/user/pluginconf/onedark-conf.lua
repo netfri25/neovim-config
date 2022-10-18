@@ -26,7 +26,7 @@ onedark.setup({
    colors = {},
 
    highlights = {
-      -- ['@parameter'] = { fg = '$fg' },
+      ['@parameter'] = { fg = '$fg' },
       -- ['@field'] = { fg = '$cyan' },
       -- ['@constructor'] = { fg = '$fg' },
       -- ['@function.builtin'] = { fg = '$cyan' },
