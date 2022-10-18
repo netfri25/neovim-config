@@ -26,16 +26,16 @@ onedark.setup({
    colors = {},
 
    highlights = {
-      ['@parameter'] = { fg = '$fg' },
-      ['@field'] = { fg = '$cyan' },
-      ['@constructor'] = { fg = '$fg' },
-      ['@function.builtin'] = { fg = '$cyan' },
-      ['@constant.builtin'] = { fg = '$orange' },
-      ['@function.macro'] = { fg = '$cyan' },
-      ['@variable.builtin'] = { fg = '$red' },
-      ['@label'] = { fg = '$red' },
-      ['@operator'] = { fg = '#818387' },
-      ['@namespace'] = { fg = '$yellow' },
+      -- ['@parameter'] = { fg = '$fg' },
+      -- ['@field'] = { fg = '$cyan' },
+      -- ['@constructor'] = { fg = '$fg' },
+      -- ['@function.builtin'] = { fg = '$cyan' },
+      -- ['@constant.builtin'] = { fg = '$orange' },
+      -- ['@function.macro'] = { fg = '$cyan' },
+      -- ['@variable.builtin'] = { fg = '$red' },
+      -- ['@label'] = { fg = '$red' },
+      -- ['@operator'] = { fg = '#818387' },
+      -- ['@namespace'] = { fg = '$yellow' },
       CursorLineNr = { fg = '$cyan' },
 
       MatchParen = {
