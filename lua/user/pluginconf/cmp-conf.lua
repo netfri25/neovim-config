@@ -1,6 +1,14 @@
 local ok, cmp = pcall(require, 'cmp')
 if not ok or cmp == nil then return end
 
+local function toggle_window()
+   if cmp.visible() then
+      cmp.abort()
+   else
+      cmp.complete()
+   end
+end
+
 cmp.setup({
    snippet = {
       expand = function(args)
@@ -16,9 +24,12 @@ cmp.setup({
    mapping = cmp.mapping.preset.insert({
       ['<C-b>'] = cmp.mapping.scroll_docs(-4),
       ['<C-f>'] = cmp.mapping.scroll_docs(4),
-      ['<C-Space>'] = cmp.mapping.complete(),
-      ['<C-e>'] = cmp.mapping.abort(),
       ['<Tab>'] = cmp.mapping.confirm({ select = true }),
+
+      ['<C-Space>'] = cmp.mapping({
+         i = toggle_window,
+         c = toggle_window,
+      }),
    }),
 
    sources = cmp.config.sources({
