@@ -2,7 +2,7 @@ return {
    'wbthomason/packer.nvim',
    'andweeb/presence.nvim',
    'folke/lsp-colors.nvim',
-   -- 'navarasu/onedark.nvim',
+   'navarasu/onedark.nvim',
    'lambdalisue/suda.vim',
    'akinsho/toggleterm.nvim',
    'sainnhe/gruvbox-material',
