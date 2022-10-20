@@ -4,25 +4,25 @@ local ok, toggleterm = pcall(require, 'toggleterm')
 if not ok then return end
 
 toggleterm.setup({
-   open_mapping = [[<c-\>]],
-   hide_numbers = true,
-   shade_filetypes = {},
-   shade_terminal = true,
-   shading_factor = 2,
-   start_in_insert = true,
-   insert_mapping = true,
-   terminal_mapping = true,
-   persist_size = true,
-   autochdir = true,
-   direction = 'float',
-   close_on_exit = true,
-   shell = '/usr/bin/fish',
-   float_opts = {
-      border = 'curved',
-      winblend = 0,
-      highlightes = {
-         border = 'Normal',
-         background = 'Normal'
-      }
-   }
+	open_mapping = [[<c-\>]],
+	hide_numbers = true,
+	shade_filetypes = {},
+	shade_terminal = true,
+	shading_factor = 2,
+	start_in_insert = true,
+	insert_mapping = true,
+	terminal_mapping = true,
+	persist_size = true,
+	autochdir = true,
+	direction = 'float',
+	close_on_exit = true,
+	shell = '/usr/bin/fish',
+	float_opts = {
+		border = 'curved',
+		winblend = 0,
+		highlightes = {
+			border = 'Normal',
+			background = 'Normal'
+		}
+	}
 })

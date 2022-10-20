@@ -5,8 +5,8 @@ vim.ui.input = require('popui.input-overrider')
 vim.g.popui_border_style = 'rounded'
 
 vim.keymap.set(
-   'n',
-   '<leader>p',
-   function() require('popui.diagnostics-navigator')() end,
-   { silent = true, desc = 'Diagnostics navigator' }
+	'n',
+	'<leader>p',
+	function() require('popui.diagnostics-navigator')() end,
+	{ silent = true, desc = 'Diagnostics navigator' }
 )
