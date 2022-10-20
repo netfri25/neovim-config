@@ -35,6 +35,6 @@ func_colorscheme('Onedark', 'onedark', false)
 func_colorscheme('Sublime', 'ofirkai', false)
 
 -- might add something in the future that will remember the last colorscheme I used
-local default_colorscheme = 'Onedark'
+local default_colorscheme = 'Gruvbox'
 
 vim.api.nvim_command(default_colorscheme)
