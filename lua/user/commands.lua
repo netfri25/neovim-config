@@ -9,6 +9,11 @@ vim.api.nvim_create_autocmd('Filetype', {
 })
 
 vim.api.nvim_create_autocmd('Filetype', {
+	pattern = 'rust',
+	command = 'setlocal shiftwidth=4 | setlocal tabstop=4 | setlocal noexpandtab',
+})
+
+vim.api.nvim_create_autocmd('Filetype', {
 	pattern = 'help',
 	callback = function()
 		local buf = vim.api.nvim_get_current_buf()
