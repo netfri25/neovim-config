@@ -12,7 +12,7 @@ vim.g.neovide_cursor_animation_length = 0.07
 vim.g.neovide_cursor_vfx_particle_lifetime = 0.8
 -- vim.g.neovide_profiler = true
 
-vim.g.gui_font_default_size = 15
+vim.g.gui_font_default_size = 13
 vim.g.gui_font_size = vim.g.gui_font_default_size
 vim.g.gui_font_face = 'Iosevka Custom'
 
