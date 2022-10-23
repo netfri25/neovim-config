@@ -1,3 +1,13 @@
+if not package.loaded.packer then
+	vim.api.nvim_create_autocmd('BufWritePost', {
+		pattern = 'plugins.lua',
+		command = 'so ~/.config/nvim/lua/plugins.lua | so ~/.config/nvim/lua/packer-startup.lua',
+	})
+else
+	package.loaded.packer = nil
+	package.loaded.plugins = nil
+end
+
 -- bootstrap packer
 local ensure_packer = function()
 	local fn = vim.fn
@@ -14,11 +24,6 @@ end
 
 local packer_bootstrap = ensure_packer()
 local packer = require('packer')
-
-vim.api.nvim_create_autocmd('BufWritePost', {
-	pattern = 'plugins.lua',
-	command = 'source ~/.config/nvim/lua/packer-startup.lua',
-})
 
 local plugins = require('plugins')
 
