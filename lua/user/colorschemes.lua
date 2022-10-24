@@ -33,8 +33,9 @@ func_colorscheme('Gruvbox', 'gruvbox-material', true)
 func_colorscheme('VSCode', 'vscode', true)
 func_colorscheme('Onedark', 'onedark', false)
 func_colorscheme('Sublime', 'ofirkai', false)
+func_colorscheme('Meliora', 'meliora', true)
 
 -- might add something in the future that will remember the last colorscheme I used
-local default_colorscheme = 'Onedark'
+local default_colorscheme = 'Meliora'
 
 vim.api.nvim_command(default_colorscheme)
