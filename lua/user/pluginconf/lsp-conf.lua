@@ -4,9 +4,8 @@ if not ok then return end
 local okok, cmp_nvim_lsp = pcall(require, 'cmp_nvim_lsp')
 if not okok then return end
 
-local lsp_capabilities = vim.lsp.protocol.make_client_capabilities()
-local cmp_capabilities = cmp_nvim_lsp.default_capabilities(lsp_capabilities)
-cmp_capabilities.textDocument.completion.completionItem.snippetSupport = true
+local capabilities = cmp_nvim_lsp.default_capabilities()
+capabilities.textDocument.completion.completionItem.snippetSupport = true
 
 vim.diagnostic.config({
 	virtual_text = false,
@@ -46,7 +45,7 @@ vim.keymap.set('n', '<leader>f', function() vim.lsp.buf.format({ async = true })
 	{ silent = true, desc = 'Format buffer' })
 
 lspconfig['pylsp'].setup({
-	capabilities = cmp_capabilities,
+	capabilities = capabilities,
 
 	settings = {
 		pylsp = {
@@ -61,16 +60,17 @@ lspconfig['pylsp'].setup({
 })
 
 lspconfig['clangd'].setup({
-	capabilities = cmp_capabilities,
+	capabilities = capabilities,
 })
 
 -- I'm not even a clojure programmer, but why not
 lspconfig['clojure_lsp'].setup({
-	capabilities = cmp_capabilities,
+	capabilities = capabilities,
 })
 
 lspconfig['hls'].setup({
-	capabilities = cmp_capabilities,
+	capabilities = capabilities,
+
 	settings = {
 		haskell = {
 			plugin = {
@@ -83,15 +83,16 @@ lspconfig['hls'].setup({
 })
 
 lspconfig['tsserver'].setup({
-	capabilities = cmp_capabilities,
+	capabilities = capabilities,
 })
 
 lspconfig['jsonls'].setup({
-	capabilities = cmp_capabilities,
+	capabilities = capabilities,
 })
 
 lspconfig['sumneko_lua'].setup({
-	capabilities = cmp_capabilities,
+	capabilities = capabilities,
+
 	settings = {
 		Lua = {
 			runtime = { version = 'LuaJIT' },
@@ -127,7 +128,7 @@ require('rust-tools').setup({
 
 	server = {
 		cmd = rust_analyzer_command,
-		capabilities = cmp_capabilities,
+		capabilities = capabilities,
 
 		settings = {
 			['rust-analyzer'] = {
