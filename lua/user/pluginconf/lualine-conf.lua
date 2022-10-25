@@ -4,6 +4,8 @@
 local ok, lualine = pcall(require, 'lualine')
 if not ok then return end
 
+local battery_exists, battery = pcall(require, 'battery')
+
 local keymap = vim.keymap.set
 
 keymap('n', '[b', '<cmd>bprevious<cr>', { silent = true, desc = 'Switch to next buffer' })
@@ -39,6 +41,11 @@ lualine.setup({
 	sections = {
 		lualine_a = {
 			{
+				battery_exists and battery.get_status_line or nil,
+				color = 'lualine_c_normal',
+			},
+
+			{
 				'buffers',
 
 				filetype_names = {
@@ -48,12 +55,18 @@ lualine.setup({
 				symbols = {
 					alternate_file = '',
 				},
+
+				buffers_color = {
+					active = 'lualine_a_normal',
+					inactive = 'lualine_b_normal',
+				},
 			}
 		},
+
 		lualine_b = {},
 		lualine_c = {},
-		lualine_x = {},
-		lualine_y = { 'diagnostics', 'diff', 'branch' },
+		lualine_x = { 'diagnostics', 'diff', 'branch' },
+		lualine_y = {},
 		lualine_z = { 'mode' },
 	},
 
