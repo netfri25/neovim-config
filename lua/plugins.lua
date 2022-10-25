@@ -40,5 +40,6 @@ return {
 	'hrsh7th/cmp-nvim-lsp-signature-help',
 	'nvim-treesitter/playground',
 	{ 'meliora-theme/neovim', requires = 'rktjmp/lush.nvim' },
-	{ 'justinhj/battery.nvim', requires = { 'kyazdani42/nvim-web-devicons', 'nvim-lua/plenary.nvim' } } -- also needs 'acpi'
+	{ 'justinhj/battery.nvim', requires = { 'kyazdani42/nvim-web-devicons', 'nvim-lua/plenary.nvim' } }, -- also needs 'acpi'
+	'smjonas/live-command.nvim',
 }
