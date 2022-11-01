@@ -1,22 +1,6 @@
 local ok, tree = pcall(require, 'nvim-tree')
 if not ok then return end
 
-local utils = require('nvim-tree.utils')
-
----@diagnostic disable-next-line: unused-local
-local function notify_level(level)
-	 return function(msg)
-		  vim.schedule(function()
-				vim.api.nvim_echo({ { msg, "WarningMsg" } }, false, {})
-		  end)
-	 end
-end
-
-utils.notify.warn = notify_level(vim.log.levels.WARN)
-utils.notify.error = notify_level(vim.log.levels.ERROR)
-utils.notify.info = notify_level(vim.log.levels.INFO)
-utils.notify.debug = notify_level(vim.log.levels.DEBUG)
-
 vim.keymap.set('n', '<leader>t', '<cmd>NvimTreeToggle<cr>', { silent = true, desc = 'Toggle file browser' })
 
 tree.setup({
