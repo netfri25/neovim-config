@@ -15,9 +15,11 @@ vim.g.neovide_cursor_vfx_particle_lifetime = 0.8
 vim.g.gui_font_default_size = 15
 vim.g.gui_font_size = vim.g.gui_font_default_size
 vim.g.gui_font_face = 'Iosevka Custom'
+vim.g.gui_antialiasing = 'subpixelantialias'
+vim.g.gui_hinting = 'normal'
 
 RefreshGuiFont = function()
-	vim.opt.guifont = string.format('%s:h%s', vim.g.gui_font_face, vim.g.gui_font_size)
+	vim.opt.guifont = string.format('%s:h%s:#e-%s:#h-%s', vim.g.gui_font_face, vim.g.gui_font_size, vim.g.gui_antialiasing, vim.g.gui_hinting)
 end
 
 ResizeGuiFont = function(delta)
