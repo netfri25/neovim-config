@@ -4,6 +4,9 @@ if not ok then return end
 vim.keymap.set('n', '<leader>bq', '<cmd>Barbecue toggle<cr>',
 	{ silent = true, desc = 'Toggle Barbecue' })
 
+-- turn it off by default
+require('barbecue.ui'):toggle(false)
+
 barbecue.setup({
 	create_autocmd = true,
 	include_buftypes = { '' },
