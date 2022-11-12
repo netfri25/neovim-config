@@ -11,14 +11,14 @@ vim.g.gruvbox_dark_sidebar = true
 vim.g.gruvbox_dark_float = true
 vim.g.gruvbox_colors = {}
 vim.g.gruvbox_theme = {
-	-- ['@parameter'] = { fg = 'fg' },
-	['@field'] = { fg = 'red' },
-	-- ['@constructor'] = { fg = 'fg' },
-	['@function.builtin'] = { fg = 'cyan' },
-	['@constant.builtin'] = { fg = 'orange' },
-	['@function.macro'] = { fg = 'cyan' },
-	['@variable.builtin'] = { fg = 'red' },
-	['@label'] = { fg = 'red' },
-	['@operator'] = { fg = '#818387' },
-	['@namespace'] = { fg = 'yellow' },
+   -- ['@parameter'] = { fg = 'fg' },
+   ['@field'] = { fg = 'red' },
+   -- ['@constructor'] = { fg = 'fg' },
+   ['@function.builtin'] = { fg = 'cyan' },
+   ['@constant.builtin'] = { fg = 'orange' },
+   ['@function.macro'] = { fg = 'cyan' },
+   ['@variable.builtin'] = { fg = 'red' },
+   ['@label'] = { fg = 'red' },
+   ['@operator'] = { fg = '#818387' },
+   ['@namespace'] = { fg = 'yellow' },
 }

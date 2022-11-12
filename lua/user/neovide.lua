@@ -19,17 +19,17 @@ vim.g.gui_antialiasing = 'subpixelantialias'
 vim.g.gui_hinting = 'normal'
 
 RefreshGuiFont = function()
-	vim.opt.guifont = string.format('%s:h%s:#e-%s:#h-%s', vim.g.gui_font_face, vim.g.gui_font_size, vim.g.gui_antialiasing, vim.g.gui_hinting)
+   vim.opt.guifont = string.format('%s:h%s:#e-%s:#h-%s', vim.g.gui_font_face, vim.g.gui_font_size, vim.g.gui_antialiasing, vim.g.gui_hinting)
 end
 
 ResizeGuiFont = function(delta)
-	vim.g.gui_font_size = vim.g.gui_font_size + delta
-	RefreshGuiFont()
+   vim.g.gui_font_size = vim.g.gui_font_size + delta
+   RefreshGuiFont()
 end
 
 ResetGuiFont = function()
-	vim.g.gui_font_size = vim.g.gui_font_default_size
-	RefreshGuiFont()
+   vim.g.gui_font_size = vim.g.gui_font_default_size
+   RefreshGuiFont()
 end
 
 -- Call function on startup to set default value

@@ -16,72 +16,72 @@ keymap('n', '<leader>bd', '<cmd>bdelete<cr>', { silent = true, desc = 'Delete bu
 keymap('n', '<leader>bb', '<cmd>silent! exe \'LualineBuffersJump\' . v:count<cr>', { silent = true, desc = 'Jump to {count}th buffer' })
 
 lualine.setup({
-	options = {
-		icons_enabled = false,
-		theme = 'auto',
-		component_separators = { left = '', right = '' },
-		section_separators = { left = '', right = '' },
+   options = {
+      icons_enabled = false,
+      theme = 'auto',
+      component_separators = { left = '', right = '' },
+      section_separators = { left = '', right = '' },
 
-		disabled_filetypes = {
-			statusline = {},
-			winbar = {},
-		},
+      disabled_filetypes = {
+         statusline = {},
+         winbar = {},
+      },
 
-		ignore_focus = { 'NvimTree' },
-		always_divide_middle = true,
-		globalstatus = true,
+      ignore_focus = { 'NvimTree' },
+      always_divide_middle = true,
+      globalstatus = true,
 
-		refresh = {
-			statusline = 1000,
-			tabline = 1000,
-			winbar = 1000,
-		}
-	},
+      refresh = {
+         statusline = 1000,
+         tabline = 1000,
+         winbar = 1000,
+      }
+   },
 
-	sections = {
-		lualine_a = {
-			{
-				battery_exists and battery.get_status_line or nil,
-				color = 'lualine_c_normal',
-			},
+   sections = {
+      lualine_a = {
+         {
+            battery_exists and battery.get_status_line or nil,
+            color = 'lualine_c_normal',
+         },
 
-			{
-				'buffers',
+         {
+            'buffers',
 
-				filetype_names = {
-					NvimTree = 'File explorer',
-				},
+            filetype_names = {
+               NvimTree = 'File explorer',
+            },
 
-				symbols = {
-					alternate_file = '',
-				},
+            symbols = {
+               alternate_file = '',
+            },
 
-				buffers_color = {
-					active = 'lualine_a_normal',
-					inactive = 'lualine_b_normal',
-				},
-			}
-		},
+            buffers_color = {
+               active = 'lualine_a_normal',
+               inactive = 'lualine_b_normal',
+            },
+         }
+      },
 
-		lualine_b = {},
-		lualine_c = {},
-		lualine_x = { 'diagnostics', 'diff', 'branch' },
-		lualine_y = {},
-		lualine_z = { 'mode' },
-	},
+      lualine_b = {},
+      lualine_c = {},
+      lualine_x = { 'diagnostics', 'diff', 'branch' },
+      lualine_y = {},
+      lualine_z = { 'mode' },
+   },
 
-	inactive_sections = {
-		lualine_a = {},
-		lualine_b = {},
-		lualine_c = { 'filename' },
-		lualine_x = { 'location' },
-		lualine_y = {},
-		lualine_z = {},
-	},
+   inactive_sections = {
+      lualine_a = {},
+      lualine_b = {},
+      lualine_c = { 'filename' },
+      lualine_x = { 'location' },
+      lualine_y = {},
+      lualine_z = {},
+   },
 
-	tabline = {},
+   tabline = {},
 
-	winbar = {},
-	inactive_winbar = {},
-	extensions = {}
+   winbar = {},
+   inactive_winbar = {},
+   extensions = {}
 })
