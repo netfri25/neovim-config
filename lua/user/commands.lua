@@ -10,7 +10,7 @@ vim.api.nvim_create_autocmd('Filetype', {
 
 vim.api.nvim_create_autocmd('Filetype', {
    pattern = 'rust',
-   command = 'setlocal shiftwidth=4 | setlocal tabstop=4 | setlocal noexpandtab',
+   command = 'setlocal shiftwidth=4 | setlocal tabstop=4',
 })
 
 vim.api.nvim_create_autocmd('Filetype', {
