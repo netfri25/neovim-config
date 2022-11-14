@@ -7,19 +7,6 @@ if not cmp_ok then return end
 local capabilities = cmp_nvim_lsp.default_capabilities()
 capabilities.textDocument.completion.completionItem.snippetSupport = true
 
-local navic_ok, navic = pcall(require, 'nvim-navic')
-
-local on_attach
-if navic_ok then
-   on_attach = function(client, bufnr)
-      if client.server_capabilities['documentSymbolProvider'] then
-         navic.attach(client, bufnr)
-      end
-   end
-else
-   on_attach = function() end
-end
-
 vim.diagnostic.config({
    virtual_text = false,
    virtual_lines = false, -- lsp_lines
@@ -59,7 +46,6 @@ vim.keymap.set('n', '<leader>f', function() vim.lsp.buf.format({ async = true })
 
 lspconfig['pylsp'].setup({
    capabilities = capabilities,
-   on_attach = on_attach,
 
    settings = {
       pylsp = {
@@ -75,18 +61,15 @@ lspconfig['pylsp'].setup({
 
 lspconfig['clangd'].setup({
    capabilities = capabilities,
-   on_attach = on_attach,
 })
 
 -- I'm not even a clojure programmer, but why not
 lspconfig['clojure_lsp'].setup({
    capabilities = capabilities,
-   on_attach = on_attach,
 })
 
 lspconfig['hls'].setup({
    capabilities = capabilities,
-   on_attach = on_attach,
 
    settings = {
       haskell = {
@@ -101,17 +84,14 @@ lspconfig['hls'].setup({
 
 lspconfig['tsserver'].setup({
    capabilities = capabilities,
-   on_attach = on_attach,
 })
 
 lspconfig['jsonls'].setup({
    capabilities = capabilities,
-   on_attach = on_attach,
 })
 
 lspconfig['sumneko_lua'].setup({
    capabilities = capabilities,
-   on_attach = on_attach,
 
    settings = {
       Lua = {
@@ -149,7 +129,6 @@ require('rust-tools').setup({
    server = {
       cmd = rust_analyzer_command,
       capabilities = capabilities,
-      on_attach = on_attach,
 
       settings = {
          ['rust-analyzer'] = {
