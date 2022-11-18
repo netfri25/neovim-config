@@ -4,7 +4,6 @@ return {
    'folke/lsp-colors.nvim',
    'navarasu/onedark.nvim',
    'lambdalisue/suda.vim',
-   'akinsho/toggleterm.nvim',
    'sainnhe/gruvbox-material',
    'lewis6991/impatient.nvim',
    'kyazdani42/nvim-web-devicons',
@@ -51,4 +50,6 @@ return {
          'kyazdani42/nvim-web-devicons',
       }
    },
+
+   'numToStr/FTerm.nvim',
 }

@@ -50,6 +50,7 @@ lualine.setup({
 
             filetype_names = {
                NvimTree = 'File explorer',
+               FTerm = 'Terminal',
             },
 
             symbols = {
