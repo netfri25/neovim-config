@@ -7,6 +7,11 @@ if not cmp_ok then return end
 local capabilities = cmp_nvim_lsp.default_capabilities()
 capabilities.textDocument.completion.completionItem.snippetSupport = true
 
+local neodev_ok, neodev = pcall(require, 'neodev')
+if neodev_ok then
+   neodev.setup()
+end
+
 vim.diagnostic.config({
    virtual_text = false,
    virtual_lines = false, -- lsp_lines
@@ -27,7 +32,6 @@ vim.lsp.handlers['textDocument/hover'] = vim.lsp.with(vim.lsp.handlers.hover, { 
 vim.lsp.handlers['textDocument/signatureHelp'] = vim.lsp.with(vim.lsp.handlers.hover, { border = 'rounded' })
 
 -- lspconfig
--- local opts = { silent = true, noremap = true }
 vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, { silent = true, desc = 'Show diagnostics' })
 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { silent = true, desc = 'Show previous diagnostics' })
 vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { silent = true, desc = 'Show next diagnostics' })
@@ -86,23 +90,27 @@ lspconfig['tsserver'].setup({
    capabilities = capabilities,
 })
 
-lspconfig['jsonls'].setup({
-   capabilities = capabilities,
-})
+-- lspconfig['jsonls'].setup({
+--    capabilities = capabilities,
+-- })
 
 lspconfig['sumneko_lua'].setup({
    capabilities = capabilities,
 
    settings = {
       Lua = {
-         runtime = { version = 'LuaJIT' },
-         diagnostics = { globals = { 'vim' } },
-         workspace = {
-            library = {
-               [vim.fn.expand('$VIMRUNTIME/lua')] = true,
-               [vim.fn.stdpath('config') .. '/lua'] = true,
-            },
+         completion = {
+            callSnippet = 'Replace',
          },
+
+         runtime = { version = 'LuaJIT' },
+         -- diagnostics = { globals = { 'vim' } },
+         -- workspace = {
+         --    library = {
+         --       [vim.fn.expand('$VIMRUNTIME/lua')] = true,
+         --       [vim.fn.stdpath('config') .. '/lua'] = true,
+         --    },
+         -- },
       },
    },
 })

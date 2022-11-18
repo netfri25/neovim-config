@@ -52,4 +52,5 @@ return {
    },
 
    'numToStr/FTerm.nvim',
+   'folke/neodev.nvim',
 }
