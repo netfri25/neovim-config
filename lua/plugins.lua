@@ -51,6 +51,4 @@ return {
          'kyazdani42/nvim-web-devicons',
       }
    },
-
-   'arnamak/stay-centered.nvim',
 }
