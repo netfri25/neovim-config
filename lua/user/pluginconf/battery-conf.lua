@@ -8,4 +8,5 @@ battery.setup({
    show_unplugged_icon = false,        -- When true show a diconnected cable icon when not plugged in
    show_percent = true,                -- Whether or not to show the percent charge remaining in digits
    vertical_icons = true,              -- When true icons are vertical, otherwise shows horizontal battery icon
+   multiple_battery_selection = 'max',
 })
