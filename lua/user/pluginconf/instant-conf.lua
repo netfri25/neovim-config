@@ -1,1 +1,1 @@
-vim.g.instant_username = 'netfri'
+vim.g.instant_username = 'netfri-laptop'
