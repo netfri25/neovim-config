@@ -53,4 +53,5 @@ return {
    'numToStr/FTerm.nvim',
    'folke/neodev.nvim',
    'aarondiel/spread.nvim',
+   'jbyuki/instant.nvim',
 }
