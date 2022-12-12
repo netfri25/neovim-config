@@ -54,4 +54,5 @@ return {
    'folke/neodev.nvim',
    'aarondiel/spread.nvim',
    'jbyuki/instant.nvim',
+   'neovimhaskell/haskell-vim',
 }
