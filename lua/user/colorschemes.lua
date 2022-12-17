@@ -33,9 +33,9 @@ vim.api.nvim_create_autocmd('ColorScheme', {
 -- func_colorscheme('VSCode', 'vscode', true)
 -- func_colorscheme('Onedark', 'onedark', false)
 -- func_colorscheme('Sublime', 'ofirkai', false)
-func_colorscheme('Meliora', 'meliora', true)
+func_colorscheme('MelioraT', 'mellifluous', true)
 
 -- might add something in the future that will remember the last colorscheme I used
-local default_colorscheme = 'Meliora'
+local default_colorscheme = 'MelioraT'
 
 vim.api.nvim_command(default_colorscheme)
