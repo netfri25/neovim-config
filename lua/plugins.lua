@@ -55,4 +55,5 @@ return {
    'aarondiel/spread.nvim',
    'jbyuki/instant.nvim',
    'neovimhaskell/haskell-vim',
+   'chrisgrieser/nvim-various-textobjs',
 }
