@@ -5,7 +5,7 @@ vim.keymap.set({ 'n', 't' }, '<C-\\>', fterm.toggle, { silent = true, desc = 'To
 
 fterm.setup({
    ft = 'FTerm',
-   border = 'rounded',
+   border = 'none',
    cmd = '/usr/bin/fish',
    auto_close = true,
 
