@@ -63,8 +63,33 @@ lspconfig['pylsp'].setup({
    },
 })
 
-lspconfig['clangd'].setup({
+lspconfig['ccls'].setup({
    capabilities = capabilities,
+
+   init_options = {
+      cache = {
+         directory = '/tmp/ccls-cache',
+         format = 'binary',
+         retainInMemory = 1,
+      },
+
+      clang = {
+         extraArgs = { '-lm', '-Wall', '-pedantic', '-Werror' },
+         excludeArgs = {},
+      },
+
+      index = {
+         threads = 2,
+         comments = 2,
+         multiVersion = 1,
+         multiVersionBlacklist = { '^/usr/include' },
+         onChange = false, -- if set to true then set cache.directory to ""
+      },
+
+      completion = {
+         detailedLabel = true,
+      },
+   },
 })
 
 -- I'm not even a clojure programmer, but why not
@@ -104,13 +129,6 @@ lspconfig['sumneko_lua'].setup({
          },
 
          runtime = { version = 'LuaJIT' },
-         -- diagnostics = { globals = { 'vim' } },
-         -- workspace = {
-         --    library = {
-         --       [vim.fn.expand('$VIMRUNTIME/lua')] = true,
-         --       [vim.fn.stdpath('config') .. '/lua'] = true,
-         --    },
-         -- },
       },
    },
 })
