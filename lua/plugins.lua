@@ -41,14 +41,14 @@ return {
    { 'justinhj/battery.nvim', requires = { 'kyazdani42/nvim-web-devicons', 'nvim-lua/plenary.nvim' } }, -- also needs 'acpi'
    'smjonas/live-command.nvim',
 
-   {
-      'utilyre/barbecue.nvim',
-      requires = {
-         'neovim/nvim-lspconfig',
-         'smiteshp/nvim-navic',
-         'kyazdani42/nvim-web-devicons',
-      }
-   },
+   -- {
+   --    'utilyre/barbecue.nvim',
+   --    requires = {
+   --       'neovim/nvim-lspconfig',
+   --       'smiteshp/nvim-navic',
+   --       'kyazdani42/nvim-web-devicons',
+   --    }
+   -- },
 
    'numToStr/FTerm.nvim',
    'folke/neodev.nvim',
