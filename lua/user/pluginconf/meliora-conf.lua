@@ -2,7 +2,7 @@ local ok, meliora = pcall(require, 'meliora')
 if not ok then return end
 
 meliora.setup({
-   dim_inactive = true,
+   dim_inactive = false,
    neutral = true, -- set this to `true` for neutral background and greys.
 
    styles = {
