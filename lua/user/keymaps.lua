@@ -9,6 +9,10 @@ vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 keymap('', '<space>', '<nop>', { silent = true, desc = 'Leader key' })
 
+-- Press hj fast to return to normal mode
+keymap({ 'i', 'v' }, 'hj', '<esc>', { silent = true, desc = 'Return to normal mode' })
+keymap('t', 'hj', '<c-\\><c-n>', { silent = true, desc = 'Return to normal mode' })
+
 -- Normal --
 -- Resize windows
 keymap('n', '<A-up>', ':resize -2<cr>', { silent = true, desc = 'Resize window' })
@@ -40,9 +44,6 @@ keymap('i', '<A-{>', '{}<left>', { silent = true, desc = 'Autocomplete {}' })
 keymap('i', '<A-(>', '()<left>', { silent = true, desc = 'Autocomplete ()' })
 keymap('i', '<A-<>', '<><left>', { silent = true, desc = 'Autocomplete <>' })
 
--- Press hj fast to exit insert mode
-keymap('i', 'hj', '<esc>', { silent = true, desc = 'Exit insert mode' })
-
 -- Visual --
 -- Stay in indent mode
 keymap('v', '<', '<gv', { silent = true, desc = 'Indent left' })
@@ -50,9 +51,6 @@ keymap('v', '>', '>gv', { silent = true, desc = 'Indent right' })
 
 -- Edit without saving the deleted text
 keymap('v', 'c', '"_di', { silent = true, desc = 'Change' })
-
--- Press hj fast to exit visual mode
-keymap('v', 'hj', '<esc>', { silent = true, desc = 'Exit visual mode' })
 
 -- Redo on shift-u instead of alt-r
 keymap('v', 'U', '<A-r>', { silent = true, desc = 'Undo' })
