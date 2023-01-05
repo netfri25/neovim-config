@@ -21,10 +21,6 @@ vim.keymap.set({ 'o', 'x' }, 'ak', function() textobjs.key(false) end)
 vim.keymap.set({ 'o', 'x' }, 'in', function() textobjs.number(true) end)
 vim.keymap.set({ 'o', 'x' }, 'an', function() textobjs.number(false) end)
 
--- Number
-vim.keymap.set({ 'o', 'x' }, 'in', function() textobjs.number(true) end)
-vim.keymap.set({ 'o', 'x' }, 'an', function() textobjs.number(false) end)
-
 -- Subword
 vim.keymap.set({ 'o', 'x' }, 'is', function() textobjs.subword(true) end)
 vim.keymap.set({ 'o', 'x' }, 'as', function() textobjs.subword(false) end)
