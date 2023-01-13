@@ -41,4 +41,5 @@ return {
    'jbyuki/instant.nvim',
    'neovimhaskell/haskell-vim',
    'chrisgrieser/nvim-various-textobjs',
+   'nvim-treesitter/nvim-treesitter-textobjects',
 }
