@@ -24,3 +24,6 @@ vim.keymap.set({ 'o', 'x' }, 'an', function() textobjs.number(false) end)
 -- Subword
 vim.keymap.set({ 'o', 'x' }, 'is', function() textobjs.subword(true) end)
 vim.keymap.set({ 'o', 'x' }, 'as', function() textobjs.subword(false) end)
+
+-- Entire buffer
+vim.keymap.set({ 'o', 'x' }, 'gG', function() textobjs.entireBuffer() end)
