@@ -17,10 +17,17 @@ vim.api.nvim_create_autocmd('Filetype', {
    pattern = 'help',
    callback = function()
       local buf = vim.api.nvim_get_current_buf()
+
       vim.keymap.set('n', 'q', '<cmd>:q<cr>', {
          buffer = buf,
          silent = true,
          desc = 'Quit the help buffer',
+      })
+
+      vim.keymap.set('n', 'gr', '<c-]>', {
+         buffer = buf,
+         silent = true,
+         desc = 'Jump to reference',
       })
    end
 })
@@ -41,6 +48,6 @@ end, {})
 vim.api.nvim_create_autocmd('TextYankPost', {
    pattern = '*',
    callback = function()
-      vim.api.nvim_command([[ silent! lua vim.highlight.on_yank { higroup='IncSearch', timeout=200 } ]])
+      vim.highlight.on_yank({ higroup = 'IncSearch', timeout = 200 });
    end
 })
