@@ -42,5 +42,4 @@ return {
    'neovimhaskell/haskell-vim',
    'chrisgrieser/nvim-various-textobjs',
    'nvim-treesitter/nvim-treesitter-textobjects',
-   'neovimhaskell/haskell-vim',
 }
