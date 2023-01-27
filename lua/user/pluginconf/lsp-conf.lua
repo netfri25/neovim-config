@@ -122,8 +122,9 @@ require('rust-tools').setup({
       autoSetHints = true,
       inlay_hints = {
          show_parameter_hints = false,
-         parameter_hints_prefix = '',
-         other_hints_prefix = '',
+         parameter_hints_prefix = '<- ',
+         other_hints_prefix = '=> ',
+         highlight = 'Conceal',
       },
    },
 
