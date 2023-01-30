@@ -1,4 +1,1 @@
-return {
-   'sitiom/nvim-numbertoggle',
-   lazy = false,
-}
+return { 'sitiom/nvim-numbertoggle' }

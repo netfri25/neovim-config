@@ -1,6 +1,6 @@
 return {
    'neovim/nvim-lspconfig',
-   lazy = false,
+   lazy = true,
 
    dependencies = {
       'folke/neodev.nvim',

@@ -1,10 +1,13 @@
 return {
    'nvim-tree/nvim-tree.lua',
+
+   keys = {
+      { '<leader>t', '<cmd>NvimTreeToggle<cr>', silent = true, desc = 'Toggle file browser' },
+   },
+
    config = function()
       local ok, tree = pcall(require, 'nvim-tree')
       if not ok then return end
-
-      vim.keymap.set('n', '<leader>t', '<cmd>NvimTreeToggle<cr>', { silent = true, desc = 'Toggle file browser' })
 
       tree.setup({
          hijack_cursor = true,

@@ -1,5 +1,5 @@
 return {
    'folke/neodev.nvim',
-   lazy = false,
+   lazy = true,
    config = true,
 }

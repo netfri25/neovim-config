@@ -1,6 +1,8 @@
 return {
    'neovimhaskell/haskell-vim',
 
+   ft = 'haskell',
+
    config = function()
       vim.g.haskell_enable_quantification = 1   -- to enable highlighting of `forall`
       vim.g.haskell_enable_recursivedo = 1      -- to enable highlighting of `mdo` and `rec`
