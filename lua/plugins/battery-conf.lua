@@ -1,7 +1,7 @@
 return {
    'justinhj/battery.nvim',
-   --
-    -- also needs 'acpi' installed
+
+   -- also needs 'acpi' installed
    dependencies = {
       'kyazdani42/nvim-web-devicons',
       'nvim-lua/plenary.nvim'
