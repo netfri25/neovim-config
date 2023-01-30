@@ -2,6 +2,7 @@
 -- makes UI look so clean and nice
 return {
    'hood/popui.nvim',
+   lazy = false,
    dependencies = { 'RishabhRD/popfix' },
 
    config = function()

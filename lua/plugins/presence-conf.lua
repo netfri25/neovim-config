@@ -1,7 +1,7 @@
 -- Discord presence with a rickroll button
 return {
    'andweeb/presence.nvim',
-
+   lazy = false,
    opts = {
       auto_update = true,
       neovim_image_text = 'We\'re no stranges to love\nYou know the rules and so do I',

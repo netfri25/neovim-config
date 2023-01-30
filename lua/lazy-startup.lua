@@ -18,4 +18,8 @@ return require('lazy').setup('plugins', {
       enabled = true,
       notify = false, -- get a notification when changes are found
    },
+
+   defaults = {
+      lazy = true,
+   },
 })
