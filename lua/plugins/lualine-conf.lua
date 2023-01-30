@@ -7,10 +7,12 @@ return {
 
    dependencies = {
       'justinhj/battery.nvim',
+      'jcdickinson/wpm.nvim',
    },
 
    config = function()
       local lualine = require('lualine')
+      local wpm = require('wpm')
       local keymap = vim.keymap.set
 
       keymap('n', '[b', '<cmd>bprevious<cr>', { silent = true, desc = 'Switch to next buffer' })
@@ -71,10 +73,11 @@ return {
             },
 
             lualine_b = {},
+
             lualine_c = {},
             lualine_x = { 'diagnostics', 'diff', 'branch' },
             lualine_y = {},
-            lualine_z = { 'mode' },
+            lualine_z = { wpm.wpm, wpm.historic_graph, 'mode' },
          },
 
          inactive_sections = {
