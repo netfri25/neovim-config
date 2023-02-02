@@ -1,8 +1,8 @@
 local keymap = vim.keymap.set
 
 -- Fix scrolling with the mouse
-keymap({'n', 'i', 'v'}, '<scrollwheelup>', '<cmd>norm 3kzz<cr>', { silent = true, desc = 'Scroll upwards' })
-keymap({'n', 'i', 'v'}, '<scrollwheeldown>', '<cmd>norm 3jzz<cr>', { silent = true, desc = 'Scroll downwards' })
+keymap({'n', 'i', 'v'}, '<scrollwheelup>', '<cmd>norm 2kzz<cr>', { silent = true, desc = 'Scroll upwards' })
+keymap({'n', 'i', 'v'}, '<scrollwheeldown>', '<cmd>norm 2jzz<cr>', { silent = true, desc = 'Scroll downwards' })
 
 -- Remap leader to space
 vim.g.mapleader = ' '

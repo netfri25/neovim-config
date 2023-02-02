@@ -57,7 +57,6 @@ return {
                   { key = 'J', action = 'last_sibling' },
                   { key = 'I', action = 'toggle_git_ignored' },
                   { key = 'H', action = 'toggle_dotfiles' },
-                  -- INFO: I don't have any custom hidden files (yet), so rn its commented out
                   { key = 'U', action = 'toggle_custom' },
                   { key = 'R', action = 'refresh' },
                   { key = 'a', action = 'create' },
@@ -75,15 +74,6 @@ return {
                   { key = '[g', action = 'prev_git_item' },
                   { key = ']g', action = 'next_git_item' },
                   { key = { 'h', '-' }, action = 'dir_up' },
-                  -- INFO: I'm not using these because I don't want it to override
-                  --       the keymaps for the lightspeed plugin
-                  -- { key = 's', action = 'system_open' },
-                  -- { key = 'S', action = 'search_node' },
-
-                  -- INFO: filters are really bad.
-                  --       If its not going to get an update which fixes most of its bugs
-                  --       and makes them look nicer I will just keep using the default
-                  --       buffer search or the lightspeed plugin
                   -- { key = 'f', action = 'live_filter' },
                   -- { key = 'F', action = 'clear_live_filter' },
                   { key = { 'q', '<esc>' }, action = 'close' },

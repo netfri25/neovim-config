@@ -1,7 +1,6 @@
 return {
    'neovim/nvim-lspconfig',
-
-   event = 'VimEnter',
+   lazy = false,
 
    dependencies = {
       'folke/neodev.nvim',
