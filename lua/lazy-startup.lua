@@ -20,6 +20,6 @@ return require('lazy').setup('plugins', {
    },
 
    defaults = {
-      lazy = true,
+      lazy = false,
    },
 })

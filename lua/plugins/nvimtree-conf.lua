@@ -1,5 +1,6 @@
 return {
    'nvim-tree/nvim-tree.lua',
+   lazy = false,
 
    keys = {
       { '<leader>t', '<cmd>NvimTreeToggle<cr>', silent = true, desc = 'Toggle file browser' },
@@ -10,6 +11,8 @@ return {
       if not ok then return end
 
       tree.setup({
+         disable_netrw = false,
+         hijack_netrw = true,
          hijack_cursor = true,
          hijack_unnamed_buffer_when_opening = false,
          sync_root_with_cwd = true,
