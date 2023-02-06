@@ -14,6 +14,8 @@ return {
 
    config = function()
       local cmp = require('cmp')
+      local luasnip = require('luasnip')
+      vim.keymap.set('i', '<s-tab>', luasnip.expand_or_jump, { expr = true, silent = true })
 
       local function toggle_window()
          if cmp.visible() then
