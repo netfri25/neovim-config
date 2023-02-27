@@ -45,8 +45,8 @@ return {
             mappings = {
                custom_only = true,
                list = {
-                  { key = '<cr>', action = 'toggle_node' },
-                  { key = 'i', action = 'edit' },
+                  { key = '<CR>', action = 'toggle_node' },
+                  { key = { 'i', '<cr>' }, action = 'edit' },
                   { key = '<C-i>', action = 'edit_in_place' },
                   { key = { '\\', 'l' }, action = 'cd' },
                   { key = '<C-v>', action = 'vsplit' },
