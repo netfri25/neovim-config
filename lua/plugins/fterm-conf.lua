@@ -14,7 +14,7 @@ return {
    opts = {
       ft = 'FTerm',
       border = 'rounded',
-      cmd = '/usr/bin/fish',
+      cmd = '/home/netfri/.cargo/bin/nu',
       auto_close = true,
 
       dimensions = {
