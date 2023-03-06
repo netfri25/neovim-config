@@ -26,6 +26,7 @@ return {
             'help',
             'ocaml',
             'python',
+            'comment',
             'haskell',
             'markdown',
             'gitcommit',
