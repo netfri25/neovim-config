@@ -17,6 +17,12 @@ vim.api.nvim_create_autocmd('Filetype', {
 })
 
 vim.api.nvim_create_autocmd('Filetype', {
+   desc = 'Spell checking in gitcommit',
+   pattern = 'gitcommit',
+   command = 'set spell',
+})
+
+vim.api.nvim_create_autocmd('Filetype', {
    desc = 'Adds key mappings for the `help` buffer',
    pattern = 'help',
    callback = function()
