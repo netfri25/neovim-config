@@ -9,4 +9,4 @@ vim.api.nvim_create_autocmd('ColorScheme', {
 -- might add something in the future that will remember the last colorscheme I used
 local default_colorscheme = 'mellifluous'
 
-vim.api.nvim_command('color ' .. default_colorscheme)
+vim.cmd.colorscheme(default_colorscheme)
