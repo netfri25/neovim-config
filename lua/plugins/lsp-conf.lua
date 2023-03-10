@@ -33,7 +33,6 @@ return {
       vim.lsp.handlers['textDocument/hover'] = vim.lsp.with(vim.lsp.handlers.hover, { border = 'rounded' })
       vim.lsp.handlers['textDocument/signatureHelp'] = vim.lsp.with(vim.lsp.handlers.hover, { border = 'rounded' })
 
-      -- lspconfig
       vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, { silent = true, desc = 'Show diagnostics' })
       vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { silent = true, desc = 'Show previous diagnostics' })
       vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { silent = true, desc = 'Show next diagnostics' })
@@ -69,20 +68,16 @@ return {
          },
       })
 
-      lspconfig['clangd'].setup({
+      lspconfig['pyright'].setup({
          capabilities = capabilities,
       })
 
-      -- I'm not even a clojure programmer, but why not
-      lspconfig['clojure_lsp'].setup({
+      lspconfig['clangd'].setup({
          capabilities = capabilities,
+         cmd = { 'clangd', '--enable-config' }
       })
 
       lspconfig['hls'].setup({
-         capabilities = capabilities,
-      })
-
-      lspconfig['tsserver'].setup({
          capabilities = capabilities,
       })
 
