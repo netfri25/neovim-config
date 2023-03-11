@@ -19,7 +19,7 @@ return {
 
          filters = {
             dotfiles = false,
-            custom = { '^.git$', '^.gitignore$', '^target$' },
+            custom = { '^.git$', '^.gitignore$', '^target$', '^.mypy_cache$' },
          },
 
          actions = {
