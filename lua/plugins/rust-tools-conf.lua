@@ -9,8 +9,9 @@ return {
 
    opts = {
       tools = {
-         autoSetHints = true,
+         -- autoSetHints = true,
          inlay_hints = {
+            auto = false,
             show_parameter_hints = false,
             parameter_hints_prefix = '<- ',
             other_hints_prefix = '=> ',
@@ -21,6 +22,10 @@ return {
       server = {
          cmd = { 'rustup', 'run', 'stable', 'rust-analyzer' },
          -- capabilities = capabilities,
+         on_attach = function(client, bufnr)
+            client.server_capabilities.semanticTokensProvider = nil
+            require("lsp-inlayhints").on_attach(client, bufnr)
+         end,
 
          settings = {
             ['rust-analyzer'] = {

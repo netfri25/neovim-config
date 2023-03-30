@@ -5,7 +5,7 @@ return {
    dependencies = {
       'folke/neodev.nvim',
       'hrsh7th/cmp-nvim-lsp-signature-help',
-      'nvim-lua/lsp_extensions.nvim',
+      'lvimuser/lsp-inlayhints.nvim',
    },
 
    config = function()
@@ -50,12 +50,18 @@ return {
       vim.keymap.set('n', '<leader>f', function() vim.lsp.buf.format({ async = true }) end,
       { silent = true, desc = 'Format buffer' })
 
+      local function on_attach(client, bufnr)
+         client.server_capabilities.semanticTokensProvider = nil
+         require("lsp-inlayhints").on_attach(client, bufnr)
+      end
+
       -- vim.keymap.set('n', '<leader>f', function()
       --    vim.notify('Format the file on your own', vim.log.levels.ERROR)
       -- end, { silent = true })
 
       lspconfig['pylsp'].setup({
          capabilities = capabilities,
+         on_attach = on_attach,
 
          settings = {
             pylsp = {
@@ -71,19 +77,23 @@ return {
 
       lspconfig['pyright'].setup({
          capabilities = capabilities,
+         on_attach = on_attach,
       })
 
       lspconfig['clangd'].setup({
          capabilities = capabilities,
+         on_attach = on_attach,
          cmd = { 'clangd', '--enable-config' }
       })
 
       lspconfig['hls'].setup({
          capabilities = capabilities,
+         on_attach = on_attach,
       })
 
       lspconfig['lua_ls'].setup({
          capabilities = capabilities,
+         on_attach = on_attach,
 
          settings = {
             Lua = {
