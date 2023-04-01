@@ -66,6 +66,10 @@ return {
          settings = {
             pylsp = {
                plugins = {
+                  rope = {
+                     enabled = true,
+                  },
+
                   pycodestyle = {
                      ignore = { 'E501' },
                      maxLineLength = 120,
@@ -73,11 +77,6 @@ return {
                },
             },
          },
-      })
-
-      lspconfig['pyright'].setup({
-         capabilities = capabilities,
-         on_attach = on_attach,
       })
 
       lspconfig['clangd'].setup({
