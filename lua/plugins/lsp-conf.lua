@@ -6,10 +6,37 @@ return {
       'folke/neodev.nvim',
       'hrsh7th/cmp-nvim-lsp-signature-help',
       'lvimuser/lsp-inlayhints.nvim',
+
+      {
+         'SmiteshP/nvim-navbuddy',
+
+         dependencies = {
+            'SmiteshP/nvim-navic',
+            'MunifTanjim/nui.nvim'
+         },
+
+         opts = {
+            window = {
+               border = 'rounded',
+               size = "50%",
+               position = "50%",
+            },
+
+            lsp = {
+               auto_attach = true,
+            },
+
+            source_buffer = {
+               highlight = true,
+               reorient = "none",
+            },
+         }
+      }
    },
 
    config = function()
       local lspconfig = require('lspconfig')
+      local navbuddy = require('nvim-navbuddy')
       local cmp_nvim_lsp = require('cmp_nvim_lsp')
       local capabilities = cmp_nvim_lsp.default_capabilities()
       capabilities.textDocument.completion.completionItem.snippetSupport = true
@@ -50,9 +77,13 @@ return {
       vim.keymap.set('n', '<leader>f', function() vim.lsp.buf.format({ async = true }) end,
       { silent = true, desc = 'Format buffer' })
 
+      vim.keymap.set('n', '<leader>u', navbuddy.open, { silent = true, desc = 'Open navbuddy' })
+
       local function on_attach(client, bufnr)
          client.server_capabilities.semanticTokensProvider = nil
-         require("lsp-inlayhints").on_attach(client, bufnr)
+         -- no need for that
+         -- navbuddy.attach(client, bufnr)
+         require('lsp-inlayhints').on_attach(client, bufnr)
       end
 
       -- vim.keymap.set('n', '<leader>f', function()
@@ -105,7 +136,7 @@ return {
                },
 
                workspace = {
-                  library = vim.api.nvim_get_runtime_file("", true),
+                  library = vim.api.nvim_get_runtime_file('', true),
                   checkThirdParty = false,
                },
 
