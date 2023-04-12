@@ -44,10 +44,22 @@ return {
             }
          },
 
-         sections = {
+         sections = {},
+
+         inactive_sections = {
+            lualine_a = {},
+            lualine_b = {},
+            lualine_c = { 'filename' },
+            lualine_x = { 'location' },
+            lualine_y = {},
+            lualine_z = {},
+         },
+
+         tabline = {
             lualine_a = {
                {
-                  "os.date('%H:%M')",
+                  'datetime',
+                  style = '%H:%M',
                   color = 'lualine_c_normal',
                },
 
@@ -76,23 +88,11 @@ return {
             },
 
             lualine_b = {},
-
             lualine_c = {},
             lualine_x = { 'diagnostics', 'diff', 'branch' },
             lualine_y = {},
             lualine_z = { 'mode' },
          },
-
-         inactive_sections = {
-            lualine_a = {},
-            lualine_b = {},
-            lualine_c = { 'filename' },
-            lualine_x = { 'location' },
-            lualine_y = {},
-            lualine_z = {},
-         },
-
-         tabline = {},
 
          winbar = {},
          inactive_winbar = {},

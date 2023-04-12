@@ -1,7 +1,7 @@
 local options = {
    backup = false, -- creates a backup file
    -- clipboard = 'unnamedplus',                         -- allows neovim to access the system clipboard
-   cmdheight = 2, -- more space in the neovim command line for displaying messages
+   cmdheight = 1, -- more space in the neovim command line for displaying messages
    completeopt = { 'menu', 'menuone', 'noselect' }, -- mostly just for cmp
    conceallevel = 0, -- so that `` is visible in markdown files
    fileencoding = 'utf-8', -- the encoding written to a file
@@ -38,10 +38,13 @@ local options = {
    shell = 'bash', -- the default shell that some neovim commands will use
    title = true, -- set the title of window to the value of the titlestring
    titlestring = 'Not Emacs', -- what the title of the window will be set to
-   showtabline = 1,
+   -- showtabline = 1,
    background = 'dark',
    -- spell = true,
    -- spelloptions = 'camel',
+   ruler = false,
+   showcmd = false,
+   laststatus = 0,
 }
 
 vim.opt.shortmess:append 'c'
