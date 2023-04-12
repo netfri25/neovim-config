@@ -47,6 +47,11 @@ return {
          sections = {
             lualine_a = {
                {
+                  "os.date('%H:%M')",
+                  color = 'lualine_c_normal',
+               },
+
+               {
                   require('battery').get_status_line,
                   color = 'lualine_c_normal',
                },
