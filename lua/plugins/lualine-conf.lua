@@ -44,7 +44,7 @@ return {
             }
          },
 
-         sections = {},
+         tabline = {},
 
          inactive_sections = {
             lualine_a = {},
@@ -55,7 +55,7 @@ return {
             lualine_z = {},
          },
 
-         tabline = {
+         sections = {
             lualine_a = {
                {
                   'datetime',
