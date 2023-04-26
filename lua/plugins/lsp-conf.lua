@@ -99,7 +99,7 @@ return {
                   },
 
                   pycodestyle = {
-                     ignore = { 'E501' },
+                     ignore = { 'E501', 'E226' },
                      maxLineLength = 120,
                   },
                },
