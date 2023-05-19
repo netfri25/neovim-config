@@ -82,7 +82,14 @@ return {
 
          filters = {
             dotfiles = false,
-            custom = { '^.git$', '^.gitignore$', '^target$', '^.mypy_cache$' },
+            custom = {
+               '^.git$',
+               '^.gitignore$',
+               '^target$',
+               '^.mypy_cache$',
+               '^__pycache__$',
+               '^.ruff_cache$',
+            },
          },
 
          actions = {
