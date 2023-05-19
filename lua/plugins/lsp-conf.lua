@@ -83,32 +83,17 @@ return {
          require('lsp-inlayhints').on_attach(client, bufnr)
       end
 
-      -- vim.keymap.set('n', '<leader>f', function()
-      --    vim.notify('Format the file on your own', vim.log.levels.ERROR)
-      -- end, { silent = true })
-
-      lspconfig['pylsp'].setup({
+      lspconfig['pyright'].setup({
          capabilities = capabilities,
          on_attach = on_attach,
+      })
 
-         settings = {
-            pylsp = {
-               plugins = {
-                  rope = {
-                     enabled = true,
-                  },
-
-                  pycodestyle = {
-                     ignore = { 'E501', 'E226' },
-                     maxLineLength = 120,
-                  },
-
-                  mypy = {
-                     enabled = true,
-                  },
-               },
-            },
-         },
+      lspconfig['ruff_lsp'].setup({
+         capabilities = capabilities,
+         on_attach = function(client, _)
+            -- use pyright as the hover provider
+            client.server_capabilities.hoverProvider = false
+         end,
       })
 
       lspconfig['clangd'].setup({
