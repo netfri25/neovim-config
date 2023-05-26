@@ -84,15 +84,28 @@ return {
       end
 
       lspconfig['pyright'].setup({
-         capabilities = capabilities,
-         on_attach = on_attach,
+         -- capabilities = capabilities,
+         capabilities = (function()
+            local this_capabilities = vim.lsp.protocol.make_client_capabilities()
+            this_capabilities.textDocument.completion.completionItem.snippetSupport = true
+            this_capabilities.textDocument.publishDiagnostics.tagSupport.valueSet = { 2 }
+            return this_capabilities
+         end)(),
+
+         on_attach = function(client, bufnr)
+            client.server_capabilities.publish_diagnostics = false
+            on_attach(client, bufnr)
+         end,
+
+         settings = {}
       })
 
       lspconfig['ruff_lsp'].setup({
          capabilities = capabilities,
-         on_attach = function(client, _)
+         on_attach = function(client, bufnr)
             -- use pyright as the hover provider
             client.server_capabilities.hoverProvider = false
+            on_attach(client, bufnr)
          end,
       })
 
