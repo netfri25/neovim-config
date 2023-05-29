@@ -73,6 +73,7 @@ return {
 
                   filetype_names = {
                      NvimTree = 'File explorer',
+                     oil = 'Oil',
                      FTerm = 'Terminal',
                   },
 

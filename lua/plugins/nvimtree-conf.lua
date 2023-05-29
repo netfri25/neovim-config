@@ -63,6 +63,7 @@ end
 return {
    'nvim-tree/nvim-tree.lua',
    lazy = false,
+   enabled = false,
 
    keys = {
       { '<leader>t', '<cmd>NvimTreeToggle<cr>', silent = true, desc = 'Toggle file browser' },
