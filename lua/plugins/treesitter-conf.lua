@@ -2,6 +2,7 @@ return {
    'nvim-treesitter/nvim-treesitter',
 
    lazy = false,
+   enabled = vim.loop.os_uname().sysname == "Linux",
 
    dependencies = {
       'nvim-treesitter/nvim-treesitter-textobjects',
