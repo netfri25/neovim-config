@@ -44,7 +44,7 @@ return {
       skip_confirm_for_simple_edits = true,
 
       -- Deleted files will be removed with the trash_command (below).
-      delete_to_trash = true,
+      delete_to_trash = vim.loop.os_uname().sysname == "Linux",
 
       -- Change this to customize the command used when deleting to trash
       trash_command = "trash-put",
