@@ -2,6 +2,7 @@ return {
    'j-hui/fidget.nvim',
 
    event = 'VimEnter',
+   tag = 'legacy',
 
    dependencies = {
       'neovim/nvim-lspconfig'
