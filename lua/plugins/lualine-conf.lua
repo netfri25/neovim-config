@@ -75,6 +75,7 @@ return {
                      NvimTree = 'File explorer',
                      oil = 'Oil',
                      FTerm = 'Terminal',
+                     CodeRunner = 'CodeRunner',
                   },
 
                   symbols = {
