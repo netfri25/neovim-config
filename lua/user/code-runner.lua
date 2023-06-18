@@ -8,7 +8,7 @@ local compile_command = {
 }
 
 local run_command = {
-   rust = 'cargo run',
+   rust = '~/.cargo-build/debug/{rusty}',
    c = './{noext}',
    python = 'python {filepath}',
 }
@@ -19,6 +19,7 @@ local expansions = {
    file = '%:t',
    noext = '%:r',
    ext = '%:e',
+   rusty = '%:p:h:h:t'
 }
 
 local function parse_command(command)
@@ -52,6 +53,10 @@ local function create_window()
       col = vim.fn.floor((width - win_w) / 2),
    }
    local win_id = vim.api.nvim_open_win(buf_id, true, win_options)
+   vim.api.nvim_create_autocmd('WinClosed', {
+      buffer = buf_id,
+      command = 'bd!',
+   })
    return win_id
 end
 
