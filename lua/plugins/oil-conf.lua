@@ -108,7 +108,7 @@ return {
          max_height = 0,
          border = "rounded",
          win_options = {
-            winblend = 10,
+            winblend = vim.g.neovide and 30 or 0,
          },
       },
       -- Configuration for the actions floating preview window

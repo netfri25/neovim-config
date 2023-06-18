@@ -4,6 +4,7 @@ vim.api.nvim_create_autocmd('ColorScheme', {
       vim.api.nvim_set_hl(0, 'CursorLine', {})
       vim.api.nvim_set_hl(0, 'FloatBorder', {})
       vim.api.nvim_set_hl(0, 'CursorLineNr', { link = 'Special' })
+      vim.api.nvim_set_hl(0, 'LspInlayHint', { link = 'NonText' })
    end
 })
 

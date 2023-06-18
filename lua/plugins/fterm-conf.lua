@@ -16,6 +16,8 @@ return {
       border = 'rounded',
       cmd = '/home/netfri/.cargo/bin/nu',
       auto_close = true,
+      hl = 'NormalFloat',
+      blend = vim.g.neovide and 30 or 0,
 
       dimensions = {
          width = 0.8,
