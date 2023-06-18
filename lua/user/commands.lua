@@ -1,13 +1,13 @@
 vim.api.nvim_create_autocmd('Filetype', {
-   desc = 'Specific filetype indentation',
-   pattern = 'haskell',
-   command = 'setlocal shiftwidth=2 | setlocal softtabstop=2 | setlocal expandtab',
+   desc = 'Comment highlight for json files',
+   pattern = 'json',
+   command = 'syntax match Comment +\\/\\/.\\+$+',
 })
 
 vim.api.nvim_create_autocmd('Filetype', {
    desc = 'Specific filetype indentation',
-   pattern = 'json',
-   command = 'syntax match Comment +\\/\\/.\\+$+',
+   pattern = 'haskell',
+   command = 'setlocal shiftwidth=2 | setlocal softtabstop=2 | setlocal expandtab',
 })
 
 vim.api.nvim_create_autocmd('Filetype', {
