@@ -25,6 +25,7 @@ return {
          SignColumn = { link = 'Background' },
          LspInlayHint = { fg = '#666666', italic = true },
          MatchParen = { link = 'GruvboxOrange' },
+         NormalFloat = { link = 'Normal' },
 
          GruvboxRedUnderline = { underline = true, undercurl = false },
          GruvboxGreenUnderline = { underline = true, undercurl = false },
