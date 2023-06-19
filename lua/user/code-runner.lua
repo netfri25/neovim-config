@@ -69,6 +69,7 @@ local function execute_command(win_id, command)
    vim.bo.filetype = 'CodeRunner'
    vim.api.nvim_win_set_option(win_id, 'winblend', vim.g.neovide and 30 or 0)
    vim.keymap.set('n', 'q', '<cmd>bdelete!<cr>', { buffer = true })
+   vim.keymap.set('n', '<esc>', '<cmd>bdelete!<cr>', { buffer = true })
    vim.api.nvim_buf_set_option(buf_id, 'bufhidden', 'hide')
    -- vim.cmd[[file something]]
    -- vim.api.nvim_buf_set_name(buf_id, "something")
