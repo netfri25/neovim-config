@@ -1,5 +1,6 @@
 return {
    'justinhj/battery.nvim',
+   lazy = true,
 
    -- also needs 'acpi' installed
    dependencies = {

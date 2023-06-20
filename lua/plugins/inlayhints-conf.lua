@@ -1,5 +1,9 @@
 return {
    'lvimuser/lsp-inlayhints.nvim',
+   lazy = true,
+
+   event = 'LspAttach',
+
    opts = {
       inlay_hints = {
          parameter_hints = {

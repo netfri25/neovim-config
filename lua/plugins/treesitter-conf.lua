@@ -1,8 +1,31 @@
+local filetypes = {
+   'c',
+   'cpp',
+   'vim',
+   'lua',
+   'rust',
+   'json',
+   'java',
+   'toml',
+   'fish',
+   -- 'help',
+   'ocaml',
+   'python',
+   'comment',
+   'haskell',
+   'markdown',
+   'gitcommit',
+   'git_rebase',
+   'gitattributes',
+}
+
 return {
    'nvim-treesitter/nvim-treesitter',
 
    lazy = false,
    enabled = vim.loop.os_uname().sysname == "Linux",
+
+   ft = filetypes,
 
    dependencies = {
       'nvim-treesitter/nvim-treesitter-textobjects',
@@ -16,26 +39,7 @@ return {
 
       tree.setup({
          ignore_install = { 'haskell' },
-         ensure_installed = {
-            'c',
-            'cpp',
-            'vim',
-            'lua',
-            'rust',
-            'json',
-            'java',
-            'toml',
-            'fish',
-            'help',
-            'ocaml',
-            'python',
-            'comment',
-            -- 'haskell',
-            'markdown',
-            'gitcommit',
-            'git_rebase',
-            'gitattributes',
-         },
+         ensure_installed = filetypes,
 
          sync_install = false,
          auto_install = true,

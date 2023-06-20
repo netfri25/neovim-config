@@ -1,6 +1,6 @@
 return {
    'chrisgrieser/nvim-various-textobjs',
-   lazy = false,
+   lazy = true,
    config = function()
       local textobjs = require('various-textobjs')
 

@@ -6,6 +6,8 @@ return {
       'folke/neodev.nvim',
       'hrsh7th/cmp-nvim-lsp-signature-help',
       'lvimuser/lsp-inlayhints.nvim',
+      'hrsh7th/nvim-cmp',
+      'hrsh7th/cmp-nvim-lsp',
 
       {
          'SmiteshP/nvim-navbuddy',
