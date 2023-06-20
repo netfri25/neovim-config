@@ -22,4 +22,8 @@ return require('lazy').setup('plugins', {
    defaults = {
       lazy = false,
    },
+
+   ui = {
+      border = 'rounded',
+   }
 })
