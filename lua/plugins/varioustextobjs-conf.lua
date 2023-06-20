@@ -1,6 +1,7 @@
 return {
    'chrisgrieser/nvim-various-textobjs',
-   lazy = true,
+   lazy = false,
+
    config = function()
       local textobjs = require('various-textobjs')
 
@@ -23,6 +24,13 @@ return {
       -- Subword
       vim.keymap.set({ 'o', 'x' }, 'is', function() textobjs.subword(true) end)
       vim.keymap.set({ 'o', 'x' }, 'as', function() textobjs.subword(false) end)
+
+      -- Chain Member
+      vim.keymap.set({ 'o', 'x' }, 'im', function() textobjs.chainMember(true) end)
+      vim.keymap.set({ 'o', 'x' }, 'am', function() textobjs.chainMember(false) end)
+
+      -- Url
+      vim.keymap.set({ 'o', 'x' }, 'as', function() textobjs.url() end)
 
       -- Entire buffer
       vim.keymap.set({ 'o', 'x' }, 'gG', function() textobjs.entireBuffer() end)
