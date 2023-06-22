@@ -15,7 +15,7 @@ return {
    opts = {
       ft = 'FTerm',
       border = 'rounded',
-      cmd = '/home/netfri/.cargo/bin/nu',
+      -- cmd = '/home/netfri/.cargo/bin/nu',
       auto_close = true,
       hl = 'NormalFloat',
       blend = vim.g.neovide and 30 or 0,

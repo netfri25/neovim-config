@@ -1,8 +1,12 @@
 return {
    'ckolkey/ts-node-action',
+   lazy = true,
+
    dependencies = { 'nvim-treesitter' },
-   opts = function()
-      require('ts-node-action').setup({})
-      vim.keymap.set('n', '<leader>a', require('ts-node-action').node_action, { desc = 'Trigger Node Action' })
-   end
+
+   keys = {
+      { '<leader>a', function() require('ts-node-action').node_action() end, desc = 'Trigger node action' }
+   },
+
+   config = true,
 }

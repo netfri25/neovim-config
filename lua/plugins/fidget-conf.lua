@@ -2,7 +2,7 @@ return {
    'j-hui/fidget.nvim',
    lazy = true,
 
-   event = 'VimEnter',
+   event = 'LspAttach',
    tag = 'legacy',
 
    dependencies = {

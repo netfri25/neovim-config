@@ -3,17 +3,13 @@ return {
    lazy = false,
 
    dependencies = {
-      'folke/neodev.nvim',
       'hrsh7th/cmp-nvim-lsp-signature-help',
-      'lvimuser/lsp-inlayhints.nvim',
       'hrsh7th/nvim-cmp',
       'hrsh7th/cmp-nvim-lsp',
-      'SmiteshP/nvim-navbuddy',
    },
 
    config = function()
       local lspconfig = require('lspconfig')
-      local navbuddy = require('nvim-navbuddy')
       local cmp_nvim_lsp = require('cmp_nvim_lsp')
       local capabilities = cmp_nvim_lsp.default_capabilities()
       capabilities.textDocument.completion.completionItem.snippetSupport = true
@@ -57,7 +53,7 @@ return {
          vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, { silent = true, desc = 'Code actions' })
          vim.keymap.set('n', 'gr', vim.lsp.buf.references, { silent = true, desc = 'Show references' })
          vim.keymap.set('n', '<leader>f', function() vim.lsp.buf.format({ async = true }) end, { silent = true, desc = 'Format buffer' })
-         vim.keymap.set('n', '<leader>u', navbuddy.open, { silent = true, desc = 'Open navbuddy' })
+         vim.keymap.set('n', '<leader>u', require('nvim-navbuddy').open, { silent = true, desc = 'Open navbuddy' })
       end
 
       lspconfig['pyright'].setup({
