@@ -49,9 +49,6 @@ keymap('i', '<A-<>', '<><left>', { silent = true, desc = 'Autocomplete <>' })
 keymap('v', '<', '<gv', { silent = true, desc = 'Indent left' })
 keymap('v', '>', '>gv', { silent = true, desc = 'Indent right' })
 
--- Edit without saving the deleted text
-keymap('v', 'c', '"_di', { silent = true, desc = 'Change' })
-
 -- Redo on shift-u instead of alt-r
 keymap('v', 'U', '<A-r>', { silent = true, desc = 'Undo' })
 
