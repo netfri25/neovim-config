@@ -36,7 +36,7 @@ return {
       local tree = require('nvim-treesitter.configs')
 
       tree.setup({
-         ignore_install = { 'haskell' },
+         ignore_install = {},
          ensure_installed = filetypes,
 
          sync_install = false,
