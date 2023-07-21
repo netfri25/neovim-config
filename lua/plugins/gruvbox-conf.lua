@@ -5,7 +5,7 @@ return {
    opts = {
       undercurl = true,
       underline = true,
-      bold = false,
+      bold = true,
       italic = {
          strings = false,
          comments = true,
