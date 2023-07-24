@@ -44,7 +44,7 @@ local options = {
    -- spelloptions = 'camel',
    ruler = false,
    showcmd = false,
-   autochdir = true,
+   autochdir = false,
 }
 
 vim.opt.shortmess:append 'c'
