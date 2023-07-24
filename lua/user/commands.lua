@@ -18,7 +18,7 @@ vim.api.nvim_create_autocmd('Filetype', {
 
 vim.api.nvim_create_autocmd('Filetype', {
    desc = 'Specific filetype indentation',
-   pattern = 'c | cpp',
+   pattern = 'c,cpp',
    command = 'setlocal shiftwidth=4 | setlocal tabstop=4',
 })
 
@@ -26,6 +26,12 @@ vim.api.nvim_create_autocmd('Filetype', {
    desc = 'Spell checking in gitcommit',
    pattern = 'gitcommit',
    command = 'set spell',
+})
+
+vim.api.nvim_create_autocmd('FileType', {
+   desc = 'Comment string for c & cpp files',
+   pattern = 'c,cpp',
+   command = 'setlocal commentstring=\\/\\/\\ %s',
 })
 
 vim.api.nvim_create_autocmd('Filetype', {
