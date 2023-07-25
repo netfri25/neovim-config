@@ -1,7 +1,7 @@
 return {
    'mfussenegger/nvim-dap',
    lazy = true,
-   ft = { 'c', 'cpp', 'rust' },
+   -- ft = { 'c', 'cpp', 'rust' },
 
    keys = {
       { '<leader>db', function() require('dap').toggle_breakpoint() end, desc = "dap toggle breakpoint" },

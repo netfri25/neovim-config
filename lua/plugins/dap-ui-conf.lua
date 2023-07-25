@@ -2,8 +2,7 @@ return {
    'rcarriga/nvim-dap-ui',
    dependencies = { 'mfussenegger/nvim-dap' },
    lazy = true,
-   event = 'VeryLazy',
-   ft = { 'c', 'cpp', 'rust' },
+   -- ft = { 'c', 'cpp', 'rust' },
 
    keys = {
       { '<leader>do', function() require('dapui').toggle() end, desc = "Toggle dap-ui" },

@@ -1,7 +1,6 @@
 return {
    'SmiteshP/nvim-navbuddy',
    lazy = true,
-
    event = 'LspAttach',
 
    dependencies = {
