@@ -111,6 +111,12 @@ return {
       lspconfig['hls'].setup({
          capabilities = capabilities,
          on_attach = on_attach,
+
+         settings = {
+            haskell = {
+               formattingProvider = 'stylish-haskell'
+            }
+         }
       })
 
       lspconfig['lua_ls'].setup({
