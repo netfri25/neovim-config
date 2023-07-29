@@ -114,6 +114,7 @@ return {
 
          settings = {
             haskell = {
+               maxCompletions = 200,
                formattingProvider = 'stylish-haskell'
             }
          }
