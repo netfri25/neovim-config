@@ -1,6 +1,6 @@
 -- vim.g.neovide_cursor_vfx_mode = 'ripple'
 vim.g.neovide_refresh_rate = 120
-vim.g.neovide_fullscreen = true
+vim.g.neovide_fullscreen = false
 vim.g.neovide_no_idle = false
 vim.g.neovide_refresh_rate_idle = 5
 vim.g.neovide_scroll_animation_length = 0.5
@@ -11,14 +11,20 @@ vim.g.neovide_cursor_animation_length = 0.08
 vim.g.neovide_cursor_vfx_particle_lifetime = 0.8
 vim.g.neovide_profiler = false
 
-vim.g.gui_font_default_size = 15
+vim.g.gui_font_default_size = 11
 vim.g.gui_font_size = vim.g.gui_font_default_size
 vim.g.gui_font_face = 'Iosevka Custom'
-vim.g.gui_antialiasing = 'subpixelantialias'
-vim.g.gui_hinting = 'normal'
+vim.g.gui_antialiasing = 'antialias'
+vim.g.gui_hinting = 'none'
 
 RefreshGuiFont = function()
-   vim.opt.guifont = string.format('%s:h%s:#e-%s:#h-%s', vim.g.gui_font_face, vim.g.gui_font_size, vim.g.gui_antialiasing, vim.g.gui_hinting)
+   vim.opt.guifont = string.format(
+      '%s:h%s:#e-%s:#h-%s',
+      vim.g.gui_font_face,
+      vim.g.gui_font_size,
+      vim.g.gui_antialiasing,
+      vim.g.gui_hinting
+   )
 end
 
 ResizeGuiFont = function(delta)
@@ -35,5 +41,5 @@ end
 ResetGuiFont()
 
 -- Keymaps
-vim.keymap.set({ 'n', 'i', 'v' }, '<C-=>', function() ResizeGuiFont(2) end, { silent = true, desc = 'Decrease GUI font size' })
-vim.keymap.set({ 'n', 'i', 'v' }, '<C-->', function() ResizeGuiFont(-2) end, { silent = true, desc = 'Increase GUI font size' })
+vim.keymap.set({ 'n', 'i', 'v' }, '<C-=>', function() ResizeGuiFont(1) end, { silent = true, desc = 'Decrease GUI font size' })
+vim.keymap.set({ 'n', 'i', 'v' }, '<C-->', function() ResizeGuiFont(-1) end, { silent = true, desc = 'Increase GUI font size' })
