@@ -49,6 +49,8 @@ local options = {
 
 vim.opt.shortmess:append 'c'
 
+vim.g.filetype_pl = 'prolog'
+
 for k, v in pairs(options) do
    vim.opt[k] = v
 end
