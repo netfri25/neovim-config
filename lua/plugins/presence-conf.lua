@@ -1,17 +1,30 @@
--- Discord presence with a rickroll button
+local function fix_repo_url(url)
+   return url:gsub('git@github.com:', 'https://github.com/', 1)
+end
+
+local function buttons(_, repo_url)
+   local t = { { label = 'Check out this cute dog!', url = 'https://youtu.be/SHRAEqxoN0c?si=f0Xru_zER7SoZPDT' } }
+   if repo_url then
+      repo_url = repo_url:gsub('git@github.com:', 'https://github.com/', 1)
+      table.insert(t, { label = 'View repository', url = fix_repo_url(repo_url) })
+   end
+   return t
+end
+
 return {
    'andweeb/presence.nvim',
    lazy = false,
+   priority = 500,
    opts = {
       auto_update = true,
       neovim_image_text = 'We\'re no stranges to love\nYou know the rules and so do I',
-      main_image = 'neovim',
+      main_image = 'file',
       client_id = '793271441293967371',
       log_level = nil,
       debounce_time = 10,
       enable_line_number = false,
       blacklist = {},
-      buttons = { { label = 'Check out this cute dog!', url = 'https://rr.noordstar.me/0ee63750' } },
+      buttons = buttons,
 
       file_assets = {},
 
