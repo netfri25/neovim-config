@@ -60,5 +60,5 @@ keymap('x', '<A-j>', ':move \'>+1<cr>gv-gv', { silent = true, desc = 'Move text'
 keymap('x', '<A-k>', ':move \'<-2<cr>gv-gv', { silent = true, desc = 'Move text' })
 
 -- Quickfix list
-keymap('n', "<c-n>", "<cmd>cnext<cr>", { silent = true, desc = "Next item in the quickfix list" })
-keymap('n', "<c-p>", "<cmd>cprev<cr>", { silent = true, desc = "Previous item in the quickfix list" })
+keymap('n', "<c-n>", "<cmd>lnext<cr>", { silent = true, desc = "Next item in the quickfix list" })
+keymap('n', "<c-p>", "<cmd>lprev<cr>", { silent = true, desc = "Previous item in the quickfix list" })
