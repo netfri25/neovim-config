@@ -33,10 +33,6 @@ return {
       },
       -- Allows a different telescope sorter. Defaults to 'fuzzy_with_index_bias'. The example below will use the native fzf
       -- sorter instead. By default, this function returns `nil`.
-      telescope_sorter = function()
-         return require("telescope").extensions.fzf.native_fzf_sorter()
-      end,
-      -- Persist the values of switches/options within and across sessions
       remember_settings = true,
       -- Scope persisted settings on a per-project basis
       use_per_project_settings = true,
@@ -57,32 +53,32 @@ return {
       -- Sorting keys: https://git-scm.com/docs/git-for-each-ref#_options
       sort_branches = "-committerdate",
       -- Change the default way of opening neogit
-      kind = "tab",
+      kind = "replace",
       -- The time after which an output console is shown for slow running commands
       console_timeout = 2000,
       -- Automatically show console if a command takes more than console_timeout milliseconds
       auto_show_console = true,
       status = {
-         recent_commit_count = 10,
+         recent_commit_count = 100,
       },
       commit_editor = {
          kind = "split",
       },
       commit_select_view = {
-         kind = "tab",
+         kind = "replace",
       },
       commit_view = {
          kind = "vsplit",
          verify_commit = os.execute("which gpg") == 0, -- Can be set to true or false, otherwise we try to find the binary
       },
       log_view = {
-         kind = "tab",
+         kind = "replace",
       },
       rebase_editor = {
          kind = "split",
       },
       reflog_view = {
-         kind = "tab",
+         kind = "replace",
       },
       merge_editor = {
          kind = "split",
