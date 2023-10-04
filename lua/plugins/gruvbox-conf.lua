@@ -4,7 +4,6 @@ return {
 
    config = function()
       local contrast = 'hard' -- can be 'hard', 'soft' or empty string
-      local colors = require("gruvbox.palette").get_base_colors(vim.o.background, contrast)
       require('gruvbox').setup({
          undercurl = true,
          underline = true,
@@ -42,10 +41,6 @@ return {
             PmenuSel = { link = 'Background' },
             PmenuSbar = { link = 'Background' },
             PmenuThumb = { link = 'Background' },
-
-            GitSignsAdd = { fg = colors.green, bg = colors.bg0 },
-            GitSignsChange = { fg = colors.aqua, bg = colors.bg0 },
-            GitSignsDelete = { fg = colors.red, bg = colors.bg0 },
 
             DiffAdd = { link = 'GruvboxGreenSign' },
             DiffDelete = { link = 'GruvboxRedSign' },
