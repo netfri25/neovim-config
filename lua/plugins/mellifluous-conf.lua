@@ -1,6 +1,6 @@
 return {
    'ramojus/mellifluous.nvim',
-   lazy = true,
+   lazy = false,
 
    dependencies = {
       'rktjmp/lush.nvim'
