@@ -64,35 +64,25 @@ return {
          end)(),
 
          on_attach = function(client, bufnr)
-            client.server_capabilities.publish_diagnostics = false
-            client.server_capabilities.hoverProvider = false
+            client.server_capabilities.publish_diagnostics = true
+            client.server_capabilities.hoverProvider = true
             on_attach(client, bufnr)
          end,
       })
 
-      -- lspconfig['ruff_lsp'].setup({
-      --    capabilities = capabilities,
-      --    on_attach = function(client, bufnr)
-      --       -- use pyright as the hover provider
-      --       client.server_capabilities.hoverProvider = false
-      --       on_attach(client, bufnr)
-      --    end,
-      -- })
-
       lspconfig['pylsp'].setup({
          capabilities = capabilities,
-         on_attach = on_attach,
+         on_attach = function(client, bufnr)
+            client.server_capabilities.publish_diagnostics = true
+            client.server_capabilities.hoverProvider = false
+            on_attach(client, bufnr)
+         end,
          settings = {
             pylsp = {
                plugins = {
-                  ruff = {
-                     enabled = true,
-                     ignore = { 'E501', 'E226', 'B011', 'Q000' },
-                  },
-
                   pyflakes = { enabled = true },
-                  mccabe = { enabled = true },
-                  pycodestyle = { enabled = true, ignore = { 'E501' } },
+                  mccabe = { enabled = false },
+                  pycodestyle = { enabled = false, ignore = { 'E501' } },
                   pydocstyle = { enabled = false },
                   autopep8 = { enabled = true },
                   flake8 = { enabled = false },
