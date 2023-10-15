@@ -13,7 +13,6 @@ return {
       local lspconfig = require('lspconfig')
       local cmp_nvim_lsp = require('cmp_nvim_lsp')
       local capabilities = cmp_nvim_lsp.default_capabilities()
-      capabilities.textDocument.completion.completionItem.snippetSupport = true
 
       vim.diagnostic.config({
          virtual_text = false,
@@ -23,7 +22,7 @@ return {
          severity_sort = true,
 
          float = {
-            focusable = false,
+            focusable = true,
             style = 'minimal',
             border = 'rounded',
             header = '',
@@ -36,7 +35,7 @@ return {
 
 
       local function on_attach(client, bufnr)
-         client.server_capabilities.semanticTokensProvider = nil
+         -- client.server_capabilities.semanticTokensProvider = nil
          -- no need for that
          -- navbuddy.attach(client, bufnr)
          require('lsp-inlayhints').on_attach(client, bufnr)
@@ -75,6 +74,7 @@ return {
          on_attach = function(client, bufnr)
             client.server_capabilities.publish_diagnostics = true
             client.server_capabilities.hoverProvider = false
+            client.server_capabilities.completion = false
             on_attach(client, bufnr)
          end,
          settings = {
