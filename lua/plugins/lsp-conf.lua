@@ -57,11 +57,7 @@ return {
       end
 
       lspconfig['pyright'].setup({
-         capabilities = (function()
-            local this_capabilities = vim.lsp.protocol.make_client_capabilities()
-            return this_capabilities
-         end)(),
-
+         capabilities = capabilities,
          on_attach = function(client, bufnr)
             client.server_capabilities.publish_diagnostics = true
             client.server_capabilities.hoverProvider = true
