@@ -132,7 +132,10 @@ return {
 
       lspconfig['prolog_ls'].setup({
          capabilities = capabilities,
-         on_attach = on_attach,
+         on_attach = function(client, bufnr)
+            client.server_capabilities.semanticTokensProvider = nil
+            on_attach(client, bufnr)
+         end,
       })
    end
 }
