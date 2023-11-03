@@ -53,8 +53,7 @@ vim.api.nvim_create_autocmd('Filetype', {
       })
    end
 })
-
-vim.api.nvim_create_autocmd('TermLeave,TermClose', {
+vim.api.nvim_create_autocmd({ 'TermLeave' ,'TermClose' }, {
    desc = 'Resets the scroll offset that the terminal buffer changes',
    callback = function()
       vim.o.scrolloff = 100
