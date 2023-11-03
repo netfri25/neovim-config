@@ -88,7 +88,7 @@ return {
          is_always_hidden = function(name, _)
             local custom_files = {
                ['.git'] = true,
-               ['.gitignore'] = true,
+               ['.gitignore'] = false,
                ['target'] = true,
                ['.mypy_cache'] = true,
                ['__pycache__'] = true,
