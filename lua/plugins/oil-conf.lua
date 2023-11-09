@@ -43,11 +43,7 @@ return {
       -- Skip the confirmation popup for simple operations
       skip_confirm_for_simple_edits = true,
 
-      -- Deleted files will be removed with the trash_command (below).
-      delete_to_trash = vim.loop.os_uname().sysname == "Linux",
-
-      -- Change this to customize the command used when deleting to trash
-      trash_command = "trash-put",
+      delete_to_trash = true,
 
       -- Selecting a new/moved/renamed file or directory will prompt you to save changes first
       prompt_save_on_select_new_entry = false,
