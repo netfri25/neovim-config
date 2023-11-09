@@ -1,7 +1,7 @@
 return {
    'echasnovski/mini.comment',
    keys = 'gc',
-   lazy = true,
+   lazy = false,
    opts = {
       -- Options which control module behavior
       options = {
