@@ -1,5 +1,6 @@
 return {
    'justinhj/battery.nvim',
+   commit = 'd1bb6290bc9653815c0a78da8b0fcd204efa8e6f',
    lazy = true,
 
    -- also needs 'acpi' installed
