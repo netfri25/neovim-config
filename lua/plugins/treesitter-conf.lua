@@ -1,5 +1,6 @@
 local filetypes = {
    'c',
+   'asm',
    'cpp',
    'vim',
    'lua',
@@ -28,12 +29,22 @@ return {
    dependencies = {
       'nvim-treesitter/nvim-treesitter-textobjects',
       'nvim-treesitter/playground',
+      'rush-rs/tree-sitter-asm',
    },
 
    build = ':TSUpdate',
 
    config = function()
       local tree = require('nvim-treesitter.configs')
+      local parsers = require('nvim-treesitter.parsers')
+
+      parsers.get_parser_configs().asm = {
+          install_info = {
+              url = 'https://github.com/rush-rs/tree-sitter-asm.git',
+              files = { 'src/parser.c' },
+              branch = 'main',
+          },
+      }
 
       tree.setup({
          ignore_install = {},
