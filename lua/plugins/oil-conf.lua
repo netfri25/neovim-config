@@ -3,7 +3,7 @@ return {
    lazy = false,
 
    keys = {
-      { '<leader>t', function() require('oil').open_float() end, desc = 'Open oil buffer in a new floating window' }
+      { '<leader>t', function() require('oil').open() end, desc = 'Open oil buffer in a new window' }
    },
 
    opts = {
