@@ -17,7 +17,7 @@ return {
       vim.diagnostic.config({
          virtual_text = false,
          virtual_lines = false, -- lsp_lines
-         update_in_insert = true,
+         update_in_insert = false,
          underline = true,
          severity_sort = true,
 
