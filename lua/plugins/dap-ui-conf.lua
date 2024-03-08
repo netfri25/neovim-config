@@ -1,3 +1,6 @@
+-- UI for dap.nvim
+-- really nice alternative for a gdb frontend
+
 return {
    'rcarriga/nvim-dap-ui',
    dependencies = { 'mfussenegger/nvim-dap' },

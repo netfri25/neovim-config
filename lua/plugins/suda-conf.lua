@@ -1,4 +1,5 @@
 -- another gigantic configuration file with a lot of effort put into it
+-- lets me write files using sudo
 return {
    'lambdalisue/suda.vim',
    lazy = true,

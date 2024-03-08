@@ -1,3 +1,5 @@
+-- Colorscheme
+
 return {
    'ellisonleao/gruvbox.nvim',
    lazy = false,

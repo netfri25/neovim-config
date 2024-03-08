@@ -1,3 +1,6 @@
+-- Completion plugin
+-- autocompletes from the current buffer, lsp, file in path etc
+
 return {
    'hrsh7th/nvim-cmp',
    lazy = false,

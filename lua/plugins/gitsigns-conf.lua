@@ -1,3 +1,6 @@
+-- Gitsignes plugin
+-- shows git diff colors next to the number column
+
 return {
    'lewis6991/gitsigns.nvim',
    lazy = false,

@@ -1,3 +1,6 @@
+-- really simple commenting plugin
+-- allowes me to press gc and then some text object to toggle a comment
+
 return {
    'echasnovski/mini.comment',
    keys = 'gc',

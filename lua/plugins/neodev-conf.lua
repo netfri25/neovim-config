@@ -1,3 +1,5 @@
+-- support for nvim lua api
+
 return {
    'folke/neodev.nvim',
    lazy = true,

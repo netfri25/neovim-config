@@ -1,3 +1,5 @@
+-- lsp items tree navigator
+
 return {
    'SmiteshP/nvim-navbuddy',
    lazy = true,

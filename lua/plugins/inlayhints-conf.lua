@@ -1,3 +1,6 @@
+-- Inlay hints
+-- displays type hints and some other information
+
 return {
    'lvimuser/lsp-inlayhints.nvim',
    lazy = true,

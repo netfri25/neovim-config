@@ -1,3 +1,5 @@
+-- zenmode for neovim
+
 return {
    "Pocco81/true-zen.nvim",
 

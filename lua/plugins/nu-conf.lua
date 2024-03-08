@@ -1,3 +1,5 @@
+-- small support for nushell script files
+
 return {
    'LhKipp/nvim-nu',
    lazy = true,

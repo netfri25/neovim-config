@@ -1,5 +1,5 @@
 -- another favourite plugin.
--- makes UI look so clean and nice
+-- makes UI look so clean and nice, with rounded edges for borders
 return {
    'hood/popui.nvim',
    lazy = false,

@@ -1,3 +1,5 @@
+-- small plugin that marks trailing whitespaces
+
 local enabled = true
 
 local function switch(fun1, fun2)

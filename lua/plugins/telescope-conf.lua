@@ -1,3 +1,7 @@
+-- fuzzy search for a lot of things
+-- I can use it to find files, live grep, navigate open buffers, see help tags,
+-- search keymaps, find lsp references and a whole lot more
+
 local function builtin() return require('telescope.builtin') end
 
 return {

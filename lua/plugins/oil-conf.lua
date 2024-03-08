@@ -1,3 +1,5 @@
+-- file explorer plugin that lets me do file operations like a regular neovim text operations
+
 return {
    'stevearc/oil.nvim',
    lazy = false,

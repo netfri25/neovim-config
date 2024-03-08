@@ -1,3 +1,6 @@
+-- Lsp
+-- configures lsp servers for neovim
+
 return {
    'neovim/nvim-lspconfig',
    lazy = false,

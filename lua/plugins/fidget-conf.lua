@@ -1,3 +1,6 @@
+-- Lsp progress
+-- shows small lsp progress on the bottom right corner
+
 return {
    'j-hui/fidget.nvim',
    lazy = true,

@@ -1,3 +1,5 @@
+-- treesitter for better text analysis, text objects and highlighting
+
 local filetypes = {
    'c',
    'asm',

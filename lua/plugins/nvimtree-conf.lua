@@ -1,3 +1,5 @@
+-- file tree explorer plugin (I'm using oil.nvim instead of this)
+
 local function on_attach(bufnr)
   local api = require('nvim-tree.api')
 

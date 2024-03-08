@@ -1,3 +1,5 @@
+-- kinda like magit but for neovim. such a great tool
+
 return {
    'NeogitOrg/neogit',
    dependencies = {

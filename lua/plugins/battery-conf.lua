@@ -1,9 +1,14 @@
+-- This plugins integrates with lualine.nvim
+-- It allows me to display the battery status & percentage in lualine
+-- I'm using a specific commit because newer commits broke this plugin (at least for me),
+-- since it was updated to use newer nerdfont and I don't want to update my font.
+
 return {
    'justinhj/battery.nvim',
    commit = 'd1bb6290bc9653815c0a78da8b0fcd204efa8e6f',
    lazy = true,
 
-   -- also needs 'acpi' installed
+   -- also needs 'acpi' cli tool installed
    dependencies = {
       'kyazdani42/nvim-web-devicons',
       'nvim-lua/plenary.nvim'

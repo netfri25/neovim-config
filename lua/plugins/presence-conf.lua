@@ -1,3 +1,5 @@
+-- discord presence plugin
+
 local function fix_repo_url(url)
    return url:gsub('git@github.com:', 'https://github.com/', 1)
 end

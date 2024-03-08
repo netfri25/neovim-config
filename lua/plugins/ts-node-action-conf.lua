@@ -1,3 +1,5 @@
+-- do a treesitter action on some node
+
 return {
    'ckolkey/ts-node-action',
    lazy = true,

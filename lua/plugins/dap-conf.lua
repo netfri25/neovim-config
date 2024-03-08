@@ -1,3 +1,6 @@
+-- Debugger Adapter Protocol plugin
+-- integrates with debuggers
+
 return {
    'mfussenegger/nvim-dap',
    lazy = true,

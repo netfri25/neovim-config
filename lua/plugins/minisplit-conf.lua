@@ -1,3 +1,5 @@
+-- simple plugin for split/join brackets
+
 return {
    'echasnovski/mini.splitjoin',
    keys = 'gs',
