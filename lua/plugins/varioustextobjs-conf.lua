@@ -7,27 +7,21 @@ return {
 
       textobjs.setup({ useDefaultKeymaps = false })
 
-      -- Indentation
-      vim.keymap.set({ 'o', 'x' }, 'ii', function() textobjs.indentation(true, true) end)
-      vim.keymap.set({ 'o', 'x' }, 'ai', function() textobjs.indentation(false, true) end)
-      vim.keymap.set({ 'o', 'x' }, 'aI', function() textobjs.indentation(false, false) end)
-      vim.keymap.set({ 'o', 'x' }, 'iI', function() textobjs.indentation(true, false) end)
-
       -- Value
-      vim.keymap.set({ 'o', 'x' }, 'iv', function() textobjs.value(true) end)
-      vim.keymap.set({ 'o', 'x' }, 'av', function() textobjs.value(false) end)
+      vim.keymap.set({ 'o', 'x' }, 'iv', function() textobjs.value("inner") end)
+      vim.keymap.set({ 'o', 'x' }, 'av', function() textobjs.value("outer") end)
 
       -- Key
-      vim.keymap.set({ 'o', 'x' }, 'ik', function() textobjs.key(true) end)
-      vim.keymap.set({ 'o', 'x' }, 'ak', function() textobjs.key(false) end)
+      vim.keymap.set({ 'o', 'x' }, 'ik', function() textobjs.key("inner") end)
+      vim.keymap.set({ 'o', 'x' }, 'ak', function() textobjs.key("outer") end)
 
       -- Subword
-      vim.keymap.set({ 'o', 'x' }, 'is', function() textobjs.subword(true) end)
-      vim.keymap.set({ 'o', 'x' }, 'as', function() textobjs.subword(false) end)
+      vim.keymap.set({ 'o', 'x' }, 'is', function() textobjs.subword("inner") end)
+      vim.keymap.set({ 'o', 'x' }, 'as', function() textobjs.subword("outer") end)
 
       -- Chain Member
-      vim.keymap.set({ 'o', 'x' }, 'im', function() textobjs.chainMember(true) end)
-      vim.keymap.set({ 'o', 'x' }, 'am', function() textobjs.chainMember(false) end)
+      vim.keymap.set({ 'o', 'x' }, 'im', function() textobjs.chainMember("inner") end)
+      vim.keymap.set({ 'o', 'x' }, 'am', function() textobjs.chainMember("outer") end)
 
       -- Url
       vim.keymap.set({ 'o', 'x' }, 'as', function() textobjs.url() end)
