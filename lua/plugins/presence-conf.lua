@@ -5,7 +5,6 @@ end
 local function buttons(_, repo_url)
    local t = { { label = 'Check out this cute dog!', url = 'https://youtu.be/SHRAEqxoN0c' } }
    if repo_url then
-      repo_url = repo_url:gsub('git@github.com:', 'https://github.com/', 1)
       table.insert(t, { label = 'View repository', url = fix_repo_url(repo_url) })
    end
    return t
