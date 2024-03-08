@@ -68,7 +68,8 @@ return {
          ["g."] = "actions.toggle_hidden",
          ["q"] = "actions.close",
          ["<leader>t"] = "actions.close",
-         ["Y"] = "actions.copy_entry_path"
+         ["Y"] = "actions.copy_entry_path",
+         ["<tab>"] = "actions.preview",
       },
       -- Set to false to disable all of the above keymaps
       use_default_keymaps = false,
