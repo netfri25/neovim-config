@@ -49,11 +49,40 @@ return {
 
          settings = {
             ['rust-analyzer'] = {
-               checkOnSave = {
-                  command = 'clippy',
+               check = {
+                  command = 'clippy'
+               },
 
-                  inlayHints = {
-                     maxLength = 'null',
+               checkOnSave = true,
+
+               inlayHints = {
+                  maxLength = 255,
+               },
+
+               imports = {
+                  granularity = {
+                     group = 'module',
+                  },
+
+                  preferPrelude = true,
+               },
+
+               completion = {
+                  callable = {
+                     snippets = 'none'
+                  },
+
+                  fullFunctionSignatures = {
+                     enable = true,
+                  },
+
+                  postfix = {
+                     enable = false,
+                  },
+               },
+
+               snippets = {
+                  custom = {
                   },
                },
             },
