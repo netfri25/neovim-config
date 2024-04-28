@@ -39,12 +39,12 @@ return {
          tooltip = '💤',                             -- Text to display when hovering over the idle image
       },
       text = {
-         viewing = 'Viewing {}',                     -- Text to display when viewing a readonly file
-         editing = 'Editing {}',                     -- Text to display when editing a file
+         viewing = 'Judging {}',                     -- Text to display when viewing a readonly file
+         editing = 'Crying because of {}',           -- Text to display when editing a file
          file_browser = 'Browsing files in {}',      -- Text to display when browsing files (Empty string to disable)
          plugin_manager = 'Managing plugins in {}',  -- Text to display when managing plugins (Empty string to disable)
          lsp_manager = 'Configuring LSP in {}',      -- Text to display when managing LSP servers (Empty string to disable)
-         workspace = 'In {}',                        -- Text to display when in a workspace (Empty string to disable)
+         workspace = 'Committing fraud in {}',       -- Text to display when in a workspace (Empty string to disable)
       },
       buttons = {
          {
