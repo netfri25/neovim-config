@@ -31,7 +31,7 @@ return {
       -- events.
       filewatcher = {
          interval = 1000,
-         enabled = true,
+         enabled = false,
       },
       -- Allows a different telescope sorter. Defaults to 'fuzzy_with_index_bias'. The example below will use the native fzf
       -- sorter instead. By default, this function returns `nil`.
@@ -54,10 +54,11 @@ return {
       -- Flag description: https://git-scm.com/docs/git-branch#Documentation/git-branch.txt---sortltkeygt
       -- Sorting keys: https://git-scm.com/docs/git-for-each-ref#_options
       sort_branches = "-committerdate",
+      graph_style = "unicode",
       -- Change the default way of opening neogit
       kind = "replace",
       -- The time after which an output console is shown for slow running commands
-      console_timeout = 2000,
+      console_timeout = 10000,
       -- Automatically show console if a command takes more than console_timeout milliseconds
       auto_show_console = true,
       status = {
@@ -65,13 +66,14 @@ return {
       },
       commit_editor = {
          kind = "split",
+         show_staged_diff = false,
       },
       commit_select_view = {
          kind = "replace",
       },
       commit_view = {
          kind = "vsplit",
-         verify_commit = os.execute("which gpg") == 0, -- Can be set to true or false, otherwise we try to find the binary
+         verify_commit = vim.fn.executable("gpg") == 1, -- Can be set to true or false, otherwise we try to find the binary
       },
       log_view = {
          kind = "replace",
@@ -160,10 +162,98 @@ return {
             hidden = false,
          },
       },
+      use_default_keymaps = false,
       mappings = {
+         commit_editor = {
+            ["q"] = "Close",
+            ["<c-c><c-c>"] = "Submit",
+            ["<c-c><c-k>"] = "Abort",
+         },
+         commit_editor_I = {
+            ["<c-c><c-c>"] = "Submit",
+            ["<c-c><c-k>"] = "Abort",
+         },
+         rebase_editor = {
+            ["p"] = "Pick",
+            ["r"] = "Reword",
+            ["e"] = "Edit",
+            ["s"] = "Squash",
+            ["f"] = "Fixup",
+            ["x"] = "Execute",
+            ["d"] = "Drop",
+            ["b"] = "Break",
+            ["q"] = "Close",
+            ["<cr>"] = "OpenCommit",
+            ["gk"] = "MoveUp",
+            ["gj"] = "MoveDown",
+            ["<c-c><c-c>"] = "Submit",
+            ["<c-c><c-k>"] = "Abort",
+            ["[c"] = "OpenOrScrollUp",
+            ["]c"] = "OpenOrScrollDown",
+         },
+         rebase_editor_I = {
+            ["<c-c><c-c>"] = "Submit",
+            ["<c-c><c-k>"] = "Abort",
+         },
+         finder = {
+            ["<cr>"] = "Select",
+            ["<c-c>"] = "Close",
+            ["<esc>"] = "Close",
+            ["<c-n>"] = "Next",
+            ["<c-p>"] = "Previous",
+            ["<down>"] = "Next",
+            ["<up>"] = "Previous",
+            ["<tab>"] = "MultiselectToggleNext",
+            ["<s-tab>"] = "MultiselectTogglePrevious",
+            ["<c-j>"] = "NOP",
+         },
+         -- Setting any of these to `false` will disable the mapping.
+         popup = {
+            ["?"] = "HelpPopup",
+            ["A"] = "CherryPickPopup",
+            ["D"] = "DiffPopup",
+            ["M"] = "RemotePopup",
+            ["P"] = "PushPopup",
+            ["X"] = "ResetPopup",
+            ["Z"] = "StashPopup",
+            ["b"] = "BranchPopup",
+            ["B"] = "BisectPopup",
+            ["c"] = "CommitPopup",
+            ["f"] = "FetchPopup",
+            ["l"] = "LogPopup",
+            ["m"] = "MergePopup",
+            ["p"] = "PullPopup",
+            ["r"] = "RebasePopup",
+            ["v"] = "RevertPopup",
+         },
          status = {
             ["q"] = "Close",
-         }
+            ["I"] = "InitRepo",
+            ["1"] = "Depth1",
+            ["2"] = "Depth2",
+            ["3"] = "Depth3",
+            ["4"] = "Depth4",
+            ["<tab>"] = "Toggle",
+            ["x"] = "Discard",
+            ["s"] = "Stage",
+            ["S"] = "StageUnstaged",
+            ["<c-s>"] = "StageAll",
+            ["K"] = "Untrack",
+            ["u"] = "Unstage",
+            ["U"] = "UnstageStaged",
+            ["$"] = "CommandHistory",
+            ["#"] = "Console",
+            ["Y"] = "YankSelected",
+            ["<c-r>"] = "RefreshBuffer",
+            ["<enter>"] = "GoToFile",
+            ["<c-v>"] = "VSplitOpen",
+            ["<c-x>"] = "SplitOpen",
+            ["<c-t>"] = "TabOpen",
+            ["{"] = "GoToPreviousHunkHeader",
+            ["}"] = "GoToNextHunkHeader",
+            ["[c"] = "OpenOrScrollUp",
+            ["]c"] = "OpenOrScrollDown",
+         },
       },
-   },
+   }
 }
