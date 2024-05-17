@@ -14,7 +14,7 @@ vim.g.neovide_remember_window_size = true
 
 vim.g.gui_font_default_size = 11
 vim.g.gui_font_size = vim.g.gui_font_default_size
-vim.g.gui_font_face = 'Iosevka Custom'
+vim.g.gui_font_face = 'IosevkaCustomNerdFontComplete Nerd Font'
 vim.g.gui_antialiasing = 'antialias'
 vim.g.gui_hinting = 'normal'
 
