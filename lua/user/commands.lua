@@ -100,3 +100,9 @@ vim.api.nvim_create_autocmd('TermLeave', {
    command = 'set scrolloff=0',
    group = group,
 })
+
+-- make .roc files have the correct filetype
+vim.api.nvim_create_autocmd({ "BufEnter", "BufWinEnter" }, {
+  pattern = { "*.roc" },
+  command = "set filetype=roc",
+})

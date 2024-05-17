@@ -140,5 +140,10 @@ return {
             on_attach(client, bufnr)
          end,
       })
+
+      lspconfig['roc_ls'].setup({
+         capabilities = capabilities,
+         on_attach = on_attach,
+      })
    end
 }
