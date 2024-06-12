@@ -12,6 +12,7 @@ local options = {
    showmode = false, -- we don't need to see things like -- INSERT -- anymore
    -- smartcase = true,                                 -- smart case
    smartindent = false, --   make indenting smarter again
+   cindent = false,
    splitbelow = true, -- force all horizontal splits to go below current window
    splitright = true, -- force all vertical splits to go to the right of current window
    swapfile = false, -- creates a swapfile
@@ -59,3 +60,5 @@ end
 vim.opt.whichwrap:append '<,>,[,],h,l'
 vim.lsp.handlers['textDocument/hover'] = vim.lsp.with(vim.lsp.handlers.hover, { border = 'rounded' })
 vim.lsp.handlers['textDocument/signatureHelp'] = vim.lsp.with(vim.lsp.handlers.signature_help, { border = 'rounded' })
+
+vim.cmd[[filetype indent off]]
