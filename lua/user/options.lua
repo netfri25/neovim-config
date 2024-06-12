@@ -31,7 +31,6 @@ local options = {
    wrap = false, -- display lines as one long line
    scrolloff = 0, -- is one of my fav
    sidescrolloff = 7,
-   guifont = 'Iosevka Custom',         -- the font used in graphical neovim applications
    foldmethod = 'manual', --   folding set to 'expr' for treesitter based folding
    foldexpr = '', -- set to 'nvim_treesitter#foldexpr()' for treesitter based folding
    hidden = true, -- required to keep multiple buffers and open multiple buffers
