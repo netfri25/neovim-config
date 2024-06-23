@@ -68,28 +68,43 @@ return {
          end,
       })
 
-      lspconfig['pylsp'].setup({
+      lspconfig['ruff'].setup({
          capabilities = capabilities,
-         on_attach = function(client, bufnr)
-            client.server_capabilities.publish_diagnostics = true
-            client.server_capabilities.hoverProvider = false
-            client.server_capabilities.completion = false
-            on_attach(client, bufnr)
-         end,
-         settings = {
-            pylsp = {
-               plugins = {
-                  pyflakes = { enabled = true },
-                  mccabe = { enabled = false },
-                  pycodestyle = { enabled = false, ignore = { 'E501' } },
-                  pydocstyle = { enabled = false },
-                  autopep8 = { enabled = true },
-                  flake8 = { enabled = false },
-                  pylint = { enabled = false },
-               }
-            }
-         }
+         on_attach = on_attach,
       })
+
+      -- lspconfig['pylsp'].setup({
+      --    capabilities = capabilities,
+      --    on_attach = function(client, bufnr)
+      --       -- client.server_capabilities.publish_diagnostics = true
+      --       -- client.server_capabilities.hoverProvider = false
+      --       -- client.server_capabilities.completion = false
+      --       on_attach(client, bufnr)
+      --    end,
+      --    settings = {
+      --       pylsp = {
+      --          plugins = {
+      --             black = { enabled = true },
+      --             autopep8 = { enabled = false },
+      --             yapf = { enabled = false },
+      --             -- pylint = { enabled = false, executable = "pylint" },
+      --             pyflakes = { enabled = false },
+      --             pycodestyle = { enabled = true, ignore = { 'E501' } },
+      --             pydocstyle = { enabled = false },
+      --             -- mccabe = { enabled = false },
+      --             -- flake8 = { enabled = false },
+      --             -- ruff = { enabled = true },
+      --             pylsp_mypy = {
+      --                enabled = true,
+      --                overrides = { "--python-executable", vim.g.python3_host_prog, true },
+      --                report_progress = true,
+      --                live_mode = false
+      --             },
+      --             jedi_completion = { fuzzy = true },
+      --          }
+      --       }
+      --    }
+      -- })
 
       lspconfig['clangd'].setup({
          capabilities = capabilities,
