@@ -12,7 +12,7 @@ vim.g.neovide_cursor_vfx_particle_lifetime = 0.8
 vim.g.neovide_profiler = false
 vim.g.neovide_remember_window_size = false
 
-vim.g.gui_font_default_size = 11
+vim.g.gui_font_default_size = 12
 vim.g.gui_font_size = vim.g.gui_font_default_size
 vim.g.gui_font_face = 'IosevkaCustomNerdFontComplete Nerd Font'
 vim.g.gui_antialiasing = 'antialias'
@@ -42,5 +42,5 @@ end
 ResetGuiFont()
 
 -- Keymaps
-vim.keymap.set({ 'n', 'i', 'v' }, '<C-=>', function() ResizeGuiFont(1) end, { silent = true, desc = 'Decrease GUI font size' })
-vim.keymap.set({ 'n', 'i', 'v' }, '<C-->', function() ResizeGuiFont(-1) end, { silent = true, desc = 'Increase GUI font size' })
+vim.keymap.set({ 'n', 'i', 'v' }, '<C-=>', function() ResizeGuiFont(2) end, { silent = true, desc = 'Decrease GUI font size' })
+vim.keymap.set({ 'n', 'i', 'v' }, '<C-->', function() ResizeGuiFont(-2) end, { silent = true, desc = 'Increase GUI font size' })
