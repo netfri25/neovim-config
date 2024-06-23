@@ -44,7 +44,29 @@ return {
             }
          },
 
-         tabline = {},
+         tabline = {
+            lualine_a = {
+               {
+                  'buffers',
+
+                  filetype_names = {
+                     NvimTree = 'File explorer',
+                     oil = 'Oil',
+                     FTerm = 'Terminal',
+                     CodeRunner = 'CodeRunner',
+                  },
+
+                  symbols = {
+                     alternate_file = '',
+                  },
+
+                  buffers_color = {
+                     active = 'lualine_a_normal',
+                     inactive = 'lualine_b_normal',
+                  },
+               }
+            }
+         },
 
          inactive_sections = {
             lualine_a = {},
@@ -67,26 +89,6 @@ return {
                   require('battery').get_status_line,
                   color = 'lualine_c_normal',
                },
-
-               {
-                  'buffers',
-
-                  filetype_names = {
-                     NvimTree = 'File explorer',
-                     oil = 'Oil',
-                     FTerm = 'Terminal',
-                     CodeRunner = 'CodeRunner',
-                  },
-
-                  symbols = {
-                     alternate_file = '',
-                  },
-
-                  buffers_color = {
-                     active = 'lualine_a_normal',
-                     inactive = 'lualine_b_normal',
-                  },
-               }
             },
 
             lualine_b = {},
