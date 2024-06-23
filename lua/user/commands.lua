@@ -53,10 +53,17 @@ vim.api.nvim_create_autocmd('Filetype', {
       })
    end
 })
-vim.api.nvim_create_autocmd({ 'TermLeave' ,'TermClose' }, {
-   desc = 'Resets the scroll offset that the terminal buffer changes',
+
+vim.api.nvim_create_autocmd({ 'TermEnter', 'TermOpen' }, {
+   desc = 'Add a `q` keymap to quit the term buffer',
    callback = function()
-      vim.o.scrolloff = 100
+      local buf = vim.api.nvim_get_current_buf()
+
+      vim.keymap.set('n', 'q', '<cmd>:bd!<cr>', {
+         buffer = buf,
+         silent = true,
+         desc = 'Quit the term buffer',
+      })
    end
 })
 
