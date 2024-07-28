@@ -34,6 +34,12 @@ vim.api.nvim_create_autocmd('FileType', {
    command = 'setlocal commentstring=\\/\\/\\ %s',
 })
 
+vim.api.nvim_create_autocmd('FileType', {
+   desc = 'Comment string for lolcode files',
+   pattern = 'lolcode',
+   command = 'setlocal commentstring=BTW\\ %s',
+})
+
 vim.api.nvim_create_autocmd('Filetype', {
    desc = 'Adds key mappings for the `help` buffer',
    pattern = 'help',
