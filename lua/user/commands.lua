@@ -70,6 +70,16 @@ vim.api.nvim_create_autocmd({ 'TermEnter', 'TermOpen' }, {
          silent = true,
          desc = 'Quit the term buffer',
       })
+
+      vim.keymap.set('n', 'r', function()
+         local title = vim.b['term_title']
+         vim.cmd('bd!')
+         vim.cmd({ cmd = 'edit', args = { title } })
+      end, {
+         buffer = buf,
+         silent = true,
+         desc = 'Re-run the terminal command',
+      })
    end
 })
 
