@@ -49,12 +49,9 @@ return {
                {
                   'buffers',
 
-                  filetype_names = {
-                     NvimTree = 'File explorer',
-                     oil = 'Oil',
-                     FTerm = 'Terminal',
-                     CodeRunner = 'CodeRunner',
-                  },
+                  max_length = function()
+                     return vim.o.columns
+                  end,
 
                   symbols = {
                      alternate_file = '',
@@ -91,8 +88,34 @@ return {
                },
             },
 
-            lualine_b = {},
             lualine_c = {},
+            lualine_b = {
+               {
+                  'filename',
+                  file_status = false,
+                  newfile_status = false,
+                  path = 1,
+                  separator = { left = '', right = '' },
+                  color = 'lualine_c_normal',
+
+                  --- @param name string
+                  fmt = function(name, opts)
+                     if vim.bo.filetype == 'oil' then
+                        name = name:gsub('oil://', '', 1)
+                        name = vim.fn.fnamemodify(name, ':~:.')
+                        name = name:match('(.*)/') or name
+                     elseif vim.bo.buftype == 'terminal' then
+                        local command = name:match('term://.*:(.*)')
+                        local path = name:match('term://(.*)/%d+:.*')
+                        path = vim.fn.fnamemodify(path, ':~:.')
+                        path = path:match('(.*)/') or path
+                        name = path == '' and command or ('[' .. path .. ']: ' .. command)
+                     end
+
+                     return name
+                  end,
+               },
+            },
             lualine_x = { 'diagnostics', 'diff', 'branch' },
             lualine_y = {},
             lualine_z = { 'mode' },
