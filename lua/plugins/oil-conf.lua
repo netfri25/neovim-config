@@ -70,8 +70,18 @@ return {
          ["g."] = "actions.toggle_hidden",
          ["q"] = "actions.close",
          ["<leader>t"] = "actions.close",
-         ["Y"] = "actions.copy_entry_path",
+         ["Y"] = "actions.yank_entry",
          ["<tab>"] = "actions.preview",
+         ["yp"] = {
+            function()
+               local dir = require('oil').get_current_dir()
+               vim.fn.setreg(vim.v.register, dir)
+            end,
+
+            nowait = true,
+            mode = 'n',
+            desc = "yank the current oil directory",
+         }
       },
       -- Set to false to disable all of the above keymaps
       use_default_keymaps = false,
