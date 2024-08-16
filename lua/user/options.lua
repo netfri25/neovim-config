@@ -22,8 +22,8 @@ local options = {
    updatetime = 220, -- faster completion (4000ms default)
    writebackup = false, -- if a file is being edited by another program (or was written to file while editing with another program), it is not allowed to be edited
    expandtab = true, -- convert tabs to spaces
-   shiftwidth = 3, -- the number of spaces inserted for each indentation
-   tabstop = 3, -- insert 3 spaces for a tab
+   shiftwidth = 4, -- the number of spaces inserted for each indentation
+   tabstop = 4, -- insert 4 spaces for a tab
    cursorline = false, -- highlight the current line
    number = true, -- set numbered lines
    relativenumber = true, --   set relative numbered lines
@@ -50,9 +50,6 @@ local options = {
 
 vim.opt.shortmess:append 'c'
 
-vim.g.filetype_pl = 'prolog'
-vim.g.filetype_pro = 'prolog'
-
 for k, v in pairs(options) do
    vim.opt[k] = v
 end
@@ -62,6 +59,8 @@ vim.filetype.add({
       ['ssa'] = 'qbe',
       ['lol'] = 'lolcode',
       ['ebnf'] = 'ebnf',
+      ['porth'] = 'porth',
+      ['pro'] = 'prolog',
    }
 })
 
@@ -70,3 +69,16 @@ vim.lsp.handlers['textDocument/hover'] = vim.lsp.with(vim.lsp.handlers.hover, { 
 vim.lsp.handlers['textDocument/signatureHelp'] = vim.lsp.with(vim.lsp.handlers.signature_help, { border = 'rounded' })
 
 vim.cmd[[filetype indent off]]
+
+vim.g.firenvim_config = {
+    globalSettings = { alt = "all" },
+    localSettings = {
+        [".*"] = {
+            cmdline  = "neovim",
+            content  = "text",
+            priority = 0,
+            selector = "textarea",
+            takeover = "always"
+        }
+    }
+}
