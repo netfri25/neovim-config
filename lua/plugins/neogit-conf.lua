@@ -11,6 +11,7 @@ return {
    lazy = true,
 
    keys = {{ '<leader>ng', function() require('neogit').open() end, silent = true, desc = 'Open neogit' }},
+   cmd = { 'Neogit' },
 
    opts = {
       -- Hides the hints at the top of the status buffer
