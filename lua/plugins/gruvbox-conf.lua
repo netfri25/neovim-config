@@ -51,6 +51,7 @@ return {
 
             ['@variable'] = { link = 'GruvboxFg2' }, -- variables
             ['@field'] = { link = '@variable' }, -- variables
+            ['Identifier'] = { link = '@variable' }, -- variables
             ['@variable.member'] = { link = '@variable' }, -- variables
             ['@variable.parameter'] = { link = '@variable' }, -- variables
             ['@parameter'] = { link = '@variable' }, -- variables
