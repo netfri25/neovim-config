@@ -10,15 +10,12 @@ return {
       'hrsh7th/cmp-buffer',
       'hrsh7th/cmp-path',
       'hrsh7th/cmp-cmdline',
-      'L3MON4D3/LuaSnip',
-      'saadparwaiz1/cmp_luasnip',
       'hrsh7th/cmp-nvim-lsp-signature-help',
    },
 
    config = function()
       local cmp = require('cmp')
-      local luasnip = require('luasnip')
-      vim.keymap.set('i', '<s-tab>', luasnip.expand_or_jump, { expr = true, silent = true })
+      vim.keymap.set('i', '<s-tab>', vim.snippet.jump, { expr = true, silent = true })
 
       local function toggle_window()
          if cmp.visible() then
@@ -31,7 +28,7 @@ return {
       cmp.setup({
          snippet = {
             expand = function(args)
-               require('luasnip').lsp_expand(args.body)
+               vim.snippet.expand(args.body)
             end
          },
 
