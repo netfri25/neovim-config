@@ -27,6 +27,7 @@ return {
     lazy = true,
     enabled = vim.loop.os_uname().sysname == "Linux",
     ft = filetypes,
+    cmd = { 'TSEnable' },
 
     dependencies = {
         'nvim-treesitter/nvim-treesitter-textobjects',
