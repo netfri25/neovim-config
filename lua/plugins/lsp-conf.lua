@@ -3,7 +3,8 @@
 
 return {
     'neovim/nvim-lspconfig',
-    lazy = false,
+    lazy = true,
+    cmd = { "LspStart" },
 
     dependencies = {
         'hrsh7th/cmp-nvim-lsp-signature-help',
