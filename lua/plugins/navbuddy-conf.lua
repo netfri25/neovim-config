@@ -10,6 +10,10 @@ return {
       'MunifTanjim/nui.nvim'
    },
 
+   keys = {
+       { '<leader>u', function() require('nvim-navbuddy').open() end, desc = 'Open navbuddy' }
+   },
+
    opts = {
       window = {
          border = 'rounded',
