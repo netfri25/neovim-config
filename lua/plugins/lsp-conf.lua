@@ -75,56 +75,59 @@ return {
             on_attach = on_attach,
         })
 
-        -- lspconfig['rust_analyzer'].setup({
-        --     cmd = { 'rustup', 'run', 'stable', 'rust-analyzer' },
-        --     -- capabilities = capabilities,
-        --     on_attach = function(client, bufnr)
-        --         client.server_capabilities.semanticTokensProvider = nil
-        --         require('lsp-inlayhints').on_attach(client, bufnr)
-        --         on_attach(client, bufnr)
-        --     end,
+        lspconfig['rust_analyzer'].setup({
+            cmd = { 'rustup', 'run', 'stable', 'rust-analyzer' },
+            capabilities = capabilities,
+            on_attach = function(client, bufnr)
+                client.server_capabilities.semanticTokensProvider = nil
+                on_attach(client, bufnr)
+            end,
 
-        --     settings = {
-        --         ['rust-analyzer'] = {
-        --             check = {
-        --                 command = 'clippy'
-        --             },
+            settings = {
+                ['rust-analyzer'] = {
+                    semanticHighlighting = {
+                        nonStandardTokens = false
+                    },
 
-        --             checkOnSave = true,
+                    check = {
+                        command = 'clippy'
+                    },
 
-        --             inlayHints = {
-        --                 maxLength = 255,
-        --             },
+                    checkOnSave = true,
 
-        --             imports = {
-        --                 granularity = {
-        --                     group = 'module',
-        --                 },
+                    inlayHints = {
+                        maxLength = 255,
+                    },
 
-        --                 preferPrelude = true,
-        --             },
+                    imports = {
+                        granularity = {
+                           group = 'module',
+                        },
 
-        --             completion = {
-        --                 callable = {
-        --                     snippets = 'none'
-        --                 },
+                        preferPrelude = true,
+                    },
 
-        --                 fullFunctionSignatures = {
-        --                     enable = true,
-        --                 },
+                    completion = {
+                        callable = {
+                           snippets = 'none'
+                        },
 
-        --                 postfix = {
-        --                     enable = false,
-        --                 },
-        --             },
+                        fullFunctionSignatures = {
+                           enable = true,
+                        },
 
-        --             snippets = {
-        --                 custom = {
-        --                 },
-        --             },
-        --         },
-        --     },
-        -- })
+                        postfix = {
+                           enable = false,
+                        },
+                    },
+
+                    snippets = {
+                        custom = {
+                        },
+                    },
+                },
+            },
+        })
 
         -- lspconfig['pylsp'].setup({
         --     capabilities = capabilities,
