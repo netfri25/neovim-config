@@ -36,6 +36,7 @@ local options = {
    foldexpr = '', -- set to 'nvim_treesitter#foldexpr()' for treesitter based folding
    hidden = true, -- required to keep multiple buffers and open multiple buffers
    shell = 'nu', -- the default shell that some neovim commands will use
+   shellpipe = 'out+err>',
    title = true, -- set the title of window to the value of the titlestring
    titlestring = '%F - Not Emacs', -- what the title of the window will be set to
    -- showtabline = 1,
