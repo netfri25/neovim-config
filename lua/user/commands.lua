@@ -13,7 +13,7 @@ vim.api.nvim_create_autocmd('Filetype', {
 vim.api.nvim_create_autocmd('Filetype', {
    desc = 'Specific filetype indentation',
    pattern = 'rust',
-   command = 'setlocal shiftwidth=4 | setlocal tabstop=4',
+   command = 'setlocal shiftwidth=4 | setlocal tabstop=4 | setlocal nocindent | setlocal nosmartindent',
 })
 
 vim.api.nvim_create_autocmd('Filetype', {
