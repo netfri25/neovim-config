@@ -129,3 +129,10 @@ vim.api.nvim_create_autocmd({ "BufEnter", "BufWinEnter" }, {
   pattern = { "*.roc" },
   command = "set filetype=roc",
 })
+
+vim.api.nvim_create_autocmd('Filetype', {
+   desc = 'Specific filetype options',
+   pattern = 'markdown',
+   command = 'setlocal wrap | setlocal linebreak',
+})
+
