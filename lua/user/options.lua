@@ -46,7 +46,7 @@ local options = {
    ruler = false,
    showcmd = false,
    autochdir = false,
-   grepprg = "grep -rn",
+   grepprg = "rg --vimgrep",
 }
 
 vim.opt.shortmess:append 'c'
