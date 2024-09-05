@@ -62,6 +62,7 @@ vim.filetype.add({
       ['ebnf'] = 'ebnf',
       ['porth'] = 'porth',
       ['pro'] = 'prolog',
+      ['nasm'] = 'nasm',
    }
 })
 
