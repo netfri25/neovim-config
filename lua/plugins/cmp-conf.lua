@@ -32,6 +32,10 @@ return {
             end
          },
 
+         completion = {
+            autocomplete = false,
+         },
+
          window = {
             completion = cmp.config.window.bordered(),
             documentation = cmp.config.window.bordered(),
