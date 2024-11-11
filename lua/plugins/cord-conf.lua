@@ -33,18 +33,18 @@ return {
       },
       idle = {
          show_idle = true,                           -- Enable idle status
-         timeout = 1800000,                          -- Timeout in milliseconds after which the idle status is set, 0 to display immediately
+         timeout = 5 * 60 * 1000,                    -- Timeout in milliseconds after which the idle status is set, 0 to display immediately
          disable_on_focus = true,                    -- Do not display idle status when neovim is focused
          text = 'Idle',                              -- Text to display when idle
          tooltip = '💤',                             -- Text to display when hovering over the idle image
       },
       text = {
-         viewing = 'Judging {}',                     -- Text to display when viewing a readonly file
-         editing = 'Committing fraud in {}',         -- Text to display when editing a file
+         viewing = 'Reading {}',                     -- Text to display when viewing a readonly file
+         editing = 'Demolishing {}',                 -- Text to display when editing a file
          file_browser = 'Browsing files in {}',      -- Text to display when browsing files (Empty string to disable)
          plugin_manager = 'Managing plugins in {}',  -- Text to display when managing plugins (Empty string to disable)
          lsp_manager = 'Configuring LSP in {}',      -- Text to display when managing LSP servers (Empty string to disable)
-         workspace = 'Crying over {}',               -- Text to display when in a workspace (Empty string to disable)
+         workspace = 'Making {} unusable',           -- Text to display when in a workspace (Empty string to disable)
       },
       buttons = {
          {
