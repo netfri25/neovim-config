@@ -107,6 +107,9 @@ return {
                         name = name:match('(.*)/') or name
                      elseif vim.bo.buftype == 'terminal' then
                         local command = name:match('term://.*:(.*)')
+                        if not command then
+                            return name
+                        end
                         local path = name:match('term://(.*)/%d+:.*')
                         path = vim.fn.fnamemodify(path, ':~:.')
                         path = path:match('(.*)/') or path
