@@ -38,32 +38,33 @@ return {
             globalstatus = true,
 
             refresh = {
-               statusline = 1000,
+               statusline = 100,
                tabline = 1000,
                winbar = 1000,
             }
          },
 
-         tabline = {
-            lualine_a = {
-               {
-                  'buffers',
+         -- NOTE: disabling the tabline for now, since I'm trying to be more efficient with multiple buffers
+         -- tabline = {
+         --    lualine_a = {
+         --       {
+         --          'buffers',
 
-                  max_length = function()
-                     return vim.o.columns
-                  end,
+         --          max_length = function()
+         --             return vim.o.columns
+         --          end,
 
-                  symbols = {
-                     alternate_file = '',
-                  },
+         --          symbols = {
+         --             alternate_file = '',
+         --          },
 
-                  buffers_color = {
-                     active = 'lualine_a_normal',
-                     inactive = 'lualine_b_normal',
-                  },
-               }
-            }
-         },
+         --          buffers_color = {
+         --             active = 'lualine_a_normal',
+         --             inactive = 'lualine_b_normal',
+         --          },
+         --       }
+         --    }
+         -- },
 
          inactive_sections = {
             lualine_a = {},
