@@ -6,6 +6,7 @@ local filetypes = {
     'cpp',
     'vim',
     'lua',
+    'ron',
     'rust',
     'json',
     'java',
