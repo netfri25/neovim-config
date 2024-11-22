@@ -66,3 +66,12 @@ keymap('n', "<c-p>", "<cmd>cprev<cr>", { silent = true, desc = "Previous item in
 -- Location list
 keymap('n', "<A-n>", "<cmd>lnext<cr>", { silent = true, desc = "Next item in the location list" })
 keymap('n', "<A-p>", "<cmd>lprev<cr>", { silent = true, desc = "Previous item in the location list" })
+
+keymap('n', '[b', '<cmd>bprevious<cr>', { silent = true, desc = 'Switch to next buffer' })
+keymap('n', ']b', '<cmd>bnext<cr>', { silent = true, desc = 'Switch to previous buffer' })
+keymap('n', '[B', '<cmd>bfirst<cr>', { silent = true, desc = 'Switch to first buffer' })
+keymap('n', ']B', '<cmd>blast<cr>', { silent = true, desc = 'Switch to last buffer' })
+keymap('n', '<leader>bd', '<cmd>bdelete<cr>', { silent = true, desc = 'Delete buffer' })
+keymap('n', '<leader>bb', '<cmd>silent! exe \'LualineBuffersJump\' . v:count<cr>',
+    { silent = true, desc = 'Jump to {count}th buffer' })
+
