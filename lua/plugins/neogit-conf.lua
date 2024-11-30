@@ -62,6 +62,8 @@ return {
       console_timeout = 10000,
       -- Automatically show console if a command takes more than console_timeout milliseconds
       auto_show_console = true,
+      disable_line_numbers = false,
+      disable_relative_line_numbers = false,
       status = {
          recent_commit_count = 100,
       },
