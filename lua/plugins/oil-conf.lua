@@ -47,8 +47,10 @@ return {
 
       delete_to_trash = true,
 
+      natural_order = true,
+
       -- Selecting a new/moved/renamed file or directory will prompt you to save changes first
-      prompt_save_on_select_new_entry = false,
+      prompt_save_on_select_new_entry = true,
 
       -- Keymaps in oil buffer. Can be any value that `vim.keymap.set` accepts OR a table of keymap
       -- options with a `callback` (e.g. { callback = function() ... end, desc = "", nowait = true })
