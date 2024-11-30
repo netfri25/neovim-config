@@ -70,6 +70,7 @@ return {
          ["_"] = "actions.open_cwd",
          ["`"] = "actions.cd",
          ["g."] = "actions.toggle_hidden",
+         ["gt"] = "actions.toggle_trash",
          ["q"] = "actions.close",
          ["<leader>t"] = "actions.close",
          ["Y"] = "actions.yank_entry",
