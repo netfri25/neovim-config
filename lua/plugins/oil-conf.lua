@@ -47,7 +47,7 @@ return {
 
       delete_to_trash = true,
 
-      natural_order = true,
+      natural_order = "fast",
 
       -- Selecting a new/moved/renamed file or directory will prompt you to save changes first
       prompt_save_on_select_new_entry = true,
