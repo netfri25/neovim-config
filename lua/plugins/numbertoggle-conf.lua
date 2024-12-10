@@ -2,6 +2,6 @@
 -- from normal mode to insert mode
 
 return {
-   'sitiom/nvim-numbertoggle',
-   lazy = false,
+    'sitiom/nvim-numbertoggle',
+    lazy = false,
 }

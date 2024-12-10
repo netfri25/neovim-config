@@ -2,92 +2,92 @@
 -- autocompletes from the current buffer, lsp, file in path etc
 
 return {
-   'hrsh7th/nvim-cmp',
-   lazy = false,
+    'hrsh7th/nvim-cmp',
+    lazy = false,
 
-   dependencies = {
-      'hrsh7th/cmp-nvim-lsp',
-      'hrsh7th/cmp-buffer',
-      'hrsh7th/cmp-path',
-      'hrsh7th/cmp-cmdline',
-      'hrsh7th/cmp-nvim-lsp-signature-help',
-   },
+    dependencies = {
+        'hrsh7th/cmp-nvim-lsp',
+        'hrsh7th/cmp-buffer',
+        'hrsh7th/cmp-path',
+        'hrsh7th/cmp-cmdline',
+        'hrsh7th/cmp-nvim-lsp-signature-help',
+    },
 
-   config = function()
-      local cmp = require('cmp')
-      vim.keymap.set('i', '<s-tab>', vim.snippet.jump, { expr = true, silent = true })
+    config = function()
+        local cmp = require('cmp')
+        vim.keymap.set('i', '<s-tab>', vim.snippet.jump, { expr = true, silent = true })
 
-      local function toggle_window()
-         if cmp.visible() then
-            cmp.abort()
-         else
-            cmp.complete()
-         end
-      end
-
-      cmp.setup({
-         snippet = {
-            expand = function(args)
-               vim.snippet.expand(args.body)
+        local function toggle_window()
+            if cmp.visible() then
+                cmp.abort()
+            else
+                cmp.complete()
             end
-         },
+        end
 
-         completion = {
-            autocomplete = false,
-         },
+        cmp.setup({
+            snippet = {
+                expand = function(args)
+                    vim.snippet.expand(args.body)
+                end
+            },
 
-         window = {
-            completion = cmp.config.window.bordered(),
-            documentation = cmp.config.window.bordered(),
-         },
+            completion = {
+                autocomplete = false,
+            },
 
-         mapping = cmp.mapping.preset.insert({
-            ['<C-b>'] = cmp.mapping.scroll_docs(-4),
-            ['<C-f>'] = cmp.mapping.scroll_docs(4),
-            ['<Tab>'] = cmp.mapping.confirm({ select = true }),
+            window = {
+                completion = cmp.config.window.bordered(),
+                documentation = cmp.config.window.bordered(),
+            },
 
-            ['<C-Space>'] = cmp.mapping({
-               i = toggle_window,
-               c = toggle_window,
+            mapping = cmp.mapping.preset.insert({
+                ['<C-b>'] = cmp.mapping.scroll_docs(-4),
+                ['<C-f>'] = cmp.mapping.scroll_docs(4),
+                ['<Tab>'] = cmp.mapping.confirm({ select = true }),
+
+                ['<C-Space>'] = cmp.mapping({
+                    i = toggle_window,
+                    c = toggle_window,
+                }),
             }),
-         }),
 
-         sources = cmp.config.sources({
-            { name = 'nvim_lsp' },
-            { name = 'luasnip' },
-            { name = 'nvim_lsp_signature_help' },
-            { name = 'path' },
-         }, {
-            { name = 'buffer' }
-         }),
+            sources = cmp.config.sources({
+                { name = 'nvim_lsp' },
+                { name = 'luasnip' },
+                { name = 'nvim_lsp_signature_help' },
+                { name = 'path' },
+            }, {
+                    { name = 'buffer' }
+                }),
 
-         -- ghost text is cool
-         experimental = {
-            ghost_text = true,
-         },
+            -- ghost text is cool
+            experimental = {
+                ghost_text = true,
+            },
 
-         formatting = {
-            format = function(_, vim_item)
-               vim_item.menu = nil
-               return vim_item
-            end,
-         },
-      })
+            formatting = {
+                format = function(_, vim_item)
+                    vim_item.menu = nil
+                    return vim_item
+                end,
+            },
+        })
 
-      cmp.setup.cmdline('/', {
-         mapping = cmp.mapping.preset.cmdline(),
-         sources = {
-            { name = 'buffer' }
-         }
-      })
+        cmp.setup.cmdline('/', {
+            mapping = cmp.mapping.preset.cmdline(),
+            sources = {
+                { name = 'buffer' }
+            }
+        })
 
-      cmp.setup.cmdline(':', {
-         mapping = cmp.mapping.preset.cmdline(),
-         sources = cmp.config.sources({
-            { name = 'path' }
-         }, {
-            { name = 'cmdline' }
-         })
-      })
-   end
+        cmp.setup.cmdline(':', {
+            mapping = cmp.mapping.preset.cmdline(),
+            sources = cmp.config.sources({
+                { name = 'path' }
+            }, {
+                    { name = 'cmdline' }
+                })
+        })
+    end
 }

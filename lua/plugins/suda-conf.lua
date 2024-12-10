@@ -2,7 +2,7 @@
 -- lets me write files using sudo
 vim.g.suda_smart_edit = 1
 return {
-   'lambdalisue/suda.vim',
-   lazy = true,
-   cmd = { 'SudaRead', 'SudaWrite' },
+    'lambdalisue/suda.vim',
+    lazy = true,
+    cmd = { 'SudaRead', 'SudaWrite' },
 }
