@@ -8,7 +8,7 @@ syn region mgComment start="//" end="$"
 syn keyword mgKeyword let final const as
 syn match mgOperator display "&&\|||"
 syn match mgOperator display "\%(+\|-\|/\|*\|=\|\^\|&\||\|!\|>\|<\|%\|\~\)=\?"
-syn match mgType "[A-Z]\w\+"
+syn match mgType "\<[A-Z]\w\+\>"
 syn match mgNumber "\<\d\+\>"
 syn match mgNumber "\<\d\+\.\d\+\>"
 syn keyword mgBoolean true false
