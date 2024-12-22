@@ -18,8 +18,8 @@ setlocal tabstop=8
 setlocal softtabstop=4
 setlocal shiftwidth=4
 
-setlocal comments=:#
-setlocal commentstring=#\ %s
+setlocal comments=:\/\/
+setlocal commentstring=\/\/\ %s
 
 let b:undo_ftplugin = 'setl et< ts< sts< sw< com< cms<'
 
