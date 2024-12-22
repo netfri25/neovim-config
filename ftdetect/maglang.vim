@@ -1,2 +1,2 @@
-au BufRead,BufNewFile *.mg                set filetype=maglang
+au BufRead,BufNewFile *.mg  set filetype=maglang
 

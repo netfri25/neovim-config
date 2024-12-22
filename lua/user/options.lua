@@ -57,8 +57,6 @@ end
 
 vim.filetype.add({
    extension = {
-      ['ssa'] = 'qbe',
-      ['lol'] = 'lolcode',
       ['ebnf'] = 'ebnf',
       ['porth'] = 'porth',
       ['pro'] = 'prolog',
