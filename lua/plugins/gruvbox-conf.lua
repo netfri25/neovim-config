@@ -42,13 +42,12 @@ return {
                 GruvboxOrangeUnderline = { underline = true, undercurl = false },
 
                 Pmenu = { link = 'Background' },
-                PmenuSel = { link = 'Background' },
                 PmenuSbar = { link = 'Background' },
                 PmenuThumb = { link = 'Background' },
 
                 DiffAdd = { link = 'GruvboxGreenSign' },
                 DiffDelete = { link = 'GruvboxRedSign' },
-
+                PmenuSel = { link = 'ColorColumn' },
                 Operator = { link = 'GruvboxFg4' }, -- operators
 
                 ['@variable'] = { link = 'GruvboxFg2' }, -- variables
