@@ -2,56 +2,82 @@
 
 return {
     'vyfor/cord.nvim',
-    build = './build',
+    branch = 'client-server',
+    build = ':Cord fetch',
     event = 'VeryLazy',
     enabled = true,
 
     opts = {
-        usercmds = true,                                -- Enable user commands
-        timer = {
-            enable = true,                              -- Enable automatically updating presence
-            interval = 1500,                            -- Interval between presence updates in milliseconds (min 500)
-            reset_on_idle = false,                      -- Reset start timestamp on idle
-            reset_on_change = false,                    -- Reset start timestamp on presence change
-        },
         editor = {
-            image = nil,                                -- Image ID or URL in case a custom client id is provided
-            client = 'neovim',                          -- vim, neovim, lunarvim, nvchad, astronvim or your application's client id
-            tooltip = "We're no strangers to love, you know the rules and so do I",  -- Text to display when hovering over the editor's image
+            client = 'neovim',
+            tooltip = "We're no strangers to love, you know the rules and so do I",
+            icon = nil,
         },
         display = {
-            show_time = true,                           -- Display start timestamp
-            show_repository = true,                     -- Display 'View repository' button linked to repository url, if any
-            show_cursor_position = false,               -- Display line and column number of cursor's position
-            swap_fields = false,                        -- If enabled, workspace is displayed first
-            workspace_blacklist = {},                   -- List of workspace names to hide
+            theme = 'pastel',
+            swap_fields = false,
+            swap_icons = true,
         },
-        lsp = {
-            show_problem_count = false,                 -- Display number of diagnostics problems
-            severity = 1,                               -- 1 = Error, 2 = Warning, 3 = Info, 4 = Hint
-            scope = 'workspace',                        -- buffer or workspace
+        timestamp = {
+            enabled = true,
+            reset_on_idle = false,
+            reset_on_change = false,
         },
         idle = {
-            show_idle = true,                           -- Enable idle status
-            timeout = 5 * 60 * 1000,                    -- Timeout in milliseconds after which the idle status is set, 0 to display immediately
-            disable_on_focus = true,                    -- Do not display idle status when neovim is focused
-            text = 'Idle',                              -- Text to display when idle
-            tooltip = '💤',                             -- Text to display when hovering over the idle image
+            enabled = true,
+            timeout = 5 * 60 * 1000,
+            show_status = true,
+            ignore_focus = true,
+            smart_idle = true,
+            details = 'Idle',
+            state = nil,
+            tooltip = '💤',
+            icon = nil,
         },
         text = {
-            viewing = 'Reading {}',                     -- Text to display when viewing a readonly file
-            editing = 'Demolishing {}',                 -- Text to display when editing a file
-            file_browser = 'Browsing files in {}',      -- Text to display when browsing files (Empty string to disable)
-            plugin_manager = 'Managing plugins in {}',  -- Text to display when managing plugins (Empty string to disable)
-            lsp_manager = 'Configuring LSP in {}',      -- Text to display when managing LSP servers (Empty string to disable)
-            workspace = 'Making {} unusable',           -- Text to display when in a workspace (Empty string to disable)
+            viewing = function(opts) return 'Reading ' .. opts.filename end,
+            editing = function(opts) return 'Demolishing ' .. opts.filename end,
+            file_browser = function(opts) return 'Browsing files in ' .. opts.tooltip end,
+            plugin_manager = function(opts) return 'Managing plugins in ' .. opts.tooltip end,
+            lsp_manager = function(opts) return 'Configuring LSP in ' .. opts.tooltip end,
+            docs = function(opts) return 'Reading ' .. opts.tooltip end,
+            vcs = function(opts) return 'Committing changes in ' .. opts.tooltip end,
+            workspace = function(opts) return 'Making ' .. opts.workspace_name .. ' unusable' end,
+            dashboard = 'Home',
         },
         buttons = {
             {
-                label = 'View Repository',              -- Text displayed on the button
-                url = 'git',                            -- URL where the button leads to ('git' = Git repository URL)
-            },
+                label = function(opts)
+                    return opts.repo_url and 'View Repository' or 'Github Profile'
+                end,
+
+                url = function(opts)
+                    return opts.repo_url or 'https://github.com/netfri25'
+                end
+            }
         },
-        assets = {},
+        assets = nil,
+        variables = nil,
+        hooks = {
+            on_ready = nil,
+            on_update = nil,
+            on_activity = nil,
+            on_idle = nil,
+            on_workspace_change = nil,
+            on_disconnect = nil,
+        },
+        advanced = {
+            plugin = {
+                log_level = vim.log.levels.INFO,
+                autocmds = true,
+            },
+            server = {
+                pipe_path = nil,
+                executable_path = nil,
+                timeout = 60000,
+            },
+            cursor_update_mode = 'on_move',
+            variables_in_functions = false,
+        },
     }
 }
