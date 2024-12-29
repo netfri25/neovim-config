@@ -5,7 +5,7 @@ endif
 
 syn region mgComment start="//" end="$"
 
-syn keyword mgKeyword let final const as
+syn keyword mgKeyword let final const as fn return
 syn match mgOperator display "&&\|||"
 syn match mgOperator display "\%(+\|-\|/\|*\|=\|\^\|&\||\|!\|>\|<\|%\|\~\)=\?"
 syn match mgType "\<[A-Z]\w\+\>"
