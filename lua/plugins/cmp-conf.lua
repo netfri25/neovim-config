@@ -58,8 +58,8 @@ return {
                 { name = 'nvim_lsp_signature_help' },
                 { name = 'path' },
             }, {
-                    { name = 'buffer' }
-                }),
+                { name = 'buffer' }
+            }),
 
             -- ghost text is cool
             experimental = {
@@ -86,8 +86,8 @@ return {
             sources = cmp.config.sources({
                 { name = 'path' }
             }, {
-                    { name = 'cmdline' }
-                })
+                { name = 'cmdline' }
+            })
         })
     end
 }
