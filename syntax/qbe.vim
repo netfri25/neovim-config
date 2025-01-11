@@ -13,7 +13,7 @@ set cpo&vim
 syn case match
 
 " Types.
-syn keyword qbeType w l s d b h
+syn keyword qbeType w l s d b h sb ub sh uh
 
 " Instructions.
 " Arithmetic and Bits.
