@@ -14,9 +14,11 @@ syn match mgNumber "\<\d\+\.\d\+\>"
 syn keyword mgBoolean true false
 syn match mgDelimiter  "(\|)\|\[\|\]\|,\|{\|}"
 syn region mgComment start="\/\/" end="$"
-syn region mgString start=/"/ skip=/\\"/ end=/"/ contains=mgEscape
-syn match mgEscape display contained /\v\\[bfnrtv'"]|\\x\x{2}|\\\o{1,3}/
 syn match mgFunction "\<\h\w*\ze\_s*("
+
+syn match mgEscape display contained /\v\\[bfnrtv'"]|\\x\x{2}|\\\o{1,3}/
+syn region mgString    start=/"/ skip=/\\"/ end=/"/ contains=mgEscape
+syn region mgCharacter start=/'/ skip=/\\'/ end=/'/ contains=mgEscape
 
 hi def link mgComment Comment
 hi def link mgOperator Operator
@@ -26,6 +28,7 @@ hi def link mgBoolean Boolean
 hi def link mgDelimiter Operator
 hi def link mgType Type
 hi def link mgString String
+hi def link mgCharacter Character
 hi def link mgComment Comment
 hi def link mgEscape Special
 hi def link mgFunction Function
