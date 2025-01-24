@@ -15,6 +15,7 @@ local filetypes = {
     -- 'help',
     'ocaml',
     'python',
+    'arduino',
     'comment',
     'haskell',
     'markdown',

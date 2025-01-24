@@ -62,6 +62,18 @@ return {
             vim.keymap.set('n', '<leader>u', require('nvim-navbuddy').open, { silent = true, desc = 'Open navbuddy' })
         end
 
+        lspconfig['arduino_language_server'].setup({
+            cmd = {
+                "arduino-language-server",
+                "-clangd", "/usr/bin/clangd",
+                "-cli", "/usr/bin/arduino-cli",
+                "-cli-config", "/home/netfri/.arduino15/arduino-cli.yaml",
+                "-fqbn", "arduino:avr:uno"
+            },
+            capabilities = capabilities,
+            on_attach = on_attach,
+        })
+
         lspconfig['pyright'].setup({
             capabilities = capabilities,
             on_attach = function(client, bufnr)
