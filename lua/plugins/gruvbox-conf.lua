@@ -49,6 +49,7 @@ return {
                 DiffDelete = { link = 'GruvboxRedSign' },
                 PmenuSel = { link = 'ColorColumn' },
                 Operator = { link = 'GruvboxFg4' }, -- operators
+                String = { fg = '#98971a' },
 
                 ['@variable'] = { link = 'GruvboxFg2' }, -- variables
                 ['@field'] = { link = '@variable' }, -- variables
