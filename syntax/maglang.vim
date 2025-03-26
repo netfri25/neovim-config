@@ -5,10 +5,10 @@ endif
 
 syn region mgComment start="//" end="$"
 
-syn keyword mgKeyword let final const as fn return
+syn keyword mgKeyword let final const as fn return break continue if else while defer struct enum sizeof global
 syn match mgOperator display "&&\|||"
-syn match mgOperator display "\%(+\|-\|/\|*\|=\|\^\|&\||\|!\|>\|<\|%\|\~\)=\?"
-syn match mgType "\<[A-Z]\w\+\>"
+syn match mgOperator display "\%(+\|-\|/\|*\|=\|\^\|&\||\|!\|>\|<\|%\|\~\|\.\|@\)=\?"
+syn match mgType "\<[A-Z]\w*\>"
 syn match mgNumber "\<\d\+\>"
 syn match mgNumber "\<\d\+\.\d\+\>"
 syn keyword mgBoolean true false
