@@ -1,20 +1,20 @@
 if not vim.g['neovide'] then return end
 
 -- vim.g.neovide_cursor_vfx_mode = 'ripple'
--- vim.g.neovide_refresh_rate = 240
+vim.g.neovide_refresh_rate = 120
 -- vim.g.neovide_no_idle = true
 -- vim.g.neovide_refresh_rate_idle = 5
 vim.g.neovide_fullscreen = false
-vim.g.neovide_scroll_animation_length = 0.15
+-- vim.g.neovide_scroll_animation_length = 0.15
 vim.g.neovide_hide_mouse_when_typing = true
 vim.g.neovide_underline_automatic_scaling = false
-vim.g.neovide_cursor_trail_size = 0.8
-vim.g.neovide_cursor_animation_length = 0.06
-vim.g.neovide_cursor_vfx_particle_lifetime = 0.8
+-- vim.g.neovide_cursor_trail_size = 0.8
+-- vim.g.neovide_cursor_animation_length = 0.06
+-- vim.g.neovide_cursor_vfx_particle_lifetime = 0.8
 -- vim.g.neovide_profiler = false
 -- vim.g.neovide_remember_window_size = false
 
-vim.g.gui_font_default_size = 12
+vim.g.gui_font_default_size = 14
 vim.g.gui_font_size = vim.g.gui_font_default_size
 vim.g.gui_font_face = 'IosevkaCustomNerdFontComplete Nerd Font'
 vim.g.gui_antialiasing = 'antialias'
