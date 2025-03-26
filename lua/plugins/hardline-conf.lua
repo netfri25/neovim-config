@@ -52,7 +52,7 @@ return {
                 exclude_terminal = true,  -- don't show terminal buffers in bufferline
                 show_index = false,        -- show buffer indexes (not the actual buffer numbers) in bufferline
             },
-            theme = 'gruvbox_minimal',   -- change theme
+            theme = 'custom',   -- change theme
             sections = {         -- define sections
                 {class = 'high', item = function() return vim.fn.strftime('%H:%M') end}, -- time
                 {class = 'low', item = require('battery').get_status_line}, -- battery
