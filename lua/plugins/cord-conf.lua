@@ -2,8 +2,8 @@
 
 return {
     'vyfor/cord.nvim',
-    branch = 'client-server',
-    build = ':Cord fetch',
+    branch = 'master',
+    build = ':Cord update',
     event = 'VeryLazy',
     enabled = true,
 
@@ -14,7 +14,6 @@ return {
             icon = nil,
         },
         display = {
-            theme = 'pastel',
             swap_fields = false,
             swap_icons = true,
         },
