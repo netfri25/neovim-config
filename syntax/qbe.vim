@@ -52,6 +52,7 @@ syn keyword qbeInstruction alloc16
             \ storel
             \ stores
             \ storew
+            \ blit
 
 " Comparison.
 syn keyword qbeInstruction ceqd
