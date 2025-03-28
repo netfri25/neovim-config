@@ -7,17 +7,14 @@ return {
     cmd = { "LspStart" },
 
     dependencies = {
-        'hrsh7th/cmp-nvim-lsp-signature-help',
-        'hrsh7th/nvim-cmp',
-        'hrsh7th/cmp-nvim-lsp',
+        'saghen/blink.cmp',
         'SmiteshP/nvim-navbuddy',
         'rachartier/tiny-code-action.nvim',
     },
 
     config = function()
         local lspconfig = require('lspconfig')
-        local cmp_nvim_lsp = require('cmp_nvim_lsp')
-        local capabilities = cmp_nvim_lsp.default_capabilities()
+        local capabilities = require('blink.cmp').get_lsp_capabilities()
 
         vim.diagnostic.config({
             virtual_text = false,
