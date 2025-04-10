@@ -20,10 +20,6 @@ keymap('n', '<A-down>', ':resize +2<cr>', { silent = true, desc = 'Resize window
 keymap('n', '<A-left>', ':vertical resize -2<cr>', { silent = true, desc = 'Resize window' })
 keymap('n', '<A-right>', ':vertical resize +2<cr>', { silent = true, desc = 'Resize window' })
 
--- Quick jumps
-keymap('n', 'L', '<end>', { silent = true, desc = 'Go to the end of the line' })
-keymap('n', 'H', '<home>', { silent = true, desc = 'Go to the start of the line' })
-
 -- Clear highlighted search patterns
 keymap('n', '<C-l>', '<cmd>let @/=\'\'<cr>', { silent = true, desc = 'Clear highlighted search' })
 
@@ -58,20 +54,3 @@ keymap('x', 'J', ':move \'>+1<cr>gv-gv', { silent = true, desc = 'Move text' })
 keymap('x', 'K', ':move \'<-2<cr>gv-gv', { silent = true, desc = 'Move text' })
 keymap('x', '<A-j>', ':move \'>+1<cr>gv-gv', { silent = true, desc = 'Move text' })
 keymap('x', '<A-k>', ':move \'<-2<cr>gv-gv', { silent = true, desc = 'Move text' })
-
--- Quickfix list
-keymap('n', "<c-n>", "<cmd>cnext<cr>", { silent = true, desc = "Next item in the quickfix list" })
-keymap('n', "<c-p>", "<cmd>cprev<cr>", { silent = true, desc = "Previous item in the quickfix list" })
-
--- Location list
-keymap('n', "<A-n>", "<cmd>lnext<cr>", { silent = true, desc = "Next item in the location list" })
-keymap('n', "<A-p>", "<cmd>lprev<cr>", { silent = true, desc = "Previous item in the location list" })
-
-keymap('n', '[b', '<cmd>bprevious<cr>', { silent = true, desc = 'Switch to next buffer' })
-keymap('n', ']b', '<cmd>bnext<cr>', { silent = true, desc = 'Switch to previous buffer' })
-keymap('n', '[B', '<cmd>bfirst<cr>', { silent = true, desc = 'Switch to first buffer' })
-keymap('n', ']B', '<cmd>blast<cr>', { silent = true, desc = 'Switch to last buffer' })
-keymap('n', '<leader>bd', '<cmd>bdelete<cr>', { silent = true, desc = 'Delete buffer' })
-keymap('n', '<leader>bb', '<cmd>silent! exe \'LualineBuffersJump\' . v:count<cr>',
-    { silent = true, desc = 'Jump to {count}th buffer' })
-
