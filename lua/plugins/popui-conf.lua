@@ -3,6 +3,7 @@
 return {
     'hood/popui.nvim',
     lazy = false,
+    enabled = false,
     dependencies = { 'RishabhRD/popfix' },
 
     config = function()
