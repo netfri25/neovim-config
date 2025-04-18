@@ -103,26 +103,26 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 
 local group = vim.api.nvim_create_augroup('Center', { clear = true })
 
-vim.api.nvim_create_autocmd('CursorMoved', {
-   pattern = '*',
-   callback = function()
-      if vim.api.nvim_get_mode().mode == "n" then
-         vim.cmd("norm zz")
-      end
-   end,
-   group = group,
-})
+-- vim.api.nvim_create_autocmd('CursorMoved', {
+--    pattern = '*',
+--    callback = function()
+--       if vim.api.nvim_get_mode().mode == "n" then
+--          vim.cmd("norm zz")
+--       end
+--    end,
+--    group = group,
+-- })
 
-vim.api.nvim_create_autocmd('InsertLeave', {
-   pattern = '*',
-   command = 'norm zz',
-   group = group,
-})
+-- vim.api.nvim_create_autocmd('InsertLeave', {
+--    pattern = '*',
+--    command = 'norm zz',
+--    group = group,
+-- })
 
-vim.api.nvim_create_autocmd('TermLeave', {
-   command = 'set scrolloff=0',
-   group = group,
-})
+-- vim.api.nvim_create_autocmd('TermLeave', {
+--    command = 'set scrolloff=100',
+--    group = group,
+-- })
 
 -- make .roc files have the correct filetype
 vim.api.nvim_create_autocmd({ "BufEnter", "BufWinEnter" }, {
