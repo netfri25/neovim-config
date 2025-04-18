@@ -64,26 +64,8 @@ vim.filetype.add({
       ['onyx'] = 'onyx',
       ['an'] = 'ante',
    },
-   -- pattern = {
-   --    [".*onyx$"] = "onyx",
-   -- },
 })
 
 vim.opt.whichwrap:append '<,>,[,],h,l'
 vim.lsp.handlers['textDocument/hover'] = vim.lsp.with(vim.lsp.handlers.hover, { border = 'rounded' })
 vim.lsp.handlers['textDocument/signatureHelp'] = vim.lsp.with(vim.lsp.handlers.signature_help, { border = 'rounded' })
-
-vim.cmd[[filetype indent off]]
-
-vim.g.firenvim_config = {
-    globalSettings = { alt = "all" },
-    localSettings = {
-        [".*"] = {
-            cmdline  = "neovim",
-            content  = "text",
-            priority = 0,
-            selector = "textarea",
-            takeover = "always"
-        }
-    }
-}
