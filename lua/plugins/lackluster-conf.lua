@@ -1,6 +1,7 @@
 return {
     "slugbyte/lackluster.nvim",
     lazy = false,
+    enabled = false,
     config = function()
         local lackluster = require('lackluster')
         lackluster.setup({
