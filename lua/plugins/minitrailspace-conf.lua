@@ -13,7 +13,8 @@ end
 
 return {
     'echasnovski/mini.trailspace',
-    lazy = false,
+    lazy = true,
+    event = 'VeryLazy',
 
     config = function()
         local trailspace = require('mini.trailspace')

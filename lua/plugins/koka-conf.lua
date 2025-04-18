@@ -1,4 +1,5 @@
 return {
     dir = '~/koka/support/vim',
-    lazy = false,
+    lazy = true,
+    event = 'VeryLazy',
 }

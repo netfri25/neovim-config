@@ -40,6 +40,8 @@ end
 
 return {
     'ojroques/nvim-hardline',
+    lazy = true,
+    event = 'VeryLazy',
 
     dependencies = {
        'justinhj/battery.nvim',

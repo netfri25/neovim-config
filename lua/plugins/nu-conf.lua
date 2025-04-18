@@ -3,6 +3,7 @@
 return {
     'LhKipp/nvim-nu',
     lazy = true,
+    enabled = false,
     ft = 'nu',
     keys = {{ 'K', vim.lsp.buf.hover, silent = true, buffer = true }},
     config = function()
