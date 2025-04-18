@@ -8,8 +8,6 @@ return {
 
     dependencies = {
         'saghen/blink.cmp',
-        'SmiteshP/nvim-navbuddy',
-        'rachartier/tiny-code-action.nvim',
     },
 
     config = function()
@@ -37,15 +35,13 @@ return {
             vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, { silent = true, desc = 'Show diagnostics' })
             vim.keymap.set('n', '<leader>q', function() vim.diagnostic.setqflist({ severity = vim.diagnostic.severity.ERROR }) end, { silent = true, desc = 'Show loclist' })
             vim.keymap.set('n', '<leader>Q', function() vim.diagnostic.setqflist({ severity = vim.diagnostic.severity.WARN }) end, { silent = true, desc = 'Show loclist' })
-            vim.keymap.set('n', 'gD', function() vim.lsp.buf.declaration({ border = "rounded" }) end, { silent = true, desc = 'Goto declaration' })
-            vim.keymap.set('n', 'gd', function() vim.lsp.buf.definition({ border = "rounded" }) end, { silent = true, desc = 'Goto definition' })
+            vim.keymap.set('n', 'gD', function() vim.lsp.buf.declaration() end, { silent = true, desc = 'Goto declaration' })
+            vim.keymap.set('n', 'gd', function() vim.lsp.buf.definition() end, { silent = true, desc = 'Goto definition' })
             vim.keymap.set('n', 'K', function() vim.lsp.buf.hover({ border = "rounded" }) end, { silent = true, desc = 'Show docs' })
-            vim.keymap.set('n', 'gri', function() vim.lsp.buf.implementation({ border = "rounded" }) end, { silent = true, desc = 'Goto implementation' })
             vim.keymap.set('n', '<c-s>', function() vim.lsp.buf.signature_help({ border = "rounded" }) end, { silent = true, desc = 'Show signature help' })
             vim.keymap.set('n', 'gt', function() vim.lsp.buf.type_definition({ border = "rounded" }) end, { silent = true, desc = 'Show type definition' })
             vim.keymap.set('n', 'gra', function() vim.lsp.buf.code_action({ border = "rounded" }) end, { silent = true, desc = 'Code actions' })
             vim.keymap.set('n', '<leader>f', function() vim.lsp.buf.format({ async = true }) end, { silent = true, desc = 'Format buffer' })
-            vim.keymap.set('n', '<leader>u', require('nvim-navbuddy').open, { silent = true, desc = 'Open navbuddy' })
         end
 
         lspconfig['arduino_language_server'].setup({
