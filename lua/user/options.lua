@@ -61,7 +61,12 @@ vim.filetype.add({
       ['porth'] = 'porth',
       ['pro'] = 'prolog',
       ['nasm'] = 'nasm',
-   }
+      ['onyx'] = 'onyx',
+      ['an'] = 'ante',
+   },
+   -- pattern = {
+   --    [".*onyx$"] = "onyx",
+   -- },
 })
 
 vim.opt.whichwrap:append '<,>,[,],h,l'

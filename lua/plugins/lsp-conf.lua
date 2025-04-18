@@ -12,7 +12,33 @@ return {
 
     config = function()
         local lspconfig = require('lspconfig')
+        local configs = require('lspconfig.configs')
         local capabilities = require('blink.cmp').get_lsp_capabilities()
+
+        configs.onyx = {
+            default_config = {
+                cmd = { "onyx", "lsp" },
+                filetypes = { "onyx" },
+                root_dir = function(filename)
+                    local utils = require "lspconfig.util"
+                    return utils.search_ancestors(filename, function(path)
+                        -- fs_stat DOES exist
+                        if (vim.uv.fs_stat(table.concat({path, "onyx-lsp.kdl"})) or {}).type == 'file' then
+                            return path
+                        end
+                    end)
+                end;
+                settings = {}
+            }
+        }
+
+        configs.ante = {
+            default_config = {
+                cmd = { "ante-ls" },
+                filetypes = { "ante" },
+                root_dir = "."
+            }
+        }
 
         vim.diagnostic.config({
             virtual_text = false,
@@ -43,6 +69,21 @@ return {
             vim.keymap.set('n', 'gra', function() vim.lsp.buf.code_action({ border = "rounded" }) end, { silent = true, desc = 'Code actions' })
             vim.keymap.set('n', '<leader>f', function() vim.lsp.buf.format({ async = true }) end, { silent = true, desc = 'Format buffer' })
         end
+
+        lspconfig['koka'].setup({
+            capabilities = capabilities,
+            on_attach = on_attach,
+        })
+
+        lspconfig['ante'].setup({
+            capabilities = capabilities,
+            on_attach = on_attach,
+        })
+
+        lspconfig['onyx'].setup({
+            capabilities = capabilities,
+            on_attach = on_attach,
+        })
 
         lspconfig['arduino_language_server'].setup({
             cmd = {
