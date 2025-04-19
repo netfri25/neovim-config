@@ -47,6 +47,7 @@ local options = {
    showcmd = false,
    autochdir = false,
    grepprg = "rg --vimgrep",
+   winborder = 'rounded',
 }
 
 vim.opt.shortmess:append 'c'
