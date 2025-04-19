@@ -5,7 +5,7 @@ return {
     lazy = false,
 
     keys = {
-        { '<leader>t', function() require('oil').open() end, desc = 'Open oil buffer in a new window' }
+        { '<leader>t', function() require('oil').open_float() end, desc = 'Open oil buffer in a new window' }
     },
 
     opts = {
@@ -34,6 +34,8 @@ return {
             list = false,
             conceallevel = 3,
             concealcursor = "n",
+            number = false,
+            relativenumber = false,
         },
 
         -- Oil will take over directory buffers (e.g. `vim .` or `:e src/`
@@ -116,10 +118,10 @@ return {
         -- Configuration for the floating window in oil.open_float
         float = {
             -- Padding around the floating window
-            padding = 4,
-            max_width = 140,
-            max_height = 0,
-            border = "rounded",
+            padding = 3,
+            max_width = 0.85,
+            max_height = 0.85,
+            -- border = "rounded",
             win_options = {
                 winblend = vim.g.neovide and 30 or 0,
             },
