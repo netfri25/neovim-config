@@ -14,6 +14,7 @@ local filetypes = {
     'fish',
     -- 'help',
     'ocaml',
+    'numbat',
     'python',
     'arduino',
     'comment',
@@ -41,6 +42,18 @@ return {
     config = function()
         local tree = require('nvim-treesitter.configs')
         local parsers = require('nvim-treesitter.parsers')
+
+        ---@diagnostic disable-next-line: inject-field
+        parsers.get_parser_configs().numbat = {
+            install_info = {
+                url = "https://github.com/irevoire/tree-sitter-numbat",
+                files = { "src/parser.c", "src/scanner.c" },
+                branch = "main",
+                generate_requires_npm = false,
+                requires_generate_from_grammar = false,
+            },
+            filetype = "numbat",
+        }
 
         parsers.get_parser_configs().asm = {
             install_info = {
